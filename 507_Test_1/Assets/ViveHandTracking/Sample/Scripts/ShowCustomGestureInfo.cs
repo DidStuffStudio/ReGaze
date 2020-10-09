@@ -11,7 +11,7 @@ class ShowCustomGestureInfo : MonoBehaviour {
   public Text SingleHandState = null;
   public Text DualHandState = null;
 
-        public GestureRecognition gestureRecognition;
+        //public GestureRecognition gestureRecognition;
 
   void Update() {
     DisplayText(LeftState, GestureProvider.LeftHand, CustomGestureProvider.LeftHandState);
@@ -45,7 +45,7 @@ class ShowCustomGestureInfo : MonoBehaviour {
     text.text += "Middle: " + state.middle + System.Environment.NewLine;
     text.text += "Ring: " + state.ring + System.Environment.NewLine;
     text.text += "Pinky: " + state.pinky + System.Environment.NewLine;
-            gestureRecognition.UpdateGestureState(state);
+            //gestureRecognition.UpdateGestureState(state);
   }
 
   string IsOn(bool match) {

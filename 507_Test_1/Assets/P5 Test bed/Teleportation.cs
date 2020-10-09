@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tobii.XR;
+
 
 public class Teleportation : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class Teleportation : MonoBehaviour
     [SerializeField] private float speed = 1.0f;
 
     [SerializeField] private TobiiXR_Initializer tobiiXR_Initializer;
-    [SerializeField] private GestureRecognition gestureRecognition;
+    //[SerializeField] private GestureRecognition gestureRecognition;
 
     public bool hasFocus = false;
     public bool hasBlinked = false;
@@ -23,14 +25,14 @@ public class Teleportation : MonoBehaviour
     void Update()
     {
 
-        if (tobiiXR_Initializer.isBlinking) StartCoroutine(BlinkingTimer());
-        if(hasFocus && tobiiXR_Initializer.isBlinking)
-        {
-            // float step = speed * Time.deltaTime; // calculate distance to move
-            // transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        //if (tobiiXR_Initializer.isBlinking) StartCoroutine(BlinkingTimer());
+        //if(hasFocus && tobiiXR_Initializer.isBlinking)
+        //{
+        //    // float step = speed * Time.deltaTime; // calculate distance to move
+        //    // transform.position = Vector3.MoveTowards(transform.position, target.position, step);
            
 
-        }
+        //}
         /*
         if(hasBlinked)
         {
@@ -40,11 +42,19 @@ public class Teleportation : MonoBehaviour
         }
         */
 
-        if(gestureRecognition.gestureRecognized)
-        {
-            transform.position = new Vector3(  tobiiXR_Initializer.targetPos.x, -2.6f, tobiiXR_Initializer.targetPos.z);
-            gestureRecognition.gestureRecognized = false;
-        }
+
+
+
+
+        //if(gestureRecognition.gestureRecognized)
+        //{
+        //    transform.position = new Vector3(  tobiiXR_Initializer.targetPos.x, -2.6f, tobiiXR_Initializer.targetPos.z);
+        //    gestureRecognition.gestureRecognized = false;
+        //}
+
+
+
+
         /*
         if(hasBlinked && tobiiXR_Initializer.raycastHitObject != null)
         {
@@ -60,10 +70,10 @@ public class Teleportation : MonoBehaviour
 
     }
     
-    IEnumerator BlinkingTimer()
-    {
-        // alternative --> while blinking --> Time.time counter --> If bigger than certain amount of time --> Teleport
-        yield return new WaitForSeconds(0.5f);
-        if (tobiiXR_Initializer.isBlinking) hasBlinked = true;
-    }
+    //IEnumerator BlinkingTimer()
+    //{
+    //    // alternative --> while blinking --> Time.time counter --> If bigger than certain amount of time --> Teleport
+    //    yield return new WaitForSeconds(0.5f);
+    //    if (tobiiXR_Initializer.isBlinking) hasBlinked = true;
+    //}
 }
