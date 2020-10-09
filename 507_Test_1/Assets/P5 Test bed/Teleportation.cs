@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Techstr33tBo11s { 
 
 public class Teleportation : MonoBehaviour
 {
@@ -27,8 +26,8 @@ public class Teleportation : MonoBehaviour
         if (tobiiXR_Initializer.isBlinking) StartCoroutine(BlinkingTimer());
         if(hasFocus && tobiiXR_Initializer.isBlinking)
         {
-            float step = speed * Time.deltaTime; // calculate distance to move
-            transform.position = Vector3.MoveTowards(transform.position, targets.position, step);
+            // float step = speed * Time.deltaTime; // calculate distance to move
+            // transform.position = Vector3.MoveTowards(transform.position, target.position, step);
            
 
         }
@@ -67,5 +66,4 @@ public class Teleportation : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (tobiiXR_Initializer.isBlinking) hasBlinked = true;
     }
-}
 }

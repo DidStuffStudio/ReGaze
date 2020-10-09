@@ -29,6 +29,8 @@ public class TobiiXR_Initializer : MonoBehaviour
 
     public Vector3 targetPos;
 
+    public GameObject blinkTargetPrefab;
+
     private void Awake()
     {
         TobiiXR.Start(Settings);
@@ -85,6 +87,11 @@ public class TobiiXR_Initializer : MonoBehaviour
             
             lightObject.transform.position = hit.point;
             targetPos = hit.point;
+            if (true)
+            {
+                Instantiate(blinkTargetPrefab, hit.point, Quaternion.identity); // instantiate cylinder for blinking if if trigger is true
+            }
+            
             // Debug.Log(hit.point);
             Vector3.MoveTowards(lightObject.transform.position, hit.point, speed * Time.deltaTime);
             lightObject.transform.position = new Vector3(lightObject.transform.position.x, -1.65f, lightObject.transform.position.z);
