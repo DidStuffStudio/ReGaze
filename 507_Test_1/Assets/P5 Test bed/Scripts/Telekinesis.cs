@@ -6,43 +6,67 @@ using UnityEngine;
 
 public class Telekinesis : MonoBehaviour
 {
+    public enum TelekineticMethod {ControllerManipulation, Copy, Touchpad}
+    public TelekineticMethod telekineticMethod;
     private EyeRaycast eyeRaycast;
-    private const ControllerButton TriggerButton = ControllerButton.Trigger;
+    private const ControllerButton TouchpadButton = ControllerButton.Touchpad;
+    private bool distanceCalculated = false;
     private bool isGrabbed;
+    private float distance = 0.0f;
     //public Rigidbody telekineticParent;
     public GameObject grabbedObject;
-    
+    [SerializeField] private float grabbableObjectOffset;
+
     private void Start()
     {
+        
         eyeRaycast = GetComponent<EyeRaycast>();
     }
 
     void Update()
     {
-        if (eyeRaycast.raycastHitObject && ControllerManager.Instance.GetButtonPressDown(TriggerButton))
+        if (eyeRaycast.raycastHitObject && ControllerManager.Instance.GetButtonPressDown(TouchpadButton))
         {
             isGrabbed = true;
             grabbedObject = eyeRaycast.raycastHitObject;
+            if (!distanceCalculated)
+            {
+                CalculateDistance();
+            }
         }
 
-        if (ControllerManager.Instance.GetButtonPressUp(TriggerButton))
+        if (ControllerManager.Instance.GetButtonPressUp(TouchpadButton))
         {
+            // grabbedObject.GetComponent<Rigidbody>().AddForce(eyeRaycast.eyeTrackingData.GazeRay.Direction, ForceMode.Impulse);
             isGrabbed = false;
-            //grabbedObject.GetComponent<SpringJoint>().connectedBody = null;
             grabbedObject = null;
+            distanceCalculated = false;
         }
 
         if (isGrabbed)
         {
+            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+            // Vector3.MoveTowards(grabbedObject.transform.position, eyeRaycast.eyeTrackingData.GazeRay.Direction * distance, 2);
+            grabbedObject.transform.position = eyeRaycast.eyeTrackingData.GazeRay.Direction * distance;
             
-            //grabbedObject.GetComponent<SpringJoint>().connectedBody =
-                //telekineticParent.GetComponent<Rigidbody>();
-            grabbedObject.transform.position = Camera.main.transform.position +
-                                                             Camera.main.transform.forward *
-                                                             Vector3.Distance(Camera.main.transform.position,
-                                                                 eyeRaycast.raycastHitObject.transform
-                                                                     .position);
-        }
-    }
-}
+            switch (telekineticMethod)
+            {
+                case TelekineticMethod.Copy:
+                {
 
+
+                    break;
+                }
+            }
+        }
+
+    }
+
+    void CalculateDistance()
+    {
+        distance = Vector3.Distance(eyeRaycast.eyeTrackingData.GazeRay.Origin, grabbedObject.transform.position);
+        distanceCalculated = true;
+    }
+        
+        
+}

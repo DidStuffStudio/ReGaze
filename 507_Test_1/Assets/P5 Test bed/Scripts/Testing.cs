@@ -25,7 +25,7 @@ using UnityEngine;
      public enum EyeTracking
     {
         Quest,
-        Htc
+        HTC
     }
 
     public EyeTracking eyeTracking;

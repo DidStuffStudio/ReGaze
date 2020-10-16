@@ -10,7 +10,8 @@ public class SmoothJump : MonoBehaviour
     private const ControllerButton TriggerButton = ControllerButton.Trigger;
     [SerializeField]
     private TobiiXR_Initializer tobiiXR_Initializer;
-    public float speed = 1.0f, acceleration = 1.0f;
+
+    public float speed = 1.0f;
     private Vector3 target = Vector3.zero;
     private bool triggered = false;
     float height = 0.0f;
@@ -20,6 +21,7 @@ public class SmoothJump : MonoBehaviour
     private float timer = 0;
 
     [SerializeField] private float topSpeed = 12;
+    [SerializeField] private float acceleration = 7;
     [SerializeField] private float distanceMultiplier = 0.1f;
 
 
@@ -59,29 +61,54 @@ public class SmoothJump : MonoBehaviour
 
     private void CalculateSpeed()
     {
-        timer += Time.deltaTime;
-        int seconds =(int)timer % 60;
-        print(seconds);
+        
+        if(Vector3.Distance(originalPos, transform.position) < (distance / 4))
+        {
+            speed = timer * acceleration;
+            timer += Time.deltaTime;
+        }
+        else if (Vector3.Distance(originalPos, transform.position) >= (distance / 4) * 3)
+        {
+            timer -= Time.deltaTime;
+            
+            speed = timer * acceleration;
+            if (speed <= 0)
+            {
+                speed = 0;
+            }
+        }
 
-        if (speed <= topSpeed)
+        // int seconds =(int)timer % 60;
+        
+
+        /*if (speed <= topSpeed)
         {
 
-            float a = topSpeed / (((distance / 4) * distanceMultiplier)); // acceleration
-            speed += seconds * a;
+            // float a = topSpeed / (((distance / 4) * distanceMultiplier)); // acceleration
+            // float a = (topSpeed * (topSpeed) / (distance/4));
+            speed = timer * 5;
         }
-        else speed = topSpeed;
+        else
+        {
+            timer = 0;
+            speed = topSpeed;
+        }
 
 
 
         if (Vector3.Distance(originalPos,transform.position) >= (distance/4)*3 && speed >= 0)
         {
-            float a = topSpeed / (((distance / 4) * distanceMultiplier)); // acceleration
-            speed -= seconds * a;
+            //float a = topSpeed / (((distance / 4) * distanceMultiplier)); // Deceleration
+            //float a = (topSpeed * topSpeed) / distance;
+            speed = -(timer * 5);
             if (speed < 0)
             {
+                timer = 0;
                 speed = 0;
             }
         }
+        */
+        print(speed);
 
     }
 }

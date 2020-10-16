@@ -18,6 +18,8 @@ public class EyeRaycast : MonoBehaviour
 
     public bool hasHit = false;
 
+    public TobiiXR_EyeTrackingData eyeTrackingData;
+
 
     private void Update()
     {
@@ -32,10 +34,10 @@ public class EyeRaycast : MonoBehaviour
                 break;
             }
 
-            case Testing.EyeTracking.Htc:
+            case Testing.EyeTracking.HTC:
 
             {
-                var eyeTrackingData = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World);
+                eyeTrackingData = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World);
                 var eyeOrigin = eyeTrackingData.GazeRay.Origin;
                 var eyeDirection = eyeTrackingData.GazeRay.Direction;
                 GazeCast(eyeOrigin, eyeDirection);
@@ -51,8 +53,21 @@ public class EyeRaycast : MonoBehaviour
 
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Selectable")))
         {
-            Debug.DrawRay(startPoint, direction * 1000, Color.red);
-            raycastHitObject = hit.transform.gameObject;
+            Debug.DrawRay(startPoint, hit.point, Color.red);
+           if (hit.transform.gameObject != raycastHitObject)
+           {
+                raycastHitObject = hit.transform.gameObject;
+                targetPos = hit.point;
+                raycastHitObject.GetComponent<Grabbable>().focused = true;
+           }
+        }
+        else
+        {
+            if (raycastHitObject != null)
+            {
+                raycastHitObject.GetComponent<Grabbable>().focused = false;
+                raycastHitObject = null;
+            }   
         }
 
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
