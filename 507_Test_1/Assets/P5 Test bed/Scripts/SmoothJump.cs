@@ -56,7 +56,6 @@ public class SmoothJump : MonoBehaviour
             triggered = false;
             speed = 0;
         }
-        
     }
 
     private void CalculateSpeed()
@@ -77,38 +76,5 @@ public class SmoothJump : MonoBehaviour
                 speed = 0;
             }
         }
-
-        // int seconds =(int)timer % 60;
-        
-
-        /*if (speed <= topSpeed)
-        {
-
-            // float a = topSpeed / (((distance / 4) * distanceMultiplier)); // acceleration
-            // float a = (topSpeed * (topSpeed) / (distance/4));
-            speed = timer * 5;
-        }
-        else
-        {
-            timer = 0;
-            speed = topSpeed;
-        }
-
-
-
-        if (Vector3.Distance(originalPos,transform.position) >= (distance/4)*3 && speed >= 0)
-        {
-            //float a = topSpeed / (((distance / 4) * distanceMultiplier)); // Deceleration
-            //float a = (topSpeed * topSpeed) / distance;
-            speed = -(timer * 5);
-            if (speed < 0)
-            {
-                timer = 0;
-                speed = 0;
-            }
-        }
-        */
-        print(speed);
-
     }
 }
