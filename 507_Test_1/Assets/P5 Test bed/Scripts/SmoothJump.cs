@@ -28,17 +28,21 @@ public class SmoothJump : MonoBehaviour
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
-        height = transform.position.y;
+        height = transform.GetChild(0).position.y;
     }
     public void Update()
     {
-   
-
+        
+        print(ControllerManager.Instance.GetButtonPress(TriggerButton));
+        //print(transform.position + "Current Location" + target + "Target Position");
+        
         if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered)
         {
+            
             timer = 0;
             triggered = true;
             target = eyeRaycast.targetPos;
+            target = target + transform.position - transform.GetChild(0).position; // Camera must be first child!!!!!!!!!!!!!!!!!!!!! 
             target += new Vector3(0,height,0);
             prevTime = Time.time;
             distance = Vector3.Distance(new Vector3(target.x, 0.0f, target.z),
@@ -51,30 +55,35 @@ public class SmoothJump : MonoBehaviour
             CalculateSpeed();
             transform.position = Vector3.MoveTowards(transform.position, target, speed);
         }
-        if (Vector3.Distance(new Vector3(target.x, 0.0f, target.z), new Vector3(transform.position.x,0.0f,transform.position.z)) < 0.1f)
+
+        var newTarget = target - (transform.position - transform.GetChild(0).position);
+        
+        if (Vector3.Distance(new Vector3(newTarget.x, 0.0f, newTarget.z), new Vector3(transform.GetChild(0).position.x,0.0f,transform.GetChild(0).position.z)) < 0.6f)
+        /*
+        if(target == transform.GetChild(0).position)
+        */
         {
             triggered = false;
-            speed = 0;
+            print("triggered false");
         }
+        
+        print(Vector3.Distance(new Vector3(newTarget.x, 0.0f, newTarget.z), new Vector3(transform.GetChild(0).position.x,0.0f,transform.GetChild(0).position.z)));
     }
 
     private void CalculateSpeed()
     {
-        
-        if(Vector3.Distance(originalPos, transform.position) < (distance / 4))
+
+        var distanceToTarget = Vector3.Distance(originalPos, target);
+        if(distanceToTarget < (distance / 4)) // acceleration
         {
+            timer += Time.fixedDeltaTime;
             speed = timer * acceleration;
-            timer += Time.deltaTime;
         }
-        else if (Vector3.Distance(originalPos, transform.position) >= (distance / 4) * 3)
+        else if (distanceToTarget >= (distance / 4) * 3) // deceleration
         {
-            timer -= Time.deltaTime;
+            timer -= Time.fixedDeltaTime;
+            speed = Mathf.Abs(timer * acceleration);
             
-            speed = timer * acceleration;
-            if (speed <= 0)
-            {
-                speed = 0;
-            }
         }
     }
 }

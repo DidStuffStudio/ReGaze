@@ -6,11 +6,12 @@ using UnityEngine;
 public class Grabbable : MonoBehaviour
 {
   public bool focused = false;
-  private Color originalColor;
+  private Outline outline;
 
   private void Start()
   {
-    originalColor = GetComponent<Renderer>().material.color;
+    outline = GetComponent<Outline>();
+    outline.enabled = false;
   }
 
   private void Update()
@@ -22,11 +23,11 @@ public class Grabbable : MonoBehaviour
   {
     if (on)
     {
-      GetComponent<Renderer>().material.color=Color.cyan;
+      outline.enabled = true;
     }
     else
     {
-      GetComponent<Renderer>().material.color = originalColor;
+      outline.enabled = false;
     }
   }
 }

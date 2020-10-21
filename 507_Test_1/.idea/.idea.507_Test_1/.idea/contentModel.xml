@@ -11,12 +11,25 @@
         <e p="Grabbable.cs" t="Include" />
         <e p="P5 Test bed" t="Include">
           <e p="Scripts" t="Include">
+            <e p="BlinkTransform.cs" t="Include" />
             <e p="EyeRaycast.cs" t="Include" />
             <e p="InputManage.cs" t="Include" />
             <e p="SmoothJump.cs" t="Include" />
             <e p="Telekinesis.cs" t="Include" />
             <e p="Teleportation.cs" t="Include" />
             <e p="Testing.cs" t="Include" />
+          </e>
+        </e>
+        <e p="QuickOutline" t="Include">
+          <e p="readme.txt" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="OutlineFill.shader" t="Include" />
+              <e p="OutlineMask.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Outline.cs" t="Include" />
           </e>
         </e>
         <e p="Rotation.cs" t="Include" />
