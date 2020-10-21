@@ -19,6 +19,9 @@
             <e p="Teleportation.cs" t="Include" />
             <e p="Testing.cs" t="Include" />
           </e>
+          <e p="Shaders" t="Include">
+            <e p="SeeThrough.shader" t="Include" />
+          </e>
         </e>
         <e p="QuickOutline" t="Include">
           <e p="readme.txt" t="Include" />

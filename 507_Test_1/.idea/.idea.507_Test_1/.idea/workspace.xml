@@ -57,6 +57,7 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/SmoothJump.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/SeeThrough.shader" />
       </list>
     </option>
   </component>
@@ -110,7 +111,7 @@
       <workItem from="1603225930971" duration="13839000" />
       <workItem from="1603265270447" duration="2317000" />
       <workItem from="1603273892751" duration="3567000" />
-      <workItem from="1603278103045" duration="3939000" />
+      <workItem from="1603278103045" duration="5321000" />
     </task>
     <servers />
   </component>

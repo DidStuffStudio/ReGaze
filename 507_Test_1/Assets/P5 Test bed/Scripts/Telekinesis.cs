@@ -24,6 +24,9 @@ public class Telekinesis : MonoBehaviour
 
     public Vector3 pos = Vector3.zero, latePos= Vector3.zero, deltaPos= Vector3.zero;
     public float strength = 5;
+
+    [SerializeField] private Material seethrough;
+    private Material originalMat;
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
@@ -38,6 +41,8 @@ public class Telekinesis : MonoBehaviour
         {
             isGrabbed = true;
             grabbedObject = eyeRaycast.raycastHitObject;
+            originalMat = grabbedObject.GetComponent<Renderer> ().material;
+            grabbedObject.GetComponent<Renderer> ().material = seethrough;
             // grabbedTans = grabbedObject.transform.position;
             if (!distanceCalculated)
             {
@@ -52,6 +57,7 @@ public class Telekinesis : MonoBehaviour
             rb.useGravity = true;
             rb.AddForce(grabbedObjDir*strength, ForceMode.Force);
             isGrabbed = false;
+            grabbedObject.GetComponent<Renderer> ().material = originalMat;
             grabbedObject = null;
             distanceCalculated = false;
         }

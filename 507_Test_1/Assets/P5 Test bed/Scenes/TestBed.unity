@@ -3029,6 +3029,7 @@ MonoBehaviour:
   latePos: {x: 0, y: 0, z: 0}
   deltaPos: {x: 0, y: 0, z: 0}
   strength: 1000
+  seethrough: {fileID: 2100000, guid: 7a8d56bbfe499f84dabe4fa29885e780, type: 2}
 --- !u!114 &1804041817
 MonoBehaviour:
   m_ObjectHideFlags: 0
