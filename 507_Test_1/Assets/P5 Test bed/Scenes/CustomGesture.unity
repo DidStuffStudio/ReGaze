@@ -1046,10 +1046,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e5498ad8d578f4e9ac345a9c80c30c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topSpeed: 0.1
+  topSpeed: 1
   multiplyer: 100
   multiplier: 2
   maxDistance: 0
+  acceleration: 0
+  accelerationCalculated: 0
 --- !u!114 &1804041819
 MonoBehaviour:
   m_ObjectHideFlags: 0

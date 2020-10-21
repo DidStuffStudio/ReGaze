@@ -107,7 +107,9 @@
       <workItem from="1603194126786" duration="6406000" />
       <workItem from="1603207493851" duration="8378000" />
       <workItem from="1603218545069" duration="6017000" />
-      <workItem from="1603225930971" duration="11546000" />
+      <workItem from="1603225930971" duration="13839000" />
+      <workItem from="1603265270447" duration="2317000" />
+      <workItem from="1603273892751" duration="3567000" />
     </task>
     <servers />
   </component>
@@ -132,6 +134,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1603274817116">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1603274817116" />
     <state x="2012" y="94" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1602840179280">
       <screen x="1920" y="2" width="1920" height="1040" />
     </state>

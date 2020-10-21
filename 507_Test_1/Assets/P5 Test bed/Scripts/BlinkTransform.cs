@@ -11,7 +11,6 @@ public class BlinkTransform : MonoBehaviour
     private const ControllerButton TriggerButton = ControllerButton.Trigger;
     private Vector3 target = Vector3.zero;
     private bool triggered = false;
-    float height = 0.0f;
     [SerializeField] private float topSpeed = 0.1f;
     private Vector3 startingPosition;
     private float slope;
@@ -25,11 +24,14 @@ public class BlinkTransform : MonoBehaviour
     public float multiplyer;
     [SerializeField] private float multiplier = 2;
     [SerializeField] private float maxDistance;
+    [SerializeField] private float acceleration;
+    [SerializeField] private bool accelerationCalculated;
+    public float height = 1.5f;
 
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
-        height = transform.GetChild(0).position.y;
+        transform.position = new Vector3(transform.position.x, height, transform.position.z);
     }
 
     public void Update()
@@ -49,63 +51,63 @@ public class BlinkTransform : MonoBehaviour
 
         if (triggered)
         {
-
-            /*ar step = 0.0f;
-            step += CalculateSpeed();
-            print(step);*/
-            if (slope == 0)
+            if (!accelerationCalculated)
             {
                 CalculateSlopeAndMaxDistance();
-
+                acceleration = (Mathf.Pow(topSpeed, 2) / 2 * maxDistance); // Acceleration
+                accelerationCalculated = true;
+                print("maxdist " + maxDistance);
             }
-
-
-            // var step = Vector3.Distance(transform.position, target) * slope * Time.deltaTime; // decelerated thing
-            // var step = Mathf.Abs(Vector3.Distance(transform.position, target) * slope);
-            // var step = Mathf.Abs(Vector3.Distance(transform.position, target) / slope);
-            // stepsum += step;
-            timer += Time.fixedDeltaTime;
-            // step += slope / CalculateSlope() / timer;
             
-            var acceleration = (Mathf.Pow(topSpeed, 2) / 2 * maxDistance);
-            print("acceleration = " + acceleration + ", timer = " + timer);
-            // var acceleration = (CalculateSlopeAndMaxDistance()*2 / Mathf.Pow(multiplier * Time.fixedDeltaTime, 2));
+            timer += Time.fixedDeltaTime;
             step += acceleration * Mathf.Pow(timer, 2);
+
+
+            /*if (CalculateDistance() < maxDistance/4 && step <= topSpeed)
+            {
+                step += acceleration * Mathf.Pow(timer, 2);
+            }
+            
+            else if (CalculateDistance() >= 3 * maxDistance / 4 && step >= 0) //deceleration
+            {
+
+                step -= acceleration * Mathf.Pow(timer, 2);
+
+            }*/
+            /*else // Constant Speed
+            {
+                print("constant speed");
+                step = topSpeed;
+            }*/
+            
             
             print(" step " + step);
-            // transform.position = Vector3.MoveTowards(transform.position, target, step / 10); // decelerating
             transform.position = Vector3.MoveTowards((transform.position), target, step);
-            
-            
-            
+            transform.position = new Vector3(transform.position.x, height, transform.position.z);
         }
 
-        if (Vector3.Distance(transform.position, target) < 0.001f)
+        if (Vector3.Distance(transform.position, new Vector3(target.x, height, target.z)) < 0.001f)
         {
             triggered = false;
             slope = 0;
             step = 0;
             timer = 0;
             maxDistance = 0;
-            //print("Hit Target");
-            // print("stepsum: " + stepsum);
+            accelerationCalculated = false;
         }
-
-        /*
-        if (slope * Vector3.Distance(startingPosition, target) != 0)
-        {
-
-        
-
-        }*/
     }
 
     float CalculateSlopeAndMaxDistance()
     {
         var dis = Vector3.Distance(startingPosition, target);
-        slope = (topSpeed - 0) / (dis - 0); // slope = y2-y1/x2-x1
-        // print(slope);
+        /*slope = (topSpeed - 0) / (dis - 0); // slope = y2-y1/x2-x1*/
         return dis;
+    }
+
+    private float CalculateDistance()
+    {
+        var dist = Vector3.Distance(transform.position, startingPosition);
+        return dist;
     }
 
 }
