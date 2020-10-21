@@ -20,6 +20,10 @@ public class Telekinesis : MonoBehaviour
     private float moveStep = 0.5f;
     private float distance = 0.0f;
     private Vector3 grabbedTans;
+    private Vector3 grabbedObjDir;
+
+    public Vector3 pos = Vector3.zero, latePos= Vector3.zero, deltaPos= Vector3.zero;
+    public float strength = 5;
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
@@ -44,7 +48,9 @@ public class Telekinesis : MonoBehaviour
         if (ControllerManager.Instance.GetButtonPressUp(TouchpadButton) || Input.GetButtonUp("Fire2"))
         {
             // grabbedObject.GetComponent<Rigidbody>().AddForce(eyeRaycast.eyeTrackingData.GazeRay.Direction, ForceMode.Impulse);
-            grabbedObject.GetComponent<Rigidbody>().useGravity = true;
+            var rb = grabbedObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.AddForce(grabbedObjDir*strength, ForceMode.Force);
             isGrabbed = false;
             grabbedObject = null;
             distanceCalculated = false;
@@ -60,11 +66,21 @@ public class Telekinesis : MonoBehaviour
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
         moveStep = telekineticTransformDist / moveConstant;
 
-        telekineticTransform.position = transform.position + eyeRaycast.eyeDirection * distance;
+        telekineticTransform.position = transform.GetChild(0).position + eyeRaycast.eyeDirection * distance;
         Debug.DrawRay(eyeRaycast.eyeOrigin, eyeRaycast.eyeDirection * distance, Color.green);
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
+        pos = grabbedObject.transform.position;
+        grabbedObjDir = grabbedObject.transform.position - latePos;
+        latePos = grabbedObject.transform.position;
     }
+
+    /*public void LateUpdate()
+    {
+        latePos = grabbedObject.transform.position;
+
+        deltaPos = latePos - pos;
+    }*/
 
     void CalculateDistance()
     {
