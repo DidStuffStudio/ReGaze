@@ -19,7 +19,7 @@ public class Telekinesis : MonoBehaviour
     [SerializeField] private float moveConstant;
     private float moveStep = 0.5f;
     private float distance = 0.0f;
-
+    private Vector3 grabbedTans;
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
@@ -27,11 +27,14 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
+        
+        //print(grabbedObject);
         if (eyeRaycast.raycastHitObject && (ControllerManager.Instance.GetButtonPressDown(TouchpadButton) ||
                                             Input.GetButtonDown("Fire2")))
         {
             isGrabbed = true;
             grabbedObject = eyeRaycast.raycastHitObject;
+            // grabbedTans = grabbedObject.transform.position;
             if (!distanceCalculated)
             {
                 CalculateDistance();
@@ -52,13 +55,13 @@ public class Telekinesis : MonoBehaviour
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
         // Vector3.MoveTowards(grabbedObject.transform.position, eyeRaycast.eyeTrackingData.GazeRay.Direction * distance, 2);
 
-        distance += Input.GetAxis("Vertical") * depthMoveStrength;
+        if(Input.GetAxis("Vertical") != 0) distance += Input.GetAxis("Vertical") * depthMoveStrength;
         var telekineticTransformDist =
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
         moveStep = telekineticTransformDist / moveConstant;
 
-        telekineticTransform.position = eyeRaycast.eyeDirection * distance;
-        Debug.DrawRay(eyeRaycast.eyeOrigin, eyeRaycast.eyeDirection * 5, Color.green);
+        telekineticTransform.position = transform.position + eyeRaycast.eyeDirection * distance;
+        Debug.DrawRay(eyeRaycast.eyeOrigin, eyeRaycast.eyeDirection * distance, Color.green);
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
     }
@@ -67,6 +70,8 @@ public class Telekinesis : MonoBehaviour
     {
         distance = Vector3.Distance(eyeRaycast.eyeOrigin, grabbedObject.transform.position);
         distanceCalculated = true;
+        print(distanceCalculated);
+        
     }
 }
 
