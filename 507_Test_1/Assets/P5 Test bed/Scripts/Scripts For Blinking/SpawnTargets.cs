@@ -7,20 +7,14 @@ using Tobii.XR;
 
 public class SpawnTargets : MonoBehaviour
 {
-    public Transform prefab;
     public GameObject[] blinkTargets;
     public float height = 1.5f;
-    private Vector3 startingPosition;
     private float numTargets = 10;
-    Camera mainCamera;
-    int i = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = new Vector3(transform.position.x, height, transform.position.z);
-        //Debug.Log(blinkTargets[1].transform.position);
 
         for (int i = 1; i < blinkTargets.Length; i++)
         {
@@ -31,23 +25,6 @@ public class SpawnTargets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(transform.GetChild(0).position);
-
-
-
-
-        /*
-
-        if (Vector3.Distance(blinkTargets[i].transform.position, transform.GetChild(0).position) < 5)
-        {
-            
-            for (i = 1; i < numTargets;)
-                blinkTargets[i].SetActive(true);
-            
-        }
-        */
-
-        
 
         checkPosition();
         Debug.Log(checkPosition());
@@ -60,14 +37,6 @@ public class SpawnTargets : MonoBehaviour
     private int checkPosition()
     {
         int pos=0;
-        for (int i = 0; i < numTargets; i++)
-        {
-            if (Vector3.Distance(blinkTargets[i].transform.position, transform.GetChild(0).position) < 5)
-            {
-                
-            }
-            
-        }
 
         if (Vector3.Distance(blinkTargets[0].transform.position, transform.GetChild(0).position) < 5)
         {
@@ -112,14 +81,4 @@ public class SpawnTargets : MonoBehaviour
 
         return pos;
     }
-    /*
-    public bool shouldSpawn()
-    {
-        if ((blinkTargets[0].transform.position - transform.GetChild(0).position).magnitude < 5.0f)
-        {
-            return true;
-        }
-        else return false;
-    }
-    */
 }
