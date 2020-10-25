@@ -2237,7 +2237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bd1368fc07ce44ebd87b7d6dbda972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
   blinkTargets:
   - {fileID: 1800935592}
   - {fileID: 1021131116}
@@ -2250,6 +2249,7 @@ MonoBehaviour:
   - {fileID: 146804378}
   - {fileID: 1182754552}
   height: 1.5
+  blinkTargetDist: 8
 --- !u!1 &2100908865
 GameObject:
   m_ObjectHideFlags: 0
