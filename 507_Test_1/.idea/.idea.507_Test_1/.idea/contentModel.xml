@@ -11,10 +11,13 @@
         <e p="Grabbable.cs" t="Include" />
         <e p="P5 Test bed" t="Include">
           <e p="Scripts" t="Include">
+            <e p="BallsInTheBucket.cs" t="Include" />
             <e p="BlinkTransform.cs" t="Include" />
+            <e p="CubeTargetCheck.cs" t="Include" />
             <e p="EyeRaycast.cs" t="Include" />
             <e p="InputManage.cs" t="Include" />
             <e p="SmoothJump.cs" t="Include" />
+            <e p="SpawnTargets.cs" t="Include" />
             <e p="Telekinesis.cs" t="Include" />
             <e p="Teleportation.cs" t="Include" />
             <e p="Testing.cs" t="Include" />

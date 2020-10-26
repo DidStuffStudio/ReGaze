@@ -22,6 +22,8 @@ public class EyeRaycast : MonoBehaviour
     public Vector3 eyeOrigin;
     public Vector3 eyeDirection;
 
+    [SerializeField] private float lightHeight = 0.2f;
+
 
     private void Update()
     {
@@ -76,7 +78,7 @@ public class EyeRaycast : MonoBehaviour
         {
             //Debug.DrawRay(startPoint, direction * 1000, Color.red);
             targetPos = hit.point;
-            lightObject.transform.position = hit.point += new Vector3(0, 0.1f, 0);
+            lightObject.transform.position = hit.point += new Vector3(0, lightHeight, 0);
             lightObject.SetActive(true);
             hasHit = true;
         }

@@ -22,11 +22,12 @@ public class Telekinesis : MonoBehaviour
     private Vector3 grabbedTans;
     private Vector3 grabbedObjDir;
 
-    public Vector3 pos = Vector3.zero, latePos= Vector3.zero, deltaPos= Vector3.zero;
+    public Vector3 pos = Vector3.zero, latePos = Vector3.zero, deltaPos = Vector3.zero;
     public float strength = 5;
 
     [SerializeField] private Material seethrough;
     private Material originalMat;
+
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
@@ -34,15 +35,14 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
-        
         //print(grabbedObject);
         if (eyeRaycast.raycastHitObject && (ControllerManager.Instance.GetButtonPressDown(TouchpadButton) ||
                                             Input.GetButtonDown("Fire2")))
         {
             isGrabbed = true;
             grabbedObject = eyeRaycast.raycastHitObject;
-            originalMat = grabbedObject.GetComponent<Renderer> ().material;
-            grabbedObject.GetComponent<Renderer> ().material = seethrough;
+            originalMat = grabbedObject.GetComponent<Renderer>().material;
+            grabbedObject.GetComponent<Renderer>().material = seethrough;
             // grabbedTans = grabbedObject.transform.position;
             if (!distanceCalculated)
             {
@@ -53,11 +53,16 @@ public class Telekinesis : MonoBehaviour
         if (ControllerManager.Instance.GetButtonPressUp(TouchpadButton) || Input.GetButtonUp("Fire2"))
         {
             // grabbedObject.GetComponent<Rigidbody>().AddForce(eyeRaycast.eyeTrackingData.GazeRay.Direction, ForceMode.Impulse);
-            var rb = grabbedObject.GetComponent<Rigidbody>();
-            rb.useGravity = true;
-            rb.AddForce(grabbedObjDir*strength, ForceMode.Force);
+
+            if (grabbedObject)
+            {
+                var rb = grabbedObject.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.AddForce(grabbedObjDir * strength, ForceMode.Force);
+                grabbedObject.GetComponent<Renderer>().material = originalMat;
+            }
+
             isGrabbed = false;
-            grabbedObject.GetComponent<Renderer> ().material = originalMat;
             grabbedObject = null;
             distanceCalculated = false;
         }
@@ -67,7 +72,7 @@ public class Telekinesis : MonoBehaviour
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
         // Vector3.MoveTowards(grabbedObject.transform.position, eyeRaycast.eyeTrackingData.GazeRay.Direction * distance, 2);
 
-        if(Input.GetAxis("Vertical") != 0) distance += Input.GetAxis("Vertical") * depthMoveStrength;
+        if (Input.GetAxis("Vertical") != 0) distance += Input.GetAxis("Vertical") * depthMoveStrength;
         var telekineticTransformDist =
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
         moveStep = telekineticTransformDist / moveConstant;
@@ -93,7 +98,6 @@ public class Telekinesis : MonoBehaviour
         distance = Vector3.Distance(eyeRaycast.eyeOrigin, grabbedObject.transform.position);
         distanceCalculated = true;
         print(distanceCalculated);
-        
     }
 }
 
