@@ -27,19 +27,20 @@ public class BlinkTransform : MonoBehaviour
     [SerializeField] private float acceleration;
     [SerializeField] private bool accelerationCalculated;
     public float height = 1.5f;
+    private bool justJumped;
 
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
         transform.position = new Vector3(transform.position.x, height, transform.position.z);
+        StartCoroutine(WaitBro());
     }
 
     public void Update()
     {
-        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered)
+        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered && !justJumped)
         {
             triggered = true;
-            
             target = eyeRaycast.targetPos;
             target = target + transform.position -
                      transform.GetChild(0).position; // Camera must be first child!!!!!!!!!!!!!!!!!!!!! 
@@ -56,38 +57,18 @@ public class BlinkTransform : MonoBehaviour
                 CalculateSlopeAndMaxDistance();
                 acceleration = (Mathf.Pow(topSpeed, 2) / 2 * maxDistance); // Acceleration
                 accelerationCalculated = true;
-                print("maxdist " + maxDistance);
             }
             
             timer += Time.fixedDeltaTime;
             step += acceleration * Mathf.Pow(timer, 2);
-
-
-            /*if (CalculateDistance() < maxDistance/4 && step <= topSpeed)
-            {
-                step += acceleration * Mathf.Pow(timer, 2);
-            }
             
-            else if (CalculateDistance() >= 3 * maxDistance / 4 && step >= 0) //deceleration
-            {
-
-                step -= acceleration * Mathf.Pow(timer, 2);
-
-            }*/
-            /*else // Constant Speed
-            {
-                print("constant speed");
-                step = topSpeed;
-            }*/
-            
-            
-            print(" step " + step);
             transform.position = Vector3.MoveTowards((transform.position), target, step);
             transform.position = new Vector3(transform.position.x, height, transform.position.z);
         }
 
         if (Vector3.Distance(transform.position, new Vector3(target.x, height, target.z)) < 0.001f)
         {
+            justJumped = true;
             triggered = false;
             slope = 0;
             step = 0;
@@ -110,4 +91,12 @@ public class BlinkTransform : MonoBehaviour
         return dist;
     }
 
+    IEnumerator WaitBro()
+    {
+        while (justJumped)
+        {
+            yield return new WaitForSeconds(2f);
+            justJumped = false;  
+        }
+    }
 }

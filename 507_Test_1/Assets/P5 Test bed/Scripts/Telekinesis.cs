@@ -86,33 +86,21 @@ public class Telekinesis : MonoBehaviour
         var telekineticTransformDist =
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
         moveStep = telekineticTransformDist / moveConstant;
-        
-        
-        
-        
+
+
+
+        if (eyeRaycast.eyeTrackingData.IsLeftEyeBlinking || eyeRaycast.eyeTrackingData.IsRightEyeBlinking) return;
+
         telekineticTransform.position = Camera.main.transform.position + eyeRaycast.eyeDirection * distance;
-        
-        
-        Debug.DrawRay(eyeRaycast.eyeOrigin, eyeRaycast.eyeDirection * distance, Color.green);
-        
         
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
-        
-        
-        
+
         pos = grabbedObject.transform.position;
         grabbedObjDir = grabbedObject.transform.position - latePos;
         latePos = grabbedObject.transform.position;
     }
-
-    /*public void LateUpdate()
-    {
-        latePos = grabbedObject.transform.position;
-
-        deltaPos = latePos - pos;
-    }*/
-
+    
     void CalculateDistance()
     {
         distance = Vector3.Distance(Camera.main.transform.position, grabbedObject.transform.position);

@@ -11,19 +11,19 @@ public class CubeTargetCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*for (int i = 1; i < cubes.Length; i++)
+        for (int i = 1; i < cubes.Length; i++)
         {
             cubes[i].SetActive(false);
             cubeTargets[i].SetActive(false);
-        }*/
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         checkCubePos();
-        //cubes[checkCubePos()].SetActive(true);
-        //cubeTargets[checkCubePos()].SetActive(true);
+        cubes[checkCubePos()].SetActive(true);
+        cubeTargets[checkCubePos()].SetActive(true);
     }
 
     private int checkCubePos()

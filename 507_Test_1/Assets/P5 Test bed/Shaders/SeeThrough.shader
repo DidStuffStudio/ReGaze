@@ -11,7 +11,10 @@ Shader "Custom/See Through"
 
     SubShader
     {
-        Tags {"Queue"="Transparent" "RenderType"="Transparent" }
+        Tags
+        {
+            "Queue"="Transparent" "RenderType"="Transparent" "IgnoreProjector"="True"
+        }
         LOD 100
 
         ZWrite Off
@@ -22,7 +25,9 @@ Shader "Custom/See Through"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-
+            /*#pragma multi_compile _ _MAIN_LIGHT_SHADOWS
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE*/
+            //#pragma surface surf Lambert addshadow
             #include "UnityCG.cginc"
 
             struct appdata
@@ -42,14 +47,14 @@ Shader "Custom/See Through"
             float4 _TintColor;
             float _Transparency;
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv) + _TintColor;

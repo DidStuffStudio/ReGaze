@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Tobii.XR.Examples;
@@ -19,10 +20,13 @@ public class SmoothJump : MonoBehaviour
     private float distance = 0;
     private Vector3 originalPos = Vector3.zero;
     private float timer = 0;
+    private bool justJumped;
+    public bool triggerBoxMet = false;
 
     [SerializeField] private float topSpeed = 12;
     [SerializeField] private float acceleration = 7;
     [SerializeField] private float distanceMultiplier = 0.1f;
+    [SerializeField] private GameObject triggerBox;
 
 
     private void Start()
@@ -36,7 +40,7 @@ public class SmoothJump : MonoBehaviour
         print(ControllerManager.Instance.GetButtonPress(TriggerButton));
         //print(transform.position + "Current Location" + target + "Target Position");
         
-        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered)
+        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered && !justJumped)
         {
             
             timer = 0;
@@ -48,26 +52,26 @@ public class SmoothJump : MonoBehaviour
             distance = Vector3.Distance(new Vector3(target.x, 0.0f, target.z),
                 new Vector3(transform.position.x, 0.0f, transform.position.z));
             originalPos = transform.position;
+            triggerBox.transform.position = target;
 
         }
         if (triggered)
         {
             CalculateSpeed();
             transform.position = Vector3.MoveTowards(transform.position, target, speed);
+            justJumped = true;
         }
 
         var newTarget = target - (transform.position - transform.GetChild(0).position);
         
-        if (Vector3.Distance(new Vector3(newTarget.x, 0.0f, newTarget.z), new Vector3(transform.GetChild(0).position.x,0.0f,transform.GetChild(0).position.z)) < 0.6f)
-        /*
-        if(target == transform.GetChild(0).position)
-        */
+        if (triggerBoxMet)
         {
+            StartCoroutine(WaitBro());
             triggered = false;
             print("triggered false");
+            triggerBoxMet = false;
         }
         
-        print(Vector3.Distance(new Vector3(newTarget.x, 0.0f, newTarget.z), new Vector3(transform.GetChild(0).position.x,0.0f,transform.GetChild(0).position.z)));
     }
 
     private void CalculateSpeed()
@@ -84,6 +88,24 @@ public class SmoothJump : MonoBehaviour
             timer -= Time.fixedDeltaTime;
             speed = Mathf.Abs(timer * acceleration);
             
+        }
+    }
+
+    IEnumerator WaitBro()
+    {
+        print("started coroutine");
+        
+        justJumped = true;
+        yield return new WaitForSeconds(2f);
+        justJumped = false;
+        print("finished coroutine");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 11)
+        {
+            triggerBoxMet = true;
         }
     }
 }

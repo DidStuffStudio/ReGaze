@@ -78,8 +78,10 @@ public class EyeRaycast : MonoBehaviour
             }   
         }
 
-        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Ground", "Walls")))
         {
+            if (hit.transform.CompareTag("Walls")) return;
+            
             Debug.DrawRay(startPoint, direction * 1000, Color.red);
             targetPos = hit.point;
             lightObject.transform.position = hit.point += new Vector3(0, lightHeight, 0);
