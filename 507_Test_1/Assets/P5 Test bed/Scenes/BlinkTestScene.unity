@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 809366774}
   - component: {fileID: 809366773}
   - component: {fileID: 809366772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +640,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a02c1e7c5a0ea842af1cc323fd2f336, type: 2}
+  - {fileID: -2722622121665978664, guid: 05908941184d0ec47a319bafa9b09fea, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -923,6 +923,7 @@ MonoBehaviour:
   Settings:
     EyeTrackingFilter: {fileID: 0}
     StandaloneEyeTrackingProviders:
+    - TypeName: HTCProvider
     - TypeName: Tobii.XR.TobiiProvider
     - TypeName: Tobii.XR.NoseDirectionProvider
     - TypeName: Tobii.XR.MouseProvider
@@ -1851,7 +1852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1adaaf1eb84d764fadccf3f62198c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeTracking: 0
+  eyeTracking: 1
 --- !u!114 &1804041818
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -390,9 +390,6 @@ GameObject:
   - component: {fileID: 122313218}
   - component: {fileID: 122313217}
   - component: {fileID: 122313216}
-  - component: {fileID: 122313215}
-  - component: {fileID: 122313214}
-  - component: {fileID: 122313213}
   - component: {fileID: 122313220}
   - component: {fileID: 122313221}
   m_Layer: 0
@@ -402,52 +399,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &122313213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122313212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e5498ad8d578f4e9ac345a9c80c30c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  topSpeed: 1
-  multiplyer: 100
-  multiplier: 2
-  maxDistance: 0
-  acceleration: 0
-  accelerationCalculated: 0
-  height: 1.5
---- !u!114 &122313214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122313212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d1ec892bb02eb4dba61fe109143c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapDegrees: 45
---- !u!114 &122313215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122313212}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 978d799b7c6948e49a673982529624a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerPrefab: {fileID: 1605841097299488, guid: 436d09b3f34fc274bb74c7f4de372d34,
-    type: 3}
 --- !u!114 &122313216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1adaaf1eb84d764fadccf3f62198c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeTracking: 0
+  eyeTracking: 1
 --- !u!114 &122313218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +987,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1001 &593296713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1402,7 +1353,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!1 &955890246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1409,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
+  far clip plane: 5000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1810,6 +1761,7 @@ MonoBehaviour:
   Settings:
     EyeTrackingFilter: {fileID: 0}
     StandaloneEyeTrackingProviders:
+    - TypeName: HTCProvider
     - TypeName: Tobii.XR.TobiiProvider
     - TypeName: Tobii.XR.NoseDirectionProvider
     - TypeName: Tobii.XR.MouseProvider
@@ -2427,9 +2379,9 @@ Rigidbody:
   m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1 &1515983312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3090,7 +3042,7 @@ GameObject:
   - component: {fileID: 1758493244}
   - component: {fileID: 1758493243}
   - component: {fileID: 1758493247}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

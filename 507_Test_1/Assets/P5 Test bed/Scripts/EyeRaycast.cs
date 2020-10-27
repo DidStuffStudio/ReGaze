@@ -25,6 +25,7 @@ public class EyeRaycast : MonoBehaviour
     [SerializeField] private float lightHeight = 0.2f;
 
 
+
     private void Update()
     {
         switch (Testing.Instance.eyeTracking)
@@ -42,8 +43,8 @@ public class EyeRaycast : MonoBehaviour
 
             {
                 eyeTrackingData = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World);
-                eyeOrigin = eyeTrackingData.GazeRay.Origin;
-                eyeDirection = eyeTrackingData.GazeRay.Direction;
+                eyeOrigin = Camera.main.transform.position;
+                eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
                 GazeCast(eyeOrigin, eyeDirection);
                 break;
             }
@@ -54,14 +55,17 @@ public class EyeRaycast : MonoBehaviour
     public void GazeCast(Vector3 startPoint, Vector3 direction)
     {
         RaycastHit hit;
-
+        
+        Debug.DrawRay(startPoint, direction, Color.cyan);
+        
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Selectable")))
         {
-            //Debug.DrawRay(startPoint, hit.point, Color.red);
+            targetPos = hit.point;
+            Debug.DrawRay(startPoint,  hit.point - startPoint, Color.red);
            if (hit.transform.gameObject != raycastHitObject)
            {
                 raycastHitObject = hit.transform.gameObject;
-                targetPos = hit.point;
+                
                 raycastHitObject.GetComponent<Grabbable>().focused = true;
            }
         }
@@ -76,7 +80,7 @@ public class EyeRaycast : MonoBehaviour
 
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
         {
-            //Debug.DrawRay(startPoint, direction * 1000, Color.red);
+            Debug.DrawRay(startPoint, direction * 1000, Color.red);
             targetPos = hit.point;
             lightObject.transform.position = hit.point += new Vector3(0, lightHeight, 0);
             lightObject.SetActive(true);
@@ -88,4 +92,15 @@ public class EyeRaycast : MonoBehaviour
             lightObject.SetActive(false);
         }
     }
+
+    IEnumerator SlowUpdate()
+    {
+        while (true)
+        {
+          
+            
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
 }
