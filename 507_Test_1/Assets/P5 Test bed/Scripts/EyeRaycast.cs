@@ -98,10 +98,13 @@ public class EyeRaycast : MonoBehaviour
 
     void MoveLight(Vector3 hitPoint)
     {
+        lightHeight += Input.GetAxis("Vertical");
         jumpTransform.position = hitPoint + new Vector3(0, lightHeight, 0);
         var lightToTargetDistance = Vector3.Distance(lightObject.transform.position, jumpTransform.position);
         var moveStep = lightToTargetDistance / lightMoveConstant;
         lightObject.transform.position =
             Vector3.MoveTowards(lightObject.transform.position, jumpTransform.position, moveStep);
+        
+        
     }
 }

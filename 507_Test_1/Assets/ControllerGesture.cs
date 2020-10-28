@@ -24,7 +24,6 @@ public class ControllerGesture : MonoBehaviour
         
         //zMovement = Camera.main.transform.position + Camera.main.transform.forward * Vector3.Distance(Camera.main.transform.position, controllerPosition);
         //zMovement = Vector3.Distance(Camera.main.transform.position, controllerPosition);
-        
 
     }
 

@@ -19,6 +19,7 @@ public class Telekinesis : MonoBehaviour
     [SerializeField] private float moveConstant;
     private float moveStep = 0.5f;
     private float distance = 0.0f;
+    private float startingDistance;
     private Vector3 grabbedTans;
     private Vector3 grabbedObjDir;
 
@@ -29,6 +30,7 @@ public class Telekinesis : MonoBehaviour
     private Material originalMat;
 
     private ControllerGesture controllerGesture;
+    
 
     private void Start()
     {
@@ -52,6 +54,7 @@ public class Telekinesis : MonoBehaviour
             if (!distanceCalculated)
             {
                 CalculateDistance();
+                startingDistance = distance;
             }
         }
 
@@ -77,9 +80,12 @@ public class Telekinesis : MonoBehaviour
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
 
        //if (Input.GetAxis("right joystick vertical") != 0) distance += Input.GetAxis("right joystick vertical") * depthMoveStrength;
-       distance += controllerGesture.zMovement * depthMoveStrength;
-        
-        
+       if (distance > startingDistance / 5)
+           distance += controllerGesture.zMovement * depthMoveStrength;
+       else distance = startingDistance / 5;
+       if (distance < startingDistance * 2)
+           distance += controllerGesture.zMovement * depthMoveStrength;
+       else distance = startingDistance * 2; 
         var telekineticTransformDist =
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
         moveStep = telekineticTransformDist / moveConstant;
