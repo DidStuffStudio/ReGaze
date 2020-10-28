@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\user\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.1984416721.00" t="ExcludeRecursive" />
-    <e p="D:\Student Projects\MED507_P5\507_Test_1" t="IncludeRecursive">
+    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.731131785.00" t="ExcludeRecursive" />
+    <e p="C:\Users\scott\Documents\GitHub\MED507_P5\507_Test_1" t="IncludeRecursive">
       <e p="507_Test_1.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="ControllerVisuals.cs" t="Include" />
-        <e p="Grabbable.cs" t="Include" />
+        <e p="ControllerGesture.cs" t="Include" />
         <e p="P5 Test bed" t="Include">
           <e p="Scripts" t="Include">
-            <e p="BallsInTheBucket.cs" t="Include" />
             <e p="BlinkTransform.cs" t="Include" />
-            <e p="CubeTargetCheck.cs" t="Include" />
+            <e p="ControllerVisuals.cs" t="Include" />
             <e p="EyeRaycast.cs" t="Include" />
-            <e p="InputManage.cs" t="Include" />
-            <e p="SmoothJump.cs" t="Include" />
-            <e p="SpawnTargets.cs" t="Include" />
+            <e p="Grabbable.cs" t="Include" />
+            <e p="Rotation.cs" t="Include" />
             <e p="Telekinesis.cs" t="Include" />
-            <e p="Teleportation.cs" t="Include" />
+            <e p="Telekinesis2.cs" t="Include" />
             <e p="Testing.cs" t="Include" />
+            <e p="Utility Test 1" t="Include">
+              <e p="BallsInTheBucket.cs" t="Include" />
+              <e p="CubeTargetCheck.cs" t="Include" />
+              <e p="SpawnTargets.cs" t="Include" />
+            </e>
           </e>
           <e p="Shaders" t="Include">
             <e p="SeeThrough.shader" t="Include" />
@@ -38,7 +40,6 @@
             <e p="Outline.cs" t="Include" />
           </e>
         </e>
-        <e p="Rotation.cs" t="Include" />
         <e p="Samples" t="Include">
           <e p="XR Management" t="Include">
             <e p="3.0.3" t="Include">

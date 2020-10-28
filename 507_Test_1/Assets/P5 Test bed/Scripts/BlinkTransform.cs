@@ -10,93 +10,83 @@ public class BlinkTransform : MonoBehaviour
     private EyeRaycast eyeRaycast;
     private const ControllerButton TriggerButton = ControllerButton.Trigger;
     private Vector3 target = Vector3.zero;
-    private bool triggered = false;
+    private bool triggered;
     [SerializeField] private float topSpeed = 0.1f;
     private Vector3 startingPosition;
-    private float slope;
     private Vector3 direction;
 
     private float stepsum;
     private float step;
 
     private float timer;
-
-    public float multiplyer;
-    [SerializeField] private float multiplier = 2;
+  
     [SerializeField] private float maxDistance;
     [SerializeField] private float acceleration;
-    [SerializeField] private bool accelerationCalculated;
-    public float height = 1.5f;
+
     private bool justJumped;
+    [SerializeField] private GameObject triggerBox;
+    private bool triggerMet;
+    private GameObject camera;
+    private CapsuleCollider capsule;
+    
 
     private void Start()
     {
+        capsule = GetComponent<CapsuleCollider>();
+        camera = transform.GetChild(0).gameObject;
         eyeRaycast = GetComponent<EyeRaycast>();
-        transform.position = new Vector3(transform.position.x, height, transform.position.z);
-        StartCoroutine(WaitBro());
     }
 
     public void Update()
     {
-        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered && !justJumped)
+        UpdateCapsuleCollider();
+        
+        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {
-            triggered = true;
             target = eyeRaycast.targetPos;
-            target = target + transform.position -
-                     transform.GetChild(0).position; // Camera must be first child!!!!!!!!!!!!!!!!!!!!! 
-            target += new Vector3(0, height, 0);
-            startingPosition = transform.position;
-            direction = eyeRaycast.eyeDirection;
-            maxDistance = CalculateSlopeAndMaxDistance();
+            triggered = true;
+            maxDistance = Vector3.Distance(transform.position, target);
+            triggerBox.transform.position = new Vector3(target.x, target.y + triggerBox.transform.localScale.y/2, target.z);
+            triggerBox.SetActive(true);
+            acceleration = Mathf.Pow(topSpeed, 2) / 2 * maxDistance;
         }
 
-        if (triggered)
+        if (!triggered) return;
+        
+        timer += Time.fixedDeltaTime;
+        step += acceleration * Mathf.Pow(timer, 2);
+        transform.position = Vector3.MoveTowards(transform.position, target, step);
+        if (triggerMet)
         {
-            if (!accelerationCalculated)
-            {
-                CalculateSlopeAndMaxDistance();
-                acceleration = (Mathf.Pow(topSpeed, 2) / 2 * maxDistance); // Acceleration
-                accelerationCalculated = true;
-            }
-            
-            timer += Time.fixedDeltaTime;
-            step += acceleration * Mathf.Pow(timer, 2);
-            
-            transform.position = Vector3.MoveTowards((transform.position), target, step);
-            transform.position = new Vector3(transform.position.x, height, transform.position.z);
-        }
-
-        if (Vector3.Distance(transform.position, new Vector3(target.x, height, target.z)) < 0.001f)
-        {
-            justJumped = true;
-            triggered = false;
-            slope = 0;
-            step = 0;
-            timer = 0;
-            maxDistance = 0;
-            accelerationCalculated = false;
+            StartCoroutine(WaitBro());
         }
     }
-
-    float CalculateSlopeAndMaxDistance()
-    {
-        var dis = Vector3.Distance(startingPosition, target);
-        /*slope = (topSpeed - 0) / (dis - 0); // slope = y2-y1/x2-x1*/
-        return dis;
-    }
-
-    private float CalculateDistance()
-    {
-        var dist = Vector3.Distance(transform.position, startingPosition);
-        return dist;
-    }
-
+    
     IEnumerator WaitBro()
     {
-        while (justJumped)
+        yield return new WaitForSeconds(0.2f);
+        step = 0;
+        timer = 0;
+        maxDistance = 0;
+        triggerBox.SetActive(false);
+        triggerMet = false;
+        triggered = false;
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.layer == 11)
         {
-            yield return new WaitForSeconds(2f);
-            justJumped = false;  
+            triggerMet = true;
         }
     }
+
+    private void UpdateCapsuleCollider()
+    {
+        var height = camera.transform.position.y;
+        capsule.center = new Vector3(0, height / 2, 0);
+        capsule.height = height;
+    }
+    
 }

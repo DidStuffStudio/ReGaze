@@ -15,7 +15,6 @@ namespace Tobii.XR.Examples
         private Color _originalColor;
         private Color _targetColor;
 
-        public Teleportation movePlayer;
 
         //The method of the "IGazeFocusable" interface, which will be called when this object receives or loses focus
         public void GazeFocusChanged(bool hasFocus)
@@ -24,13 +23,11 @@ namespace Tobii.XR.Examples
             if (hasFocus)
             {
                 _targetColor = HighlightColor;
-                movePlayer.hasFocus = true;
             }
             //If this object lost focus, fade the object's color to it's original color
             else
             {
                 _targetColor = _originalColor;
-                movePlayer.hasFocus = false;
             }
         }
 

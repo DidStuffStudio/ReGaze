@@ -11,13 +11,14 @@ public class ControllerVisuals : MonoBehaviour
     private GameObject spawn;
     private void Start()
     {
-        spawn = Instantiate(controllerPrefab);
+        spawn = Instantiate(controllerPrefab, transform);
+        spawn.transform.position = transform.position;
     }
 
     private void Update()
     {
         
-        spawn.transform.position = ControllerManager.Instance.Position;
-        spawn.transform.rotation = ControllerManager.Instance.Rotation;
+        spawn.transform.localPosition = ControllerManager.Instance.Position - transform.position;
+        spawn.transform.localRotation = ControllerManager.Instance.Rotation;
     }
 }

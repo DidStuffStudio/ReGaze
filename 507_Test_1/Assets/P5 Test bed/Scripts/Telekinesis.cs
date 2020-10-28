@@ -27,12 +27,13 @@ public class Telekinesis : MonoBehaviour
 
     [SerializeField] private Material seethrough;
     private Material originalMat;
-    
 
+    private ControllerGesture controllerGesture;
 
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
+        controllerGesture = GetComponent<ControllerGesture>();
     }
 
     private void Update()
@@ -42,7 +43,7 @@ public class Telekinesis : MonoBehaviour
         if (eyeRaycast.raycastHitObject && (ControllerManager.Instance.GetButtonPressDown(TriggerButton) ||
                                             Input.GetButtonDown("Fire2")))
         {
-            
+            controllerGesture.StoreVector(ControllerManager.Instance.Position);
             isGrabbed = true;
             grabbedObject = eyeRaycast.raycastHitObject;
             originalMat = grabbedObject.GetComponent<Renderer>().material;
@@ -71,25 +72,17 @@ public class Telekinesis : MonoBehaviour
 
             distanceCalculated = false;
         }
-        print(Input.GetAxis("right joystick vertical"));
 
         if (!isGrabbed) return;
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
-        // Vector3.MoveTowards(grabbedObject.transform.position, eyeRaycast.eyeTrackingData.GazeRay.Direction * distance, 2);
-        
-        
-        
 
-       if (Input.GetAxis("right joystick vertical") != 0) distance += Input.GetAxis("right joystick vertical") * depthMoveStrength;
+       //if (Input.GetAxis("right joystick vertical") != 0) distance += Input.GetAxis("right joystick vertical") * depthMoveStrength;
+       distance += controllerGesture.zMovement * depthMoveStrength;
         
         
         var telekineticTransformDist =
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
         moveStep = telekineticTransformDist / moveConstant;
-
-
-
-        if (eyeRaycast.eyeTrackingData.IsLeftEyeBlinking || eyeRaycast.eyeTrackingData.IsRightEyeBlinking) return;
 
         telekineticTransform.position = Camera.main.transform.position + eyeRaycast.eyeDirection * distance;
         

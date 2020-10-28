@@ -24,7 +24,9 @@ public class EyeRaycast : MonoBehaviour
 
     [SerializeField] private float lightHeight = 0.2f;
 
+    [SerializeField] private float lightMoveConstant = 0.2f;
 
+    [SerializeField] private Transform jumpTransform;
 
     private void Update()
     {
@@ -54,20 +56,20 @@ public class EyeRaycast : MonoBehaviour
 
     public void GazeCast(Vector3 startPoint, Vector3 direction)
     {
-        RaycastHit hit;
-        
+        RaycastHit hitGround;
+        RaycastHit hitSelectable;
         Debug.DrawRay(startPoint, direction, Color.cyan);
-        
-        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Selectable")))
+
+        if (Physics.Raycast(startPoint, direction, out hitSelectable, Mathf.Infinity, LayerMask.GetMask("Selectable")))
         {
-            targetPos = hit.point;
-            Debug.DrawRay(startPoint,  hit.point - startPoint, Color.red);
-           if (hit.transform.gameObject != raycastHitObject)
-           {
-                raycastHitObject = hit.transform.gameObject;
-                
+            targetPos = hitSelectable.point;
+            Debug.DrawRay(startPoint, hitSelectable.point - startPoint, Color.red);
+            if (hitSelectable.transform.gameObject != raycastHitObject)
+            {
+                raycastHitObject = hitSelectable.transform.gameObject;
+
                 raycastHitObject.GetComponent<Grabbable>().focused = true;
-           }
+            }
         }
         else
         {
@@ -75,16 +77,13 @@ public class EyeRaycast : MonoBehaviour
             {
                 raycastHitObject.GetComponent<Grabbable>().focused = false;
                 raycastHitObject = null;
-            }   
+            }
         }
 
-        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, LayerMask.GetMask("Ground", "Walls")))
+        if (Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Ground")))
         {
-            if (hit.transform.CompareTag("Walls")) return;
-            
-            Debug.DrawRay(startPoint, direction * 1000, Color.red);
-            targetPos = hit.point;
-            lightObject.transform.position = hit.point += new Vector3(0, lightHeight, 0);
+            // if (hitGround.transform.gameObject.layer == 10) return;
+            targetPos = hitGround.point;
             lightObject.SetActive(true);
             hasHit = true;
         }
@@ -93,16 +92,16 @@ public class EyeRaycast : MonoBehaviour
             hasHit = false;
             lightObject.SetActive(false);
         }
+
+        MoveLight(hitGround.point);
     }
 
-    IEnumerator SlowUpdate()
+    void MoveLight(Vector3 hitPoint)
     {
-        while (true)
-        {
-          
-            
-            yield return new WaitForFixedUpdate();
-        }
+        jumpTransform.position = hitPoint + new Vector3(0, lightHeight, 0);
+        var lightToTargetDistance = Vector3.Distance(lightObject.transform.position, jumpTransform.position);
+        var moveStep = lightToTargetDistance / lightMoveConstant;
+        lightObject.transform.position =
+            Vector3.MoveTowards(lightObject.transform.position, jumpTransform.position, moveStep);
     }
-
 }
