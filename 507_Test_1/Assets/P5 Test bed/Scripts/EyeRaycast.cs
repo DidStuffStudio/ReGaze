@@ -11,6 +11,7 @@ public class EyeRaycast : MonoBehaviour
     public float eyeSpeed = 2.0f;
 
     public GameObject raycastHitObject;
+    public GameObject lastHitSelectable;
 
     public Vector3 targetPos;
 
@@ -51,6 +52,11 @@ public class EyeRaycast : MonoBehaviour
                 break;
             }
         }
+
+        if (lastHitSelectable)
+        {
+            lastHitSelectable.GetComponent<Grabbable>().focused = false;
+        }
     }
 
 
@@ -66,10 +72,11 @@ public class EyeRaycast : MonoBehaviour
             Debug.DrawRay(startPoint, hitSelectable.point - startPoint, Color.red);
             if (hitSelectable.transform.gameObject != raycastHitObject)
             {
+                lastHitSelectable = raycastHitObject;
                 raycastHitObject = hitSelectable.transform.gameObject;
-
                 raycastHitObject.GetComponent<Grabbable>().focused = true;
             }
+            
         }
         else
         {
@@ -98,7 +105,7 @@ public class EyeRaycast : MonoBehaviour
 
     void MoveLight(Vector3 hitPoint)
     {
-        lightHeight += Input.GetAxis("Vertical");
+        //lightHeight += Input.GetAxis("Vertical");
         jumpTransform.position = hitPoint + new Vector3(0, lightHeight, 0);
         var lightToTargetDistance = Vector3.Distance(lightObject.transform.position, jumpTransform.position);
         var moveStep = lightToTargetDistance / lightMoveConstant;

@@ -64,9 +64,9 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis2.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/ControllerVisuals.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
         <option value="$PROJECT_DIR$/Assets/ControllerGesture.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
       </list>
     </option>
   </component>
@@ -128,6 +128,8 @@
       <workItem from="1603871030099" duration="875000" />
       <workItem from="1603872201636" duration="7210000" />
       <workItem from="1603887531416" duration="4834000" />
+      <workItem from="1604243118001" duration="1290000" />
+      <workItem from="1604308819870" duration="13237000" />
     </task>
     <servers />
   </component>

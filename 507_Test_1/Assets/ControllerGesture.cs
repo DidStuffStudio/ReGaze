@@ -9,10 +9,12 @@ public class ControllerGesture : MonoBehaviour
     private Vector3 controllerPosition;
     private Vector3 storedControllerPosition;
     public float zMovement;
+    public Vector3 controllerPositionDelta;
 
     private void Update()
     {
-        controllerPosition = ControllerManager.Instance.Position;
+        /*controllerPosition = ControllerManager.Instance.Position;
+        
         if (Vector3.Distance(controllerPosition, Camera.main.transform.position) < Vector3.Distance(Camera.main.transform.position, storedControllerPosition))
         {
             zMovement = -Vector3.Distance(controllerPosition,storedControllerPosition);
@@ -20,10 +22,11 @@ public class ControllerGesture : MonoBehaviour
         else
         {
             zMovement = Vector3.Distance(controllerPosition,storedControllerPosition);
-        }
+        }*/
         
         //zMovement = Camera.main.transform.position + Camera.main.transform.forward * Vector3.Distance(Camera.main.transform.position, controllerPosition);
         //zMovement = Vector3.Distance(Camera.main.transform.position, controllerPosition);
+        controllerPositionDelta = ControllerManager.Instance.Position - storedControllerPosition;
 
     }
 
