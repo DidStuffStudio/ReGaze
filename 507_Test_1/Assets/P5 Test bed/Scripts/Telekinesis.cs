@@ -5,16 +5,17 @@ using System.Resources;
 using Tobii.XR.Examples;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Valve.VR;
 
 public class Telekinesis : MonoBehaviour
 {
     private EyeRaycast eyeRaycast;
     private const ControllerButton TriggerButton = ControllerButton.Trigger;
+    private const ControllerButton Wheel = ControllerButton.Touchpad;
     private bool distanceCalculated = false;
     private bool isGrabbed;
-
     public Transform telekineticTransform;
-
+    
     public GameObject grabbedObject;
     private float moveConstant = 10;
     private float moveStep = 0.5f;
@@ -51,6 +52,11 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetButtonDown("Grip_R"))
+        {
+            print("Boobies");
+        }
+        
         if (eyeRaycast.raycastHitObject && (ControllerManager.Instance.GetButtonPressDown(TriggerButton) ||
                                             Input.GetButtonDown("Fire2")))
         {
@@ -132,8 +138,8 @@ public class Telekinesis : MonoBehaviour
 
         telekineticTransform.position +=
             (ControllerManager.Instance.Position - storedControllerPos) * controllerMoveStrength;
-        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
-            ControllerManager.Instance.Rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+        
+        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation, ControllerManager.Instance.Rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
 
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
@@ -237,6 +243,18 @@ public class Telekinesis : MonoBehaviour
         shapeModule.length = grabbedObject.transform.position.y;
         shapeModule.radius = grabbedObject.GetComponent<Renderer>().bounds.extents.x;
     }        
+    
+    void ResetControllerPosition(){
+        
+        StoreVector();
+        
+    }
+
+    IEnumerator DoubleClickWindow()
+    {
+        
+        yield return new WaitForSeconds(0.5f);
+    }
 }
 
 

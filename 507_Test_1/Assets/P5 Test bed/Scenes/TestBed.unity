@@ -48912,7 +48912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1adaaf1eb84d764fadccf3f62198c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeTracking: 0
+  eyeTracking: 1
 --- !u!114 &1804041818
 MonoBehaviour:
   m_ObjectHideFlags: 0
