@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Tobii.XR.Examples;
 using Tobii.XR.GazeModifier;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class BlinkTransform : MonoBehaviour
 {
@@ -28,18 +30,18 @@ public class BlinkTransform : MonoBehaviour
     private bool triggerMet;
     private GameObject camera;
     private CapsuleCollider capsule;
-    
 
+   
     private void Start()
     {
-        capsule = GetComponent<CapsuleCollider>();
+        
+        //capsule = GetComponent<CapsuleCollider>();
         camera = transform.GetChild(0).gameObject;
         eyeRaycast = GetComponent<EyeRaycast>();
     }
 
     public void Update()
     {
-        UpdateCapsuleCollider();
         
         if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {

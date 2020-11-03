@@ -6,9 +6,11 @@ using Tobii.XR.Examples;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class Telekinesis : MonoBehaviour
 {
+    public Hand leftHand, rightHand;
     private EyeRaycast eyeRaycast;
     private const ControllerButton TriggerButton = ControllerButton.Trigger;
     private const ControllerButton Wheel = ControllerButton.Touchpad;
@@ -44,7 +46,8 @@ public class Telekinesis : MonoBehaviour
     }
 
     public TelekinesisMethod Method;
-
+    
+    
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
@@ -52,21 +55,20 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Grip_R"))
+        if (rightHand.grabGripAction.state)
         {
             print("Boobies");
         }
         
-        if (eyeRaycast.raycastHitObject && (ControllerManager.Instance.GetButtonPressDown(TriggerButton) ||
-                                            Input.GetButtonDown("Fire2")))
+        if (eyeRaycast.raycastHitObject)
         {
             PickUp();
         }
 
-        if (ControllerManager.Instance.GetButtonPressUp(TriggerButton) || Input.GetButtonUp("Fire2") && grabbedObject)
+        /*if (ControllerManager.Instance.GetButtonPressUp(TriggerButton) || Input.GetButtonUp("Fire2") && grabbedObject)
         {
             ReleaseObject();
-        }
+        }*/
 
         if (!isGrabbed) return;
 
