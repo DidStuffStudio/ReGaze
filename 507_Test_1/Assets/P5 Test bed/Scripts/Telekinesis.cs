@@ -235,7 +235,8 @@ public class Telekinesis : MonoBehaviour
 
         var shapeModule = particles.GetComponent<ParticleSystem>().shape;
         shapeModule.length = grabbedObject.transform.position.y;
-    }
+        shapeModule.radius = grabbedObject.GetComponent<Renderer>().bounds.extents.x;
+    }        
 }
 
 
