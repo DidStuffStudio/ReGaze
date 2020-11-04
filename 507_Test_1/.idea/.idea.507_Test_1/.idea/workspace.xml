@@ -59,6 +59,7 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
+        <option value="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/BodyCollider.cs" />
       </list>
     </option>
   </component>
@@ -124,6 +125,8 @@
       <workItem from="1604308819870" duration="13237000" />
       <workItem from="1604383111910" duration="707000" />
       <workItem from="1604391309796" duration="11170000" />
+      <workItem from="1604462596789" duration="1129000" />
+      <workItem from="1604464234824" duration="3558000" />
     </task>
     <servers />
   </component>

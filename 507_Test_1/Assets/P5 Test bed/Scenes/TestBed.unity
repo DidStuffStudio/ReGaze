@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26841,6 +26841,12 @@ Transform:
   m_Father: {fileID: 1566076878}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1074255912 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1893138394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1075076383
 GameObject:
   m_ObjectHideFlags: 0
@@ -39950,6 +39956,10 @@ MonoBehaviour:
   maxDistance: 0
   acceleration: 0
   triggerBox: {fileID: 1625447706}
+  teleport:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  handType: 2
 --- !u!114 &1658989986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39969,7 +39979,12 @@ MonoBehaviour:
   seethrough: {fileID: 2100000, guid: 7a8d56bbfe499f84dabe4fa29885e780, type: 2}
   controllerMoveStrength: 3
   particles: {fileID: 1776880224}
-  Method: 2
+  setDistance: 0
+  Method: 4
+  reset:
+    actionPath: /actions/default/in/ResetObject
+    needsReinit: 0
+  handType: 2
 --- !u!114 &1658989987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39982,7 +39997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1adaaf1eb84d764fadccf3f62198c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeTracking: 1
+  eyeTracking: 0
 --- !u!114 &1658989988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40006,6 +40021,20 @@ MonoBehaviour:
   lightHeight: 1
   lightMoveConstant: 2
   jumpTransform: {fileID: 1743877014}
+--- !u!136 &1658989989
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658989984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1660902864
 GameObject:
   m_ObjectHideFlags: 0
@@ -50955,6 +50984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.35
@@ -50987,6 +51020,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11455280, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 1074255912}
+    - target: {fileID: 11455280, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11489144, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: urpControllerMaterial
       value: 
@@ -50995,6 +51036,10 @@ PrefabInstance:
       propertyPath: urpControllerMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 70a2eb634d7ed434b86d36f190fcf3a1, type: 2}
+    - target: {fileID: 13693334, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &1901299627

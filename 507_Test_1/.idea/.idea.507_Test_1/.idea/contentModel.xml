@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\user\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.1984416721.00" t="ExcludeRecursive" />
-    <e p="D:\Student Projects\MED507_P5\507_Test_1" t="IncludeRecursive">
+    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.731131785.00" t="ExcludeRecursive" />
+    <e p="C:\Users\scott\Documents\GitHub\MED507_P5\507_Test_1" t="IncludeRecursive">
       <e p="507_Test_1.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -16,7 +16,6 @@
             <e p="Grabbable.cs" t="Include" />
             <e p="Rotation.cs" t="Include" />
             <e p="Telekinesis.cs" t="Include" />
-            <e p="Telekinesis2.cs" t="Include" />
             <e p="Testing.cs" t="Include" />
             <e p="Utility Test 1" t="Include">
               <e p="BallsInTheBucket.cs" t="Include" />
@@ -353,10 +352,7 @@
         </e>
         <e p="SteamVR_Input" t="Include">
           <e p="ActionSetClasses" t="Include">
-            <e p="SteamVR_Input_ActionSet_buggy.cs" t="Include" />
             <e p="SteamVR_Input_ActionSet_default.cs" t="Include" />
-            <e p="SteamVR_Input_ActionSet_mixedreality.cs" t="Include" />
-            <e p="SteamVR_Input_ActionSet_platformer.cs" t="Include" />
           </e>
           <e p="SteamVR_Actions.asmdef" t="Include" />
           <e p="SteamVR_Input_Actions.cs" t="Include" />

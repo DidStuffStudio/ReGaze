@@ -31,19 +31,21 @@ public class BlinkTransform : MonoBehaviour
     private GameObject camera;
     private CapsuleCollider capsule;
 
-   
+    public SteamVR_Action_Boolean teleport;
+    public SteamVR_Input_Sources handType;
     private void Start()
     {
         
         //capsule = GetComponent<CapsuleCollider>();
         camera = transform.GetChild(0).gameObject;
         eyeRaycast = GetComponent<EyeRaycast>();
+        teleport.AddOnStateDownListener(GripToTelport, handType);
     }
 
     public void Update()
     {
         
-        if (ControllerManager.Instance.GetButtonPress(TriggerButton) && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
+        if (teleport.state && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {
             target = eyeRaycast.targetPos;
             triggered = true;
@@ -89,6 +91,10 @@ public class BlinkTransform : MonoBehaviour
         var height = camera.transform.position.y;
         capsule.center = new Vector3(0, height / 2, 0);
         capsule.height = height;
+    }
+    
+    public void GripToTelport(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
     }
     
 }
