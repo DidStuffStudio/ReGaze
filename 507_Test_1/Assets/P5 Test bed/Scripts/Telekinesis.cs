@@ -65,13 +65,13 @@ public class Telekinesis : MonoBehaviour
     }
     private void Update()
     {
-        print(window);
+        
         if (window && reset.state)
         {
             //StoreVector();
             print("Yeah");
         }
-        if (eyeRaycast.raycastHitObject && rightHand.grabPinchAction.state)
+        if (eyeRaycast.raycastHitObject && rightHand.grabPinchAction.state && !isGrabbed)
         {
             PickUp();
         }
