@@ -17,7 +17,7 @@ public class Telekinesis : MonoBehaviour
     private bool distanceCalculated = false;
     private bool isGrabbed;
     public Transform telekineticTransform;
-    
+
     public GameObject grabbedObject;
     private float moveConstant = 10;
     private float moveStep = 0.5f;
@@ -38,6 +38,7 @@ public class Telekinesis : MonoBehaviour
 
     private float startingDistance;
     [SerializeField] private float setDistance = 1.0f;
+
     public enum TelekinesisMethod
     {
         Thumbstick,
@@ -45,16 +46,17 @@ public class Telekinesis : MonoBehaviour
         XYZGesture,
         PullTowards,
         Resetable,
-        Combined
+        Combined,
+        GestureWithLock
     }
 
     private bool window;
     public TelekinesisMethod Method;
-    
+
     public SteamVR_Action_Boolean reset;
     public SteamVR_Input_Sources handType;
     public SteamVR_Action_Vector2 trackpadPos;
-    
+
     private void Start()
     {
         eyeRaycast = GetComponent<EyeRaycast>();
@@ -67,6 +69,7 @@ public class Telekinesis : MonoBehaviour
         if (window) return;
         StartCoroutine(DoubleClickWindow());
     }
+
     private void Update()
     {
         if (eyeRaycast.raycastHitObject && rightHand.grabPinchAction.state && !isGrabbed)
@@ -85,7 +88,7 @@ public class Telekinesis : MonoBehaviour
         {
             case TelekinesisMethod.Thumbstick:
             {
-                controllerMoveStrength = 50;
+                //controllerMoveStrength = 5;
                 ThumbstickUpdate();
                 break;
             }
@@ -99,26 +102,32 @@ public class Telekinesis : MonoBehaviour
                 XYZGestureUpdate();
                 break;
             }
-            
-            
+
+
             case TelekinesisMethod.PullTowards:
             {
                 PullTowardsUpdate();
                 break;
             }
-            
-            
+
+
             case TelekinesisMethod.Resetable:
             {
-                controllerMoveStrength = 5;
+                //controllerMoveStrength = 5;
                 ResetableUpdate();
                 break;
             }
 
             case TelekinesisMethod.Combined:
             {
-                controllerMoveStrength = 5;
+                //controllerMoveStrength = 5;
                 CombinedUpdate();
+                break;
+            }
+
+            case TelekinesisMethod.GestureWithLock:
+            {
+                GestureWithLockUpdate();
                 break;
             }
         }
@@ -138,6 +147,9 @@ public class Telekinesis : MonoBehaviour
         isGrabbed = true;
         originalMat = grabbedObject.GetComponent<Renderer>().material;
         grabbedObject.GetComponent<Renderer>().material = seethrough;
+        var rb = grabbedObject.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         CalculateDistance();
         StoreVector();
     }
@@ -152,6 +164,43 @@ public class Telekinesis : MonoBehaviour
         grabbedObject = null;
         isGrabbed = false;
         distanceCalculated = false;
+    }
+
+
+    void GestureWithLockUpdate()
+    {
+        if (reset.state)
+        {
+            StoreVector();
+        }
+        else
+        {
+            grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+
+            UpdateParticles();
+            var telekineticTransformDist =
+                Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
+
+
+            moveStep = telekineticTransformDist / moveConstant;
+
+
+            telekineticTransform.position = Camera.main.transform.position + eyeRaycast.eyeDirection * distance;
+
+
+            telekineticTransform.position +=
+                (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
+
+            grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
+                rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+
+            grabbedObject.transform.position =
+                Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
+
+            //Calculate direction of rigidbody for throwing on release
+            grabbedObjDir = grabbedObject.transform.position - latePos;
+            latePos = grabbedObject.transform.position;
+        }
     }
 
 
@@ -172,8 +221,9 @@ public class Telekinesis : MonoBehaviour
 
         telekineticTransform.position +=
             (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
-        
-        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation, rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+
+        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
+            rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
 
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
@@ -238,9 +288,9 @@ public class Telekinesis : MonoBehaviour
                 distance += trackpadPos.axis.y * controllerMoveStrength / 100;
             else distance = startingDistance / 5;
 
-            if (distance < startingDistance * 2)
-                distance += trackpadPos.axis.y * controllerMoveStrength / 100;
-            else distance = startingDistance * 2;
+            // if (distance < startingDistance * 2)
+            distance += trackpadPos.axis.y * controllerMoveStrength / 100;
+            //else distance = startingDistance * 2;
         }
 
         UpdateParticles();
@@ -279,8 +329,9 @@ public class Telekinesis : MonoBehaviour
 
         telekineticTransform.position +=
             (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
-        
-        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation, rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+
+        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
+            rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
 
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
@@ -292,7 +343,6 @@ public class Telekinesis : MonoBehaviour
 
     void ResetableUpdate()
     {
-        
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
 
         UpdateParticles();
@@ -308,8 +358,9 @@ public class Telekinesis : MonoBehaviour
 
         telekineticTransform.position +=
             (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
-        
-        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation, rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+
+        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
+            rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
 
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
@@ -321,15 +372,14 @@ public class Telekinesis : MonoBehaviour
             telekineticTransform.position = eyeRaycast.eyeDirection * telekineticTransformDist;
         }
 
-        
+
         //Calculate direction of rigidbody for throwing on release
         grabbedObjDir = grabbedObject.transform.position - latePos;
         latePos = grabbedObject.transform.position;
     }
-    
+
     void CombinedUpdate()
     {
-        
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
 
         UpdateParticles();
@@ -345,24 +395,25 @@ public class Telekinesis : MonoBehaviour
 
         telekineticTransform.position +=
             (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
-        
-        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation, rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+
+        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
+            rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
 
         grabbedObject.transform.position =
             Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
 
         if (trackpadPos.axis.y != 0)
         {
-            //if (distance > startingDistance / 5)
+            if (distance > startingDistance / 5)
                 distance += trackpadPos.axis.y * controllerMoveStrength / 75;
-            //else distance = startingDistance / 5;
+            else distance = startingDistance / 5;
 
-            if (distance < startingDistance * 2)
-                distance += trackpadPos.axis.y * controllerMoveStrength / 75;
-            else distance = startingDistance * 2;
+            //if (distance < startingDistance * 2)
+            distance += trackpadPos.axis.y * controllerMoveStrength / 75;
+            //else distance = startingDistance * 2;
         }
 
-        
+
         if (reset.state)
         {
             print("print");
@@ -370,14 +421,12 @@ public class Telekinesis : MonoBehaviour
             telekineticTransform.position = eyeRaycast.eyeDirection * telekineticTransformDist;
         }
 
-        
-        
-        
+
         //Calculate direction of rigidbody for throwing on release
         grabbedObjDir = grabbedObject.transform.position - latePos;
         latePos = grabbedObject.transform.position;
     }
-    
+
     void StoreVector()
     {
         storedControllerPos = rightHand.transform.position;
@@ -392,12 +441,11 @@ public class Telekinesis : MonoBehaviour
         var shapeModule = particles.GetComponent<ParticleSystem>().shape;
         shapeModule.length = grabbedObject.transform.position.y;
         shapeModule.radius = grabbedObject.GetComponent<Renderer>().bounds.extents.x;
-    }        
-    
-    void ResetControllerPosition(){
-        
-        StoreVector();
+    }
 
+    void ResetControllerPosition()
+    {
+        StoreVector();
     }
 
     IEnumerator DoubleClickWindow()
