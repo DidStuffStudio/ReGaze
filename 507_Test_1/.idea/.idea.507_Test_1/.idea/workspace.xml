@@ -23,9 +23,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/UtilityTest2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/UtilityTest2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Longbow/Materials/ArcheryTargetWeeble.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Longbow/Materials/ArcheryTargetWeeble.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionSetClasses/SteamVR_Input_ActionSet_default.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Input/ActionSetClasses/SteamVR_Input_ActionSet_default.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Input/SteamVR_Input_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Input/SteamVR_Input_Actions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/actions.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/actions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_holographic_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_holographic_controller.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_knuckles.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_knuckles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_logitech_stylus.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_logitech_stylus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_oculus_touch.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_oculus_touch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_vive_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_vive_controller.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_vive_cosmos_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_vive_cosmos_controller.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +135,7 @@
       <workItem from="1604462596789" duration="1129000" />
       <workItem from="1604464234824" duration="3558000" />
       <workItem from="1604496249842" duration="3453000" />
+      <workItem from="1604567840860" duration="1551000" />
     </task>
     <servers />
   </component>

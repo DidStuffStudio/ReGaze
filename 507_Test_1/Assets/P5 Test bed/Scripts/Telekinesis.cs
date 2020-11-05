@@ -353,9 +353,9 @@ public class Telekinesis : MonoBehaviour
 
         if (trackpadPos.axis.y != 0)
         {
-            if (distance > startingDistance / 5)
+            //if (distance > startingDistance / 5)
                 distance += trackpadPos.axis.y * controllerMoveStrength / 75;
-            else distance = startingDistance / 5;
+            //else distance = startingDistance / 5;
 
             if (distance < startingDistance * 2)
                 distance += trackpadPos.axis.y * controllerMoveStrength / 75;
