@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.731131785.00" t="ExcludeRecursive" />
-    <e p="C:\Users\scott\Documents\GitHub\MED507_P5\507_Test_1" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="507_Test_1.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -17,6 +15,7 @@
             <e p="Rotation.cs" t="Include" />
             <e p="Telekinesis.cs" t="Include" />
             <e p="Testing.cs" t="Include" />
+            <e p="TutorialTriggers.cs" t="Include" />
             <e p="Utility Test 1" t="Include">
               <e p="BallsInTheBucket.cs" t="Include" />
               <e p="CubeTargetCheck.cs" t="Include" />
@@ -359,6 +358,7 @@
           <e p="SteamVR_Input_ActionSets.cs" t="Include" />
           <e p="SteamVR_Input_Initialization.cs" t="Include" />
         </e>
+        <e p="TestLerp.cs" t="Include" />
         <e p="TobiiXR" t="Include">
           <e p="API" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
@@ -662,7 +662,7 @@
       <e p="SteamVR_Editor.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Input_Editor.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Windows_EditorHelper.csproj" t="IncludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="TobiiXRCore.csproj" t="IncludeRecursive" />
       <e p="TobiiXRDevTools.csproj" t="IncludeRecursive" />
       <e p="TobiiXREditor.csproj" t="IncludeRecursive" />
@@ -672,5 +672,7 @@
       <e p="Unity.XR.Management.Samples.csproj" t="IncludeRecursive" />
       <e p="Unity.XR.Management.Samples.Editor.csproj" t="IncludeRecursive" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_507_Test_1.1442874921.00" t="ExcludeRecursive" />
   </component>
 </project>

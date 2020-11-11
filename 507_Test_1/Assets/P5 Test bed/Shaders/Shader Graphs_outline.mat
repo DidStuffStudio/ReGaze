@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_outline
+  m_Shader: {fileID: -6465566751694194690, guid: 9787781f0a98a46d4b55ed37c1d41db7,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_9F90E893:
+        m_Texture: {fileID: 2800000, guid: f87c4d7405a724cda8366e308cb781ad, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_4AB39F12: 41.91
+    - Vector1_55B3E45C: 1.45
+    - Vector1_9DBE3B7E: 1.23
+    - Vector1_A3D95743: 5.5
+    - Vector1_BC370582: 1.14
+    m_Colors:
+    - Color_6C1AA6A6: {r: 1, g: 0.8573976, b: 0.6839622, a: 1}
