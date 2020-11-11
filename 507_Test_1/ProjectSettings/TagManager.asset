@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Walls
+  - PreciseDashTriggerBox
+  - AsteroidTriggerBox
+  - GestureTriggerBox
+  - TouchpadTriggerBox
   layers:
   - Default
   - TransparentFX

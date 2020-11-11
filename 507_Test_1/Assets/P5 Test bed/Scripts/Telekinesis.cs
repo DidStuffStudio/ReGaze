@@ -19,14 +19,14 @@ public class Telekinesis : MonoBehaviour
     public Transform telekineticTransform;
 
     public GameObject grabbedObject;
-    private float moveConstant = 10;
+    public float moveConstant = 10;
     private float moveStep = 0.5f;
     private float distance = 0.0f;
     private Vector3 grabbedObjDir;
     private Vector3 latePos = Vector3.zero;
     private float throwStrength = 10000;
 
-    [SerializeField] private Material seethrough;
+    public Material seethrough;
     private Material originalMat;
 
     private Vector3 storedControllerPos;
@@ -34,7 +34,7 @@ public class Telekinesis : MonoBehaviour
 
     [SerializeField] private float controllerMoveStrength = 2.0f;
 
-    [SerializeField] private GameObject particles;
+    public GameObject particles;
 
     private float startingDistance;
     [SerializeField] private float setDistance = 1.0f;
@@ -88,7 +88,6 @@ public class Telekinesis : MonoBehaviour
         {
             case TelekinesisMethod.Thumbstick:
             {
-                //controllerMoveStrength = 5;
                 ThumbstickUpdate();
                 break;
             }
@@ -113,14 +112,12 @@ public class Telekinesis : MonoBehaviour
 
             case TelekinesisMethod.Resetable:
             {
-                //controllerMoveStrength = 5;
                 ResetableUpdate();
                 break;
             }
 
             case TelekinesisMethod.Combined:
             {
-                //controllerMoveStrength = 5;
                 CombinedUpdate();
                 break;
             }
@@ -141,12 +138,13 @@ public class Telekinesis : MonoBehaviour
 
     void PickUp()
     {
+        print("picking up");
         grabbedObject = eyeRaycast.raycastHitObject;
-        particles.SetActive(true);
+        grabbedObject.GetComponent<Grabbable>().OnSelect();
         startingDistance = Vector3.Distance(transform.position, grabbedObject.transform.position);
         isGrabbed = true;
-        originalMat = grabbedObject.GetComponent<Renderer>().material;
-        grabbedObject.GetComponent<Renderer>().material = seethrough;
+        // originalMat = grabbedObject.GetComponent<Renderer>().material;
+        
         var rb = grabbedObject.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -156,11 +154,10 @@ public class Telekinesis : MonoBehaviour
 
     void ReleaseObject()
     {
-        particles.SetActive(false);
+        grabbedObject.GetComponent<Grabbable>().Default();
         var rb = grabbedObject.GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.AddForce(grabbedObjDir * throwStrength, ForceMode.Force);
-        grabbedObject.GetComponent<Renderer>().material = originalMat;
         grabbedObject = null;
         isGrabbed = false;
         distanceCalculated = false;
@@ -381,36 +378,43 @@ public class Telekinesis : MonoBehaviour
     void CombinedUpdate()
     {
         grabbedObject.GetComponent<Rigidbody>().useGravity = false;
-
         UpdateParticles();
+        
+        // Make the grabbed object follow the eyes
         var telekineticTransformDist =
             Vector3.Distance(telekineticTransform.position, grabbedObject.transform.position);
-
-
+        
         moveStep = telekineticTransformDist / moveConstant;
-
-
+        
         telekineticTransform.position = Camera.main.transform.position + eyeRaycast.eyeDirection * distance;
+        
+        // Move and rotate the grabbed object proportional to the gestures of the controller in the XYZ
+        if (Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.Gestures || 
+            Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.TouchPad)
+        {
+            telekineticTransform.position +=
+                (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
 
-
-        telekineticTransform.position +=
-            (rightHand.transform.position - storedControllerPos) * controllerMoveStrength;
-
-        grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
-            rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
-
+            grabbedObject.transform.rotation = Quaternion.Lerp(grabbedObject.transform.rotation,
+                rightHand.transform.rotation * Quaternion.Inverse(storedControllerRot), Time.deltaTime);
+        }
+          
+        
         grabbedObject.transform.position =
-            Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
+                Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
+        
 
+        // Move the grabbed object also with the touchpad
+        if(Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.TouchPad) {
         if (trackpadPos.axis.y != 0)
         {
+            // add a constraint to how close the grabbed object can get to the player
             if (distance > startingDistance / 5)
                 distance += trackpadPos.axis.y * controllerMoveStrength / 75;
             else distance = startingDistance / 5;
 
-            //if (distance < startingDistance * 2)
             distance += trackpadPos.axis.y * controllerMoveStrength / 75;
-            //else distance = startingDistance * 2;
+        }
         }
 
 

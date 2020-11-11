@@ -28,6 +28,14 @@ public class EyeRaycast : MonoBehaviour
     [SerializeField] private float lightMoveConstant = 0.2f;
 
     [SerializeField] private Transform jumpTransform;
+    [SerializeField] private GameObject eyeSignifierPrefab;
+    private GameObject eyeSignifier;
+
+    private void Start()
+    {
+        eyeSignifier = Instantiate(eyeSignifierPrefab, lightObject.transform) as GameObject;
+        eyeSignifier.SetActive(false);
+    }
 
     private void Update()
     {
@@ -55,7 +63,7 @@ public class EyeRaycast : MonoBehaviour
 
         if (lastHitSelectable)
         {
-            lastHitSelectable.GetComponent<Grabbable>().focused = false;
+            lastHitSelectable.GetComponent<Grabbable>().Default();
         }
     }
 
@@ -74,7 +82,7 @@ public class EyeRaycast : MonoBehaviour
             {
                 lastHitSelectable = raycastHitObject;
                 raycastHitObject = hitSelectable.transform.gameObject;
-                raycastHitObject.GetComponent<Grabbable>().focused = true;
+                raycastHitObject.GetComponent<Grabbable>().Focused();
             }
             
         }
@@ -82,7 +90,7 @@ public class EyeRaycast : MonoBehaviour
         {
             if (raycastHitObject != null)
             {
-                raycastHitObject.GetComponent<Grabbable>().focused = false;
+                raycastHitObject.GetComponent<Grabbable>().Default();
                 raycastHitObject = null;
             }
         }
@@ -91,11 +99,13 @@ public class EyeRaycast : MonoBehaviour
         {
             // if (hitGround.transform.gameObject.layer == 10) return;
             targetPos = hitGround.point;
+            if(!eyeSignifier.activeSelf) eyeSignifier.SetActive(true);
             lightObject.SetActive(true);
             hasHit = true;
         }
         else
         {
+            if(eyeSignifier.activeSelf) eyeSignifier.SetActive(false);
             hasHit = false;
             lightObject.SetActive(false);
         }
