@@ -21,13 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/See Through.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/See Through.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiny_Toony_City_Demo/PolygonBlacksmith/TT_Citizens_demo/animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiny_Toony_City_Demo/PolygonBlacksmith/TT_Citizens_demo/models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TobiiXR/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ice.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ice.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/Tutorial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +37,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/TestLerp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TestLerp.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -62,11 +61,11 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
         <option value="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/BodyCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Testing.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
         <option value="$PROJECT_DIR$/Assets/TestLerp.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
       </list>
     </option>
   </component>
@@ -91,16 +90,22 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -152,13 +157,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

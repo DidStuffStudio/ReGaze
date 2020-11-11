@@ -35,6 +35,7 @@ public class Telekinesis : MonoBehaviour
     [SerializeField] private float controllerMoveStrength = 2.0f;
 
     public GameObject particles;
+    private ParticleSystem ps;
 
     private float startingDistance;
     [SerializeField] private float setDistance = 1.0f;
@@ -61,6 +62,7 @@ public class Telekinesis : MonoBehaviour
     {
         eyeRaycast = GetComponent<EyeRaycast>();
         reset.AddOnStateDownListener(JoystickDown, handType);
+        if (particles) ps = particles.GetComponent<ParticleSystem>();
     }
 
 
@@ -144,7 +146,7 @@ public class Telekinesis : MonoBehaviour
         startingDistance = Vector3.Distance(transform.position, grabbedObject.transform.position);
         isGrabbed = true;
         // originalMat = grabbedObject.GetComponent<Renderer>().material;
-        
+        particles.SetActive(true);
         var rb = grabbedObject.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -154,6 +156,7 @@ public class Telekinesis : MonoBehaviour
 
     void ReleaseObject()
     {
+        particles.SetActive(false);
         grabbedObject.GetComponent<Grabbable>().Default();
         var rb = grabbedObject.GetComponent<Rigidbody>();
         rb.useGravity = true;
@@ -440,11 +443,10 @@ public class Telekinesis : MonoBehaviour
     void UpdateParticles()
     {
         particles.transform.position =
-            new Vector3(grabbedObject.transform.position.x, 0, grabbedObject.transform.position.z);
-
-        var shapeModule = particles.GetComponent<ParticleSystem>().shape;
-        shapeModule.length = grabbedObject.transform.position.y;
-        shapeModule.radius = grabbedObject.GetComponent<Renderer>().bounds.extents.x;
+            new Vector3(grabbedObject.transform.position.x, grabbedObject.transform.position.y, grabbedObject.transform.position.z);
+        
+        var s = ps.shape;
+        s.scale = new Vector3(grabbedObject.GetComponent<Renderer>().bounds.extents.x, 1, grabbedObject.GetComponent<Renderer>().bounds.extents.z);
     }
 
     void ResetControllerPosition()
