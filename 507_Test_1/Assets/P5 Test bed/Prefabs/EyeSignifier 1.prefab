@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5497282843842948660}
   - component: {fileID: 7626372563427242694}
   m_Layer: 0
-  m_Name: EyeSignifier
+  m_Name: EyeSignifier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
