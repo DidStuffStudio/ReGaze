@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 using Tobii.XR.Examples;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Valve.VR;
@@ -62,7 +63,7 @@ public class Telekinesis : MonoBehaviour
     {
         eyeRaycast = GetComponent<EyeRaycast>();
         reset.AddOnStateDownListener(JoystickDown, handType);
-        if (particles) ps = particles.GetComponent<ParticleSystem>();
+        if (particles) ps = particles.transform.GetChild(0).GetComponent<ParticleSystem>();
     }
 
 
@@ -442,11 +443,24 @@ public class Telekinesis : MonoBehaviour
 
     void UpdateParticles()
     {
+        // set the position, rotation, scale and the rate over time emission of particles in the particle system dependent and proportionate on the grabbed object
+        // position
         particles.transform.position =
             new Vector3(grabbedObject.transform.position.x, grabbedObject.transform.position.y, grabbedObject.transform.position.z);
         
-        var s = ps.shape;
-        s.scale = new Vector3(grabbedObject.GetComponent<Renderer>().bounds.extents.x, 1, grabbedObject.GetComponent<Renderer>().bounds.extents.z);
+        
+        var psShape = ps.shape;
+        // scale
+        psShape.scale = new Vector3(grabbedObject.transform.localScale.x, grabbedObject.transform.localScale.z, 1);
+        // rotation
+        var eulerRotation1 = new Vector3(grabbedObject.transform.eulerAngles.x, grabbedObject.transform.eulerAngles.y, particles.transform.eulerAngles.z);
+        particles.transform.rotation = Quaternion.Euler(eulerRotation1);
+        var eulerRotation2 = new Vector3(grabbedObject.transform.eulerAngles.x -90, 0, 0);
+        psShape.rotation = eulerRotation2;
+        
+        // rate over time
+        var e = ps.emission;
+        e.rateOverTime = (grabbedObject.transform.localScale.x + grabbedObject.transform.localScale.z) / 2 * 30;
     }
 
     void ResetControllerPosition()
