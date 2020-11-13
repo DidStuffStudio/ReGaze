@@ -14,7 +14,7 @@ public class EyeRaycast : MonoBehaviour
     public GameObject lastHitSelectable;
 
     public Vector3 targetPos;
-
+    public RaycastHit raycastHit;
 
     public bool hasHit = false;
 
@@ -99,6 +99,7 @@ public class EyeRaycast : MonoBehaviour
         {
             // if (hitGround.transform.gameObject.layer == 10) return;
             targetPos = hitGround.point;
+            raycastHit = hitGround;
             if(!eyeSignifier.activeSelf) eyeSignifier.SetActive(true);
             lightObject.SetActive(true);
             hasHit = true;

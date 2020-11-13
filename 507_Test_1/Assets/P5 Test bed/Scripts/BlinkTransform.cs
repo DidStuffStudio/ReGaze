@@ -47,12 +47,15 @@ public class BlinkTransform : MonoBehaviour
         
         if (teleport.state && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {
-            target = eyeRaycast.targetPos;
+            // get the normal of the mesh of the point the player will be moving to, and add it to the targetPos
+            var normal = eyeRaycast.raycastHit.normal;
+            target = eyeRaycast.targetPos + normal * 2;
             triggered = true;
             maxDistance = Vector3.Distance(transform.position, target);
             triggerBox.transform.position = new Vector3(target.x, target.y + triggerBox.transform.localScale.y/2, target.z);
             triggerBox.SetActive(true);
             acceleration = Mathf.Pow(topSpeed, 2) / 2 * maxDistance;
+            
         }
 
         if (!triggered) return;
