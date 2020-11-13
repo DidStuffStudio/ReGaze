@@ -28,6 +28,7 @@ public class Telekinesis : MonoBehaviour
     private float throwStrength = 10000;
 
     public Material seethrough;
+    public Material outlineMaterial;
     private Material originalMat;
 
     private Vector3 storedControllerPos;

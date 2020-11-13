@@ -49,6 +49,7 @@ public class BlinkTransform : MonoBehaviour
         {
             // get the normal of the mesh of the point the player will be moving to, and add it to the targetPos
             var normal = eyeRaycast.raycastHit.normal;
+            if (normal.y < 0) normal.y = Mathf.Abs(normal.y);
             target = eyeRaycast.targetPos + normal * 2;
             triggered = true;
             maxDistance = Vector3.Distance(transform.position, target);

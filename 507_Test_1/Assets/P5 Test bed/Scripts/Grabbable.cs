@@ -18,8 +18,12 @@ public class Grabbable : MonoBehaviour
     private Outline outline;
     
     private Material originalMaterial;
+    private Material outlineMaterial;
     private Material selectionMaterial;
     private GameObject particleSystem;
+
+    private Renderer mesh;
+    private Material [] matArray;
     
     public enum ObjectState
     {
@@ -39,9 +43,12 @@ public class Grabbable : MonoBehaviour
         originalMaterial = GetComponent<Renderer>().material;
         selectionMaterial = Testing.Instance.Telekinesis.seethrough;
         particleSystem = Testing.Instance.Telekinesis.particles;
+        mesh = GetComponent<Renderer>();
+        matArray = mesh.materials;
+        outlineMaterial = Testing.Instance.Telekinesis.outlineMaterial;
     }
 
-    private void Update()
+    private void UpdateObjectState()
     {
         switch (objectState)
         {
@@ -50,9 +57,12 @@ public class Grabbable : MonoBehaviour
                 print("default");
                 // some indication that that object is interactable (optional for now)
                 if (outline.enabled) outline.enabled = false;
-                if (GetComponent<Renderer>().material != originalMaterial)
-                    GetComponent<Renderer>().material = originalMaterial;
+                
+                if (mesh.material != originalMaterial) mesh.material = originalMaterial;
                 //particleSystem.SetActive(false);
+                matArray[1] = originalMaterial;
+                mesh.materials = matArray;
+
                 break;
             }
             case ObjectState.Focused:
@@ -60,6 +70,9 @@ public class Grabbable : MonoBehaviour
                 // outline
                 print("focused");
                 outline.enabled = true;
+                matArray[1] = outlineMaterial;
+                mesh.materials = matArray;
+
                 break;
             }
             case ObjectState.OnSelect:
@@ -103,11 +116,35 @@ public class Grabbable : MonoBehaviour
         }
     }
 
-    public void Default() => objectState = ObjectState.Default;
-    public void Focused() => objectState = ObjectState.Focused;
-    public void OnSelect() => objectState = ObjectState.OnSelect;
-    public void Selected() => objectState = ObjectState.Selected;
-    public void Disabled() => objectState = ObjectState.Disabled;
+    public void Default()
+    {
+        objectState = ObjectState.Default;
+        UpdateObjectState();
+    }
+    public void Focused()
+    {
+        objectState = ObjectState.Focused;
+        UpdateObjectState();
+    }
+
+    public void OnSelect()
+    {
+        objectState = ObjectState.OnSelect;
+        UpdateObjectState();
+    }
+
+    public void Selected()
+    {
+        objectState = ObjectState.Selected;
+        UpdateObjectState();
+    }
+
+    public void Disabled()
+    {
+        objectState = ObjectState.Disabled;
+        UpdateObjectState();
+    }
+
     private IEnumerator OnSelectCoroutine()
     {
         yield return new WaitForSeconds(0.05f);
