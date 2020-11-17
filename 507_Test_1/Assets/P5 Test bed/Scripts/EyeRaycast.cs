@@ -86,15 +86,22 @@ public class EyeRaycast : MonoBehaviour
             }
             
         }
-        else
+        else // if the user is not looking at a selectable object
         {
             if (raycastHitObject != null)
             {
-                raycastHitObject.GetComponent<Grabbable>().Default();
+                var g = raycastHitObject.GetComponent<Grabbable>();
+                if (g.objectState != Grabbable.ObjectState.OnSelect &&
+                    g.objectState != Grabbable.ObjectState.Selected) {
+                    g.Default();
+                }
                 raycastHitObject = null;
             }
         }
-
+        if(Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Walls")))
+        {
+            return;
+        }
         if (Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Ground")))
         {
             // if (hitGround.transform.gameObject.layer == 10) return;
