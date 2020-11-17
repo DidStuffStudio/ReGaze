@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: IceShards_M
+  m_Shader: {fileID: -6465566751694194690, guid: 3e40a61ad4a00db4d8c2429c051690c6,
+    type: 3}
+  m_ShaderKeywords: _RECEIVE_SHADOWS_OFF
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2D_1999F811_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 60fe9f26f39417d4c862bcad5b60aede, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_1DD6B082_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 34052ff677e1e0040bfdde61332fac2e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_7C67FDDA_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 201188ee751bf7240aaf3907cba525c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_FFE2DBBD_Texture_1:
+        m_Texture: {fileID: 2800000, guid: acebd876ac4d0954492e55fcc86bf7cc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_F71DE0B8: 0.93
+    - Vector1_FB582AD2: 0
+    m_Colors:
+    - Color_9D3E2628: {r: 0, g: 0, b: 0, a: 0}

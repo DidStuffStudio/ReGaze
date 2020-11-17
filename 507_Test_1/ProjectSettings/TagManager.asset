@@ -22,8 +22,8 @@ TagManager:
   - Selectable
   - Walls
   - TravelTrigger
-  - 
-  - 
+  - Player
+  - Icicle
   - 
   - 
   - 
