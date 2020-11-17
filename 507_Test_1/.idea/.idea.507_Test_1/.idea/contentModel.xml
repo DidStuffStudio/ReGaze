@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.731131785.00" t="ExcludeRecursive" />
-    <e p="C:\Users\scott\Documents\GitHub\MED507_P5\507_Test_1" t="IncludeRecursive">
+    <e p="C:\Users\scott\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.-207395763.00" t="ExcludeRecursive" />
+    <e p="C:\Users\scott\Documents\GitHub\nEW\MED507_P5\507_Test_1" t="IncludeRecursive">
       <e p="507_Test_1.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="AudioTrigger.cs" t="Include" />
         <e p="ControllerGesture.cs" t="Include" />
+        <e p="IceSheet.cs" t="Include" />
         <e p="P5 Test bed" t="Include">
           <e p="Scripts" t="Include">
             <e p="BlinkTransform.cs" t="Include" />
@@ -807,6 +809,7 @@
           </e>
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="Usability_StoryManager.cs" t="Include" />
         <e p="ViveSR" t="Include">
           <e p="Scripts" t="Include">
             <e p="Eye" t="Include">

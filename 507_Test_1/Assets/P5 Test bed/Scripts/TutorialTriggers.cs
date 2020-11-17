@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class TutorialTriggers : MonoBehaviour
 {
+    public Usability_StoryManager sm;
+
+    private void Start()
+    {
+        sm.PlayVoice(0);
+        Wait(sm.voiceClips[0].length);
+        sm.PlayVoice(1);
+        print("started");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         // each of the trigger boxes will allow for the use of certain telekinesis interactions.
@@ -25,6 +35,9 @@ public class TutorialTriggers : MonoBehaviour
         {
             Testing.Instance.tutorialInteractionMethods = Testing.TutorialInteractionMethods.EyeOnly;
             Debug.Log("Moving objects with the eye only");
+
+            
+
         }
         else if (other.CompareTag("AsteroidTriggerBox"))
         {
@@ -34,6 +47,7 @@ public class TutorialTriggers : MonoBehaviour
         else if (other.CompareTag("GestureTriggerBox"))
         {
             Testing.Instance.tutorialInteractionMethods = Testing.TutorialInteractionMethods.Gestures;
+            
         }
         else if (other.CompareTag("TouchpadTriggerBox"))
         {
@@ -46,6 +60,7 @@ public class TutorialTriggers : MonoBehaviour
 
     private void PlaySoundAndAnimation(GameObject g)
     {
+        
         var audioSource = g.GetComponent<AudioSource>();
         if(audioSource) audioSource.Play();
         else Debug.LogWarning("Audio file is missing on " + g.name);
@@ -53,5 +68,10 @@ public class TutorialTriggers : MonoBehaviour
         var animation = g.GetComponent<Animation>();
         if (animation) animation.Play();
         else Debug.LogWarning("Animation is missing on " + g.name);
+    }
+
+    IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 }
