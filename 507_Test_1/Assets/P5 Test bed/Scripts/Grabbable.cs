@@ -14,7 +14,6 @@ public class Grabbable : MonoBehaviour
     5 - Inactive / disabled (optional - could be left as default)
     */
 
-    public bool focused = false;
     private Outline outline;
     
     private Material originalMaterial;
@@ -84,17 +83,20 @@ public class Grabbable : MonoBehaviour
                 // outline
                 outline.enabled = true;
                 // selection shader
-                GetComponent<Renderer>().material = selectionMaterial;
+                matArray[1] = selectionMaterial;
+                mesh.materials = matArray;
                 StartCoroutine(OnSelectCoroutine());                
                 break;
             }
             case ObjectState.Selected:
             {
                 print("selected");
-                // selection shader, depth signifier (particle system for now), outline
-                // particle system
-                //particleSystem.SetActive(true);
-                break;
+                    matArray[1] = selectionMaterial;
+                    mesh.materials = matArray;
+                    // selection shader, depth signifier (particle system for now), outline
+                    // particle system
+                    //particleSystem.SetActive(true);
+                    break;
             }
             case ObjectState.Disabled:
             {

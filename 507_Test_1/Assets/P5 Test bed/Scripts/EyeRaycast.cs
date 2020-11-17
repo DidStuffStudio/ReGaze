@@ -91,20 +91,17 @@ public class EyeRaycast : MonoBehaviour
             if (raycastHitObject != null)
             {
                 var g = raycastHitObject.GetComponent<Grabbable>();
-                if (g.objectState != Grabbable.ObjectState.OnSelect &&
+                if (g.objectState != Grabbable.ObjectState.Focused && g.objectState != Grabbable.ObjectState.OnSelect &&
                     g.objectState != Grabbable.ObjectState.Selected) {
                     g.Default();
                 }
                 raycastHitObject = null;
             }
         }
-        if(Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Walls")))
+
+        if (Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Ground", "Walls")))
         {
-            return;
-        }
-        if (Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Ground")))
-        {
-            // if (hitGround.transform.gameObject.layer == 10) return;
+            if (hitGround.collider.gameObject.layer == 10) return; // Wall layer
             targetPos = hitGround.point;
             raycastHit = hitGround;
             if(!eyeSignifier.activeSelf) eyeSignifier.SetActive(true);
