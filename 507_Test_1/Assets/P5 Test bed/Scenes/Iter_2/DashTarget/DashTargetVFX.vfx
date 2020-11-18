@@ -211,9 +211,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -181
-    y: -192
+    y: -193
     width: 4627
-    height: 1982
+    height: 1983
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4993,7 +4993,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 21
           m_Value: 0
         - m_ExpressionIndex: 22
-          m_Value: -100000
+          m_Value: 1
         - m_ExpressionIndex: 23
           m_Value: 0
         - m_ExpressionIndex: 26
@@ -9534,7 +9534,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: -100000
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: o

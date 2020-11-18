@@ -6,18 +6,18 @@ using UnityEngine;
 public class DirtBoulderCheck : MonoBehaviour
 {
    public Transform boulder, yPass;
-   public GameObject jumpCollider;
+   public Collider jumpCollider;
 
    private void Start()
    {
-      jumpCollider.SetActive(false);
+      jumpCollider.gameObject.layer = 0;
    }
 
    private void Update()
    {
       if (boulder.position.y < yPass.position.y)
       {
-         jumpCollider.SetActive(true);
+         jumpCollider.gameObject.layer = 8;
       }
       
    }

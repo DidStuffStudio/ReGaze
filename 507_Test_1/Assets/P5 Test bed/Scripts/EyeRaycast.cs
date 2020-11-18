@@ -68,36 +68,31 @@ public class EyeRaycast : MonoBehaviour
     public void GazeCast(Vector3 startPoint, Vector3 direction)
     {
         RaycastHit hit;
-        Debug.DrawRay(startPoint, direction, Color.cyan);
 
-        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity))
+        int layerMask = 1 << 0; // this would cast rays only against colliders in layer 0 --> the default one
+        layerMask = ~layerMask; // invert the layer mask
+        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, layerMask))
         {
+            print(hit.collider.gameObject.name);
+            Debug.DrawRay(startPoint, direction * hit.distance, Color.cyan); 
             targetPos = hit.point;
-
-            // check if it's a selectable object
-            //   --> if it has been selected, return
-            //   --> if it hasn't --> Hover (focus on it)
-            //   --> 
 
             if (hit.collider.gameObject.layer == 9) // if selectable              
             {
-                if(raycastHitObject)
+                if (raycastHitObject)
                 {
                     lastHitObject = raycastHitObject;
-                    if (raycastHitObject.GetComponent<Grabbable>().isSelected) return; 
+                    if (raycastHitObject.GetComponent<Grabbable>().isSelected) return;
                 }
+
                 raycastHitObject = hit.transform.gameObject;
-                //Debug.DrawRay(startPoint, hit.point - startPoint, Color.red);
-                // if (hit.transform.gameObject != raycastHitObject)
-                // {
-                // raycastHitObject.GetComponent<Grabbable>().Default();
                 if (raycastHitObject == lastHitObject || raycastHitObject.GetComponent<Grabbable>().isSelected)
                 {
                     return;
                 }
 
                 // if it's not the same as the previous hit object, then set that one to default state
-                if(lastHitObject) lastHitObject.GetComponent<Grabbable>().Default();
+                if (lastHitObject) lastHitObject.GetComponent<Grabbable>().Default();
 
                 // set the new one as focused
                 raycastHitObject.GetComponent<Grabbable>().Focused();
@@ -125,6 +120,7 @@ public class EyeRaycast : MonoBehaviour
                 {
                     raycastHitObject.GetComponent<Grabbable>().Default();
                 }
+                eyeSignifier.GetComponent<VisualEffect>().enabled = false;
             }
         }
     }
@@ -137,17 +133,5 @@ public class EyeRaycast : MonoBehaviour
         var moveStep = lightToTargetDistance / lightMoveConstant;
         lightObject.transform.position =
             Vector3.MoveTowards(lightObject.transform.position, jumpTransform.position, moveStep);
-    }
-
-    private void SelectableHit(RaycastHit hitSelectable, Vector3 startPoint)
-    {
-        var g = raycastHitObject.GetComponent<Grabbable>();
-        Debug.DrawRay(startPoint, hitSelectable.point - startPoint, Color.red);
-        if (hitSelectable.transform.gameObject != raycastHitObject && !g.isSelected)
-        {
-            raycastHitObject.GetComponent<Grabbable>().Default();
-            raycastHitObject = hitSelectable.transform.gameObject;
-            raycastHitObject.GetComponent<Grabbable>().Focused();
-        }
     }
 }
