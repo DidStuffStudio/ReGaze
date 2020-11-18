@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ice_M
+  m_Name: Icicle_M
   m_Shader: {fileID: -6465566751694194690, guid: 7863a8daafed5334aa41c127360f71cd,
     type: 3}
   m_ShaderKeywords: _ENVIRONMENTREFLECTIONS_OFF
