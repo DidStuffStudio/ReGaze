@@ -21,7 +21,7 @@ public class IceSheet : MonoBehaviour
             source.Play();
         }
 
-        else if (collision.collider.gameObject.layer == 13) //Play break and break
+        else if (collision.collider.gameObject.CompareTag("Icicle")) //Play break and break
         {
             var shards = Instantiate(iceShardsPrefab, transform.position, transform.rotation, null);
             //shards.transform.localScale = Vector3.one;

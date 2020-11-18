@@ -9,6 +9,7 @@ TagManager:
   - AsteroidTriggerBox
   - GestureTriggerBox
   - TouchpadTriggerBox
+  - Icicle
   layers:
   - Default
   - TransparentFX

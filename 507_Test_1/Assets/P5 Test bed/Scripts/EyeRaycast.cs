@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Tobii.XR;
+using UnityEngine.VFX;
 
 public class EyeRaycast : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class EyeRaycast : MonoBehaviour
     public float eyeSpeed = 2.0f;
 
     public GameObject raycastHitObject;
-    
+
     public Vector3 targetPos;
     public RaycastHit raycastHit;
 
@@ -29,6 +30,8 @@ public class EyeRaycast : MonoBehaviour
     [SerializeField] private Transform jumpTransform;
     [SerializeField] private GameObject eyeSignifierPrefab;
     private GameObject eyeSignifier;
+
+    private GameObject lastHitObject;
 
     private void Start()
     {
@@ -64,55 +67,66 @@ public class EyeRaycast : MonoBehaviour
 
     public void GazeCast(Vector3 startPoint, Vector3 direction)
     {
-        RaycastHit hitGround;
-        RaycastHit hitSelectable;
+        RaycastHit hit;
         Debug.DrawRay(startPoint, direction, Color.cyan);
 
-        if (Physics.Raycast(startPoint, direction, out hitSelectable, Mathf.Infinity, LayerMask.GetMask("Selectable")))
+        if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity))
         {
-            targetPos = hitSelectable.point;
-            if (!raycastHitObject) raycastHitObject = hitSelectable.transform.gameObject;
-            var g = raycastHitObject.GetComponent<Grabbable>();
-            Debug.DrawRay(startPoint, hitSelectable.point - startPoint, Color.red);
-            if (hitSelectable.transform.gameObject != raycastHitObject && !g.isSelected)
+            targetPos = hit.point;
+
+            // check if it's a selectable object
+            //   --> if it has been selected, return
+            //   --> if it hasn't --> Hover (focus on it)
+            //   --> 
+
+            if (hit.collider.gameObject.layer == 9) // if selectable              
             {
-                raycastHitObject.GetComponent<Grabbable>().Default();
-                raycastHitObject = hitSelectable.transform.gameObject;
+                if(raycastHitObject)
+                {
+                    lastHitObject = raycastHitObject;
+                    if (raycastHitObject.GetComponent<Grabbable>().isSelected) return; 
+                }
+                raycastHitObject = hit.transform.gameObject;
+                //Debug.DrawRay(startPoint, hit.point - startPoint, Color.red);
+                // if (hit.transform.gameObject != raycastHitObject)
+                // {
+                // raycastHitObject.GetComponent<Grabbable>().Default();
+                if (raycastHitObject == lastHitObject || raycastHitObject.GetComponent<Grabbable>().isSelected)
+                {
+                    return;
+                }
+
+                // if it's not the same as the previous hit object, then set that one to default state
+                if(lastHitObject) lastHitObject.GetComponent<Grabbable>().Default();
+
+                // set the new one as focused
                 raycastHitObject.GetComponent<Grabbable>().Focused();
             }
-            return;
-        }
-        // if the user is not looking at a selectable object but another one was hovered/selected
-        /*if (raycastHitObject)
-        {
-            var g = raycastHitObject.GetComponent<Grabbable>();
-            if (!g.isSelected)
+            else
             {
-                g.Default();
-                raycastHitObject = null;
+                // if ground, turn on target pos and so on...
+                if (hit.collider.gameObject.layer == 8) // if ground                
+                {
+                    targetPos = hit.point;
+                    raycastHit = hit;
+                    eyeSignifier.GetComponent<VisualEffect>().enabled = true;
+                    // lightObject.SetActive(true);
+                    hasHit = true;
+                    MoveLight(hit.point);
+                }
+                else
+                {
+                    eyeSignifier.GetComponent<VisualEffect>().enabled = false;
+                    hasHit = false;
+                    // lightObject.SetActive(false);
+                }
+
+                if (raycastHitObject && !raycastHitObject.GetComponent<Grabbable>().isSelected)
+                {
+                    raycastHitObject.GetComponent<Grabbable>().Default();
+                }
             }
-        }*/
-        
-        // if there's another selectable object behind the already selected one, it apparently sets it to focused or selected (one of both)
-
-        if (Physics.Raycast(startPoint, direction, out hitGround, Mathf.Infinity, LayerMask.GetMask("Ground", "Walls")))
-        {
-            if (hitGround.collider.gameObject.layer == 10) return; // Wall layer
-            targetPos = hitGround.point;
-            raycastHit = hitGround;
-            if(!eyeSignifier.activeSelf) eyeSignifier.SetActive(true);
-            lightObject.SetActive(true);
-            hasHit = true;
-            MoveLight(hitGround.point);
         }
-        else
-        {
-            if(eyeSignifier.activeSelf) eyeSignifier.SetActive(false);
-            hasHit = false;
-            lightObject.SetActive(false);
-        }
-
-        
     }
 
     void MoveLight(Vector3 hitPoint)
@@ -123,7 +137,17 @@ public class EyeRaycast : MonoBehaviour
         var moveStep = lightToTargetDistance / lightMoveConstant;
         lightObject.transform.position =
             Vector3.MoveTowards(lightObject.transform.position, jumpTransform.position, moveStep);
-        
-        
+    }
+
+    private void SelectableHit(RaycastHit hitSelectable, Vector3 startPoint)
+    {
+        var g = raycastHitObject.GetComponent<Grabbable>();
+        Debug.DrawRay(startPoint, hitSelectable.point - startPoint, Color.red);
+        if (hitSelectable.transform.gameObject != raycastHitObject && !g.isSelected)
+        {
+            raycastHitObject.GetComponent<Grabbable>().Default();
+            raycastHitObject = hitSelectable.transform.gameObject;
+            raycastHitObject.GetComponent<Grabbable>().Focused();
+        }
     }
 }

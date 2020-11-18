@@ -17,7 +17,6 @@ public class Usability_StoryManager : MonoBehaviour
     {
         voiceoverSource.clip = voiceClips[part];
         voiceoverSource.PlayOneShot(voiceClips[part]);
-        print("PLAYED");
     }
 
     private void Update()

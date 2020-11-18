@@ -24,6 +24,7 @@ public class Grabbable : MonoBehaviour
     private Renderer mesh;
     private Material[] matArray;
     public bool isSelected;
+    public bool isFocused;
 
     private void Start()
     {
@@ -52,9 +53,11 @@ public class Grabbable : MonoBehaviour
         // outline
         print("focused");
         outline.enabled = true;
-        matArray[0] = originalMaterial;
+        /*matArray[0] = originalMaterial;
         matArray[1] = outlineMaterial;
-        mesh.materials = matArray;
+        mesh.materials = matArray;*/
+        isFocused = true;
+        isSelected = false;
     }
 
     public void OnSelect()
@@ -63,12 +66,13 @@ public class Grabbable : MonoBehaviour
         // vibration
 
         // outline
-        outline.enabled = true;
+        outline.enabled = false;
         // selection shader
         matArray[0] = selectionMaterial;
         matArray[1] = selectionMaterial;
         mesh.materials = matArray;
         isSelected = true;
+        isFocused = false;
         // StartCoroutine(OnSelectCoroutine());
     }
 
