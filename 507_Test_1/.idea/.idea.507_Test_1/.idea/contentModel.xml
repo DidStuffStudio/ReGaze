@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="AudioTrigger.cs" t="Include" />
         <e p="ControllerGesture.cs" t="Include" />
+        <e p="DirtBoulderCheck.cs" t="Include" />
         <e p="IceSheet.cs" t="Include" />
         <e p="P5 Test bed" t="Include">
           <e p="Scripts" t="Include">

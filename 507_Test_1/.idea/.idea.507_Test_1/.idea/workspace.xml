@@ -47,6 +47,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Usability_StoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DirtBoulderCheck.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -74,6 +75,7 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" />
         <option value="$PROJECT_DIR$/Assets/Usability_StoryManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/DirtBoulderCheck.cs" />
       </list>
     </option>
   </component>
@@ -155,7 +157,7 @@
       <workItem from="1605171327925" duration="6126000" />
       <workItem from="1605191973415" duration="480000" />
       <workItem from="1605610052134" duration="2341000" />
-      <workItem from="1605649802793" duration="3216000" />
+      <workItem from="1605649802793" duration="3353000" />
     </task>
     <servers />
   </component>
