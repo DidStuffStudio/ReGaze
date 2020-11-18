@@ -33,6 +33,10 @@ public class BlinkTransform : MonoBehaviour
 
     public SteamVR_Action_Boolean teleport;
     public SteamVR_Input_Sources handType;
+
+
+    public Usability_StoryManager StoryManager; //Messy shit remove after usability
+
     private void Start()
     {
         
@@ -47,6 +51,7 @@ public class BlinkTransform : MonoBehaviour
         
         if (teleport.state && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {
+            StoryManager.jumped = true;
             // get the normal of the mesh of the point the player will be moving to, and add it to the targetPos
             var normal = eyeRaycast.raycastHit.normal;
             if (normal.y < 0) normal.y = Mathf.Abs(normal.y);
