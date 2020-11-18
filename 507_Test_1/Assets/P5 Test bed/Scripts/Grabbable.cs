@@ -15,26 +15,16 @@ public class Grabbable : MonoBehaviour
     */
 
     private Outline outline;
-    
+
     private Material originalMaterial;
     private Material outlineMaterial;
     private Material selectionMaterial;
     private GameObject particleSystem;
 
     private Renderer mesh;
-    private Material [] matArray;
-    
-    public enum ObjectState
-    {
-        Default,
-        Focused,
-        OnSelect,
-        Selected,
-        Disabled
-    }
+    private Material[] matArray;
+    public bool isSelected;
 
-    public ObjectState objectState;
-    
     private void Start()
     {
         outline = GetComponent<Outline>();
@@ -47,111 +37,58 @@ public class Grabbable : MonoBehaviour
         outlineMaterial = Testing.Instance.Telekinesis.outlineMaterial;
     }
 
-    private void UpdateObjectState()
-    {
-        switch (objectState)
-        {
-            case ObjectState.Default:
-            {
-                print("default");
-                // some indication that that object is interactable (optional for now)
-                if (outline.enabled) outline.enabled = false;
-                
-                if (mesh.material != originalMaterial) mesh.material = originalMaterial;
-                //particleSystem.SetActive(false);
-                matArray[1] = originalMaterial;
-                mesh.materials = matArray;
-
-                break;
-            }
-            case ObjectState.Focused:
-            {
-                // outline
-                print("focused");
-                outline.enabled = true;
-                matArray[1] = outlineMaterial;
-                mesh.materials = matArray;
-
-                break;
-            }
-            case ObjectState.OnSelect:
-            {
-                print("onselect");
-                // vibration, outline, selection shader
-                // vibration
-                
-                // outline
-                outline.enabled = true;
-                // selection shader
-                matArray[1] = selectionMaterial;
-                mesh.materials = matArray;
-                StartCoroutine(OnSelectCoroutine());                
-                break;
-            }
-            case ObjectState.Selected:
-            {
-                print("selected");
-                    matArray[1] = selectionMaterial;
-                    mesh.materials = matArray;
-                    // selection shader, depth signifier (particle system for now), outline
-                    // particle system
-                    //particleSystem.SetActive(true);
-                    break;
-            }
-            case ObjectState.Disabled:
-            {
-                break;
-            }
-        }
-        // Highlight(focused);
-    }
-
-    public void Highlight(bool on)
-    {
-        if (on)
-        {
-            outline.enabled = true;
-        }
-        else
-        {
-            outline.enabled = false;
-        }
-    }
-
     public void Default()
     {
-        objectState = ObjectState.Default;
-        UpdateObjectState();
+        print("default");
+        outline.enabled = false;
+        matArray[0] = originalMaterial;
+        matArray[1] = originalMaterial;
+        mesh.materials = matArray;
+        isSelected = false;
     }
+
     public void Focused()
     {
-        objectState = ObjectState.Focused;
-        UpdateObjectState();
+        // outline
+        print("focused");
+        outline.enabled = true;
+        matArray[0] = originalMaterial;
+        matArray[1] = outlineMaterial;
+        mesh.materials = matArray;
     }
 
     public void OnSelect()
     {
-        objectState = ObjectState.OnSelect;
-        UpdateObjectState();
+        print("onselect");
+        // vibration
+
+        // outline
+        outline.enabled = true;
+        // selection shader
+        matArray[0] = selectionMaterial;
+        matArray[1] = selectionMaterial;
+        mesh.materials = matArray;
+        isSelected = true;
+        // StartCoroutine(OnSelectCoroutine());
     }
 
     public void Selected()
     {
-        objectState = ObjectState.Selected;
-        UpdateObjectState();
+        print("selected");
+        // matArray[1] = selectionMaterial;
+        // mesh.materials = matArray;
+        // selection shader, depth signifier (particle system for now), outline
+        // particle system
+        //particleSystem.SetActive(true);
     }
 
     public void Disabled()
     {
-        objectState = ObjectState.Disabled;
-        UpdateObjectState();
     }
 
     private IEnumerator OnSelectCoroutine()
     {
         yield return new WaitForSeconds(0.05f);
-        objectState = ObjectState.Selected;
         Selected();
     }
-
 }

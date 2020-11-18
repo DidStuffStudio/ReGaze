@@ -211,9 +211,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -181
-    y: -190
+    y: -192
     width: 4627
-    height: 1981
+    height: 1982
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4979,7 +4979,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 8
           m_Value: 0
         - m_ExpressionIndex: 9
-          m_Value: 1
+          m_Value: 2
         - m_ExpressionIndex: 10
           m_Value: 0
         - m_ExpressionIndex: 11
@@ -4993,7 +4993,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 21
           m_Value: 0
         - m_ExpressionIndex: 22
-          m_Value: 1
+          m_Value: -100000
         - m_ExpressionIndex: 23
           m_Value: 0
         - m_ExpressionIndex: 26
@@ -7911,7 +7911,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -9096,7 +9096,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Position, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":0.0,"y":1.0,"z":0.0}}'
+      m_SerializableObject: '{"position":{"x":0.0,"y":2.0,"z":0.0}}'
     m_Space: 0
   m_Property:
     name: Position
@@ -9471,7 +9471,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -9534,7 +9534,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: -100000
     m_Space: 2147483647
   m_Property:
     name: o
@@ -13626,7 +13626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78581a96eae8bf4398c282eb0b098bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
@@ -15982,7 +15982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78581a96eae8bf4398c282eb0b098bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
