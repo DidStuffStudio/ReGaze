@@ -88,6 +88,7 @@ public class EyeRaycast : MonoBehaviour
                 raycastHitObject = hit.transform.gameObject;
                 if (raycastHitObject == lastHitObject || raycastHitObject.GetComponent<Grabbable>().isSelected)
                 {
+                    raycastHitObject.GetComponent<Grabbable>().Focused();
                     return;
                 }
 
@@ -105,7 +106,7 @@ public class EyeRaycast : MonoBehaviour
                     targetPos = hit.point;
                     raycastHit = hit;
                     eyeSignifier.GetComponent<VisualEffect>().enabled = true;
-                    // lightObject.SetActive(true);
+                    lightObject.SetActive(true);
                     hasHit = true;
                     MoveLight(hit.point);
                 }
@@ -113,7 +114,7 @@ public class EyeRaycast : MonoBehaviour
                 {
                     eyeSignifier.GetComponent<VisualEffect>().enabled = false;
                     hasHit = false;
-                    // lightObject.SetActive(false);
+                    lightObject.SetActive(false);
                 }
 
                 if (raycastHitObject && !raycastHitObject.GetComponent<Grabbable>().isSelected)

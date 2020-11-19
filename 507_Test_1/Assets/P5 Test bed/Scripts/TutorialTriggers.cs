@@ -8,8 +8,12 @@ public class TutorialTriggers : MonoBehaviour
     public Usability_StoryManager sm;
     private int audioClipIndex = 0;
 
+    private BlinkTransform blinkTransform;
+
     private void Start()
     {
+        blinkTransform = GetComponent<BlinkTransform>();
+        blinkTransform.enabled = false;
         StartCoroutine(Wait());
     }
 
@@ -69,5 +73,6 @@ public class TutorialTriggers : MonoBehaviour
         sm.PlayVoice(0);
         yield return new WaitForSeconds(sm.voiceClips[0].length + 1.0f);
         sm.PlayVoice(1);
+        blinkTransform.enabled = true;
     }
 }

@@ -35,9 +35,14 @@ public class IceSheet : MonoBehaviour
             {
                 rb.AddForceAtPosition(Vector3.down * breakForce, collision.gameObject.transform.position);
             }
-            gameObject.SetActive(false);
+            
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+            
             StartCoroutine(WaitForEnd());
- 
+     
+
+
 
         }
     }
@@ -46,5 +51,6 @@ public class IceSheet : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         OnBreak?.Invoke();
+        gameObject.SetActive(false);
     }
 }

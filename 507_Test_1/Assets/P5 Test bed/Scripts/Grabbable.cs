@@ -24,7 +24,6 @@ public class Grabbable : MonoBehaviour
     private Renderer mesh;
     private Material[] matArray;
     public bool isSelected;
-    public bool isFocused;
 
     private void Start()
     {
@@ -56,7 +55,6 @@ public class Grabbable : MonoBehaviour
         /*matArray[0] = originalMaterial;
         matArray[1] = outlineMaterial;
         mesh.materials = matArray;*/
-        isFocused = true;
         isSelected = false;
     }
 
@@ -72,23 +70,12 @@ public class Grabbable : MonoBehaviour
         matArray[1] = selectionMaterial;
         mesh.materials = matArray;
         isSelected = true;
-        isFocused = false;
         // StartCoroutine(OnSelectCoroutine());
     }
 
-    public void Selected()
-    {
-        print("selected");
-        // matArray[1] = selectionMaterial;
-        // mesh.materials = matArray;
-        // selection shader, depth signifier (particle system for now), outline
-        // particle system
-        //particleSystem.SetActive(true);
-    }
+    public void Selected() { }
 
-    public void Disabled()
-    {
-    }
+    public void Disabled() { }
 
     private IEnumerator OnSelectCoroutine()
     {
