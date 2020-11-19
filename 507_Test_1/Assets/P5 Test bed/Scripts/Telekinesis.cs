@@ -18,7 +18,7 @@ public class Telekinesis : MonoBehaviour
     private bool distanceCalculated = false;
     private bool isGrabbed;
     public Transform telekineticTransform;
-    public GameObject DashVFX;
+
     public GameObject grabbedObject;
     public float moveConstant = 10;
     private float moveStep = 0.5f;
@@ -154,7 +154,6 @@ public class Telekinesis : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
         CalculateDistance();
         StoreVector();
-        DashVFX.SetActive(false) 
     }
 
     void ReleaseObject()
