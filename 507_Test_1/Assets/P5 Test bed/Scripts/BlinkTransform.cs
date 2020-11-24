@@ -48,8 +48,7 @@ public class BlinkTransform : MonoBehaviour
 
     public void Update()
     {
-        
-        if (teleport.state && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
+        if ((teleport.state || Input.GetKey(KeyCode.Z)) && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {
             StoryManager.jumped = true;
             // get the normal of the mesh of the point the player will be moving to, and add it to the targetPos

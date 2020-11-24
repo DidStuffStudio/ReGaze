@@ -44,24 +44,21 @@ public class EyeRaycast : MonoBehaviour
         switch (Testing.Instance.eyeTracking)
         {
             case Testing.EyeTracking.Quest:
-
             {
                 eyeOrigin = Camera.main.transform.position;
                 eyeDirection = Camera.main.transform.forward;
-                GazeCast(eyeOrigin, eyeDirection);
                 break;
             }
 
             case Testing.EyeTracking.HTC:
-
             {
                 eyeTrackingData = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World);
                 eyeOrigin = Camera.main.transform.position;
                 eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
-                GazeCast(eyeOrigin, eyeDirection);
                 break;
             }
         }
+        GazeCast(eyeOrigin, eyeDirection);
     }
 
 

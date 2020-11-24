@@ -78,12 +78,12 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
-        if (eyeRaycast.raycastHitObject && rightHand.grabPinchAction.state && !isGrabbed)
+        if (eyeRaycast.raycastHitObject && (rightHand.grabPinchAction.state || Input.GetKey(KeyCode.X)) && !isGrabbed)
         {
             PickUp();
         }
 
-        if (!rightHand.grabPinchAction.state && grabbedObject)
+        if ((!rightHand.grabPinchAction.state || Input.GetKey(KeyCode.C)) && grabbedObject)
         {
             ReleaseObject();
         }
