@@ -22,17 +22,12 @@
     <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IceSheet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IceSheet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/DashTarget/DashTargetVFX.vfx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/DashTarget/DashTargetVFX.vfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Snow 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Snow 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_vive_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/SteamVR/bindings_vive_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tiny_Toony_City_Demo/PolygonBlacksmith/TT_Citizens_demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiny_Toony_City_Demo.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unityProject.vrmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/unityProject.vrmanifest" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +38,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Usability_StoryManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DirtBoulderCheck.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -70,11 +63,11 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
         <option value="$PROJECT_DIR$/Assets/Usability_StoryManager.cs" />
         <option value="$PROJECT_DIR$/Assets/DirtBoulderCheck.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" />
         <option value="$PROJECT_DIR$/Assets/IceSheet.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" />
       </list>
     </option>
   </component>
@@ -85,6 +78,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -104,10 +99,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11356">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="11356" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -160,6 +155,7 @@
       <workItem from="1605768701123" duration="1117000" />
       <workItem from="1605773868176" duration="672000" />
       <workItem from="1605781714952" duration="2907000" />
+      <workItem from="1606381822836" duration="9216000" />
     </task>
     <servers />
   </component>
@@ -184,6 +180,78 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="437" height="464" key="DebuggerActiveHint" timestamp="1606400470799">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="437" height="464" key="DebuggerActiveHint/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606400470799" />
+    <state width="1877" height="196" key="GridCell.Tab.0.bottom" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.0.center" timestamp="1606403115879">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115879" />
+    <state width="1877" height="196" key="GridCell.Tab.0.left" timestamp="1606403115879">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115879" />
+    <state width="1877" height="196" key="GridCell.Tab.0.right" timestamp="1606403115879">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115879" />
+    <state width="1877" height="196" key="GridCell.Tab.1.bottom" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.1.center" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.1.center/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.1.left" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.1.left/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.1.right" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.1.right/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.2.bottom" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.2.bottom/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.2.center" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.2.center/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.2.left" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.2.left/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.2.right" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.2.right/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.3.bottom" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.3.bottom/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.3.center" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.3.center/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.3.left" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.3.left/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state width="1877" height="196" key="GridCell.Tab.3.right" timestamp="1606403115880">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="196" key="GridCell.Tab.3.right/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606403115880" />
+    <state x="2469" y="198" key="RiderGenerateDialog" timestamp="1606386817973">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state x="2469" y="198" key="RiderGenerateDialog/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1606386817973" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1603274817116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

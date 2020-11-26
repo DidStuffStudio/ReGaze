@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Tobii.G2OM;
 using UnityEngine;
+using Valve.VR;
 
-public class Grabbable : MonoBehaviour
+public class Grabbable : MonoBehaviour, IGazeFocusable
 {
     /*
     Object telekinesis states:
@@ -14,6 +16,10 @@ public class Grabbable : MonoBehaviour
     5 - Inactive / disabled (optional - could be left as default)
     */
 
+    // to vibrate controller onseleect of object
+
+    public SteamVR_Action_Vibration hapticAction;
+    
     private Outline outline;
 
     private Material originalMaterial;
@@ -52,17 +58,12 @@ public class Grabbable : MonoBehaviour
         // outline
         print("focused");
         outline.enabled = true;
-        /*matArray[0] = originalMaterial;
-        matArray[1] = outlineMaterial;
-        mesh.materials = matArray;*/
         isSelected = false;
     }
 
     public void OnSelect()
     {
         print("onselect");
-        // vibration
-
         // outline
         outline.enabled = false;
         // selection shader
@@ -82,4 +83,18 @@ public class Grabbable : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         Selected();
     }
+
+    // The method of the "IGazeFocusable" interface, which will be called when this object receives or loses focus
+    public void GazeFocusChanged(bool hasFocus)
+    {
+        // ref --> https://vr.tobii.com/sdk/develop/unity/documentation/api-reference/core/
+        // This object either received or lost focused this frame, as indicated by the hasFocus parameter
+        if(hasFocus) print(gameObject.name + "  is focused by the user");
+    }
+
+    private void Vibrate(float secondsFromNow, float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
+    {
+        hapticAction.Execute(secondsFromNow, duration, frequency, amplitude, source);
+    }
+    
 }

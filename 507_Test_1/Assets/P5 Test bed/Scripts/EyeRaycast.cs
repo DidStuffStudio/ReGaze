@@ -53,8 +53,11 @@ public class EyeRaycast : MonoBehaviour
             case Testing.EyeTracking.HTC:
             {
                 eyeTrackingData = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World);
-                eyeOrigin = Camera.main.transform.position;
-                eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
+                if (eyeTrackingData.GazeRay.IsValid)
+                {
+                    eyeOrigin = Camera.main.transform.position;
+                    eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
+                }
                 break;
             }
         }

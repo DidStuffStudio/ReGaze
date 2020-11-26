@@ -209,6 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &15612281
 Rigidbody:
@@ -393,7 +396,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8395907230036279294, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395907230036279294, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
+    - target: {fileID: -8395907230036279294, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
     - target: {fileID: -8334199837992131057, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
@@ -583,7 +596,17 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
     - target: {fileID: -1366321757691144053, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1366321757691144053, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
+    - target: {fileID: -1366321757691144053, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
     - target: {fileID: -968526333244848925, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
@@ -653,7 +676,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1668469095498436944, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668469095498436944, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
+    - target: {fileID: 1668469095498436944, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
     - target: {fileID: 2326770185586611067, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
@@ -693,7 +726,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4679409082406460280, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679409082406460280, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
+    - target: {fileID: 4679409082406460280, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 50cc05a32496765458337c7eadcba0ed, type: 2}
     - target: {fileID: 8002837590571800802, guid: 2fcb5c8ce0c646c468e89675d2eaecc4,
@@ -819,6 +862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!1001 &56930259
 PrefabInstance:
@@ -1250,6 +1296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &118138335
 Rigidbody:
@@ -1467,6 +1516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &131497559
 Rigidbody:
@@ -1650,6 +1702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &146862661
 Rigidbody:
@@ -1814,6 +1869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &158026921
 Rigidbody:
@@ -1958,6 +2016,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &159092458
 Rigidbody:
@@ -2195,6 +2256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &198478149
 Rigidbody:
@@ -2339,6 +2403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &202527668
 Rigidbody:
@@ -2483,6 +2550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &235470266
 Rigidbody:
@@ -2627,6 +2697,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &282015168
 Rigidbody:
@@ -3276,6 +3349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &395591647
 Rigidbody:
@@ -3440,6 +3516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &448744126
 Rigidbody:
@@ -3590,6 +3669,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &468606102
 Rigidbody:
@@ -3860,6 +3942,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &485785025
 Rigidbody:
@@ -4190,6 +4275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &509311880
 Rigidbody:
@@ -4505,6 +4593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &521736784
 Rigidbody:
@@ -4806,6 +4897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &562995768
 Rigidbody:
@@ -4903,6 +4997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &567599295
 Rigidbody:
@@ -5141,6 +5238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &581052854
 Rigidbody:
@@ -5285,6 +5385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &581448878
 Rigidbody:
@@ -5523,6 +5626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &618410798
 Rigidbody:
@@ -6148,6 +6254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &649317429
 Rigidbody:
@@ -6374,6 +6483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &694819030
 Rigidbody:
@@ -6648,6 +6760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &714136388
 Rigidbody:
@@ -11556,6 +11671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &717562692
 Rigidbody:
@@ -11700,6 +11818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &723084547
 Rigidbody:
@@ -11844,6 +11965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &741204758
 Rigidbody:
@@ -12520,6 +12644,9 @@ MonoBehaviour:
   handType: 2
   trackpadPos:
     actionPath: /actions/default/in/Trackpad
+    needsReinit: 0
+  hapticAction:
+    actionPath: 
     needsReinit: 0
 --- !u!114 &769977384
 MonoBehaviour:
@@ -13256,6 +13383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &888162564
 Rigidbody:
@@ -13400,6 +13530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &890238320
 Rigidbody:
@@ -14384,6 +14517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &993643809
 Rigidbody:
@@ -14711,7 +14847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1062720644
 Transform:
   m_ObjectHideFlags: 0
@@ -14976,6 +15112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1082050094
 Rigidbody:
@@ -15121,6 +15260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1083652152
 Rigidbody:
@@ -15265,6 +15407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1090198717
 Rigidbody:
@@ -16229,6 +16374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1168431663
 Rigidbody:
@@ -16845,6 +16993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1202200914
 Rigidbody:
@@ -17155,6 +17306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1216062560
 Rigidbody:
@@ -17299,6 +17453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1219631144
 Rigidbody:
@@ -17483,6 +17640,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1236400228
 Rigidbody:
@@ -17627,6 +17787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1242996062
 Rigidbody:
@@ -17771,6 +17934,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1269914024
 Rigidbody:
@@ -17915,6 +18081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1276543379
 Rigidbody:
@@ -18631,6 +18800,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1451761094
 Rigidbody:
@@ -19097,6 +19269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1496403963
 Rigidbody:
@@ -19355,6 +19530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1519777597
 Rigidbody:
@@ -19499,6 +19677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1520105913
 Rigidbody:
@@ -19773,6 +19954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1543738121
 Rigidbody:
@@ -20029,6 +20213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1598294530
 Rigidbody:
@@ -20240,6 +20427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1602725869
 Rigidbody:
@@ -20442,6 +20632,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1615961925
 Rigidbody:
@@ -20792,6 +20985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1664501459
 Rigidbody:
@@ -21146,6 +21342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1671797618
 Rigidbody:
@@ -21290,6 +21489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1687098212
 Rigidbody:
@@ -21908,6 +22110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1728887247
 Rigidbody:
@@ -22052,6 +22257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1766170171
 Rigidbody:
@@ -22196,6 +22404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1785562185
 Rigidbody:
@@ -22370,6 +22581,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1793373402
 Rigidbody:
@@ -22542,6 +22756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1811312141
 Rigidbody:
@@ -22639,6 +22856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1830814331
 Rigidbody:
@@ -23267,6 +23487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1867044250
 Rigidbody:
@@ -23411,6 +23634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1876694606
 Rigidbody:
@@ -23619,6 +23845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1887589401
 Rigidbody:
@@ -23809,6 +24038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1942316235
 Rigidbody:
@@ -23923,6 +24155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1960301405
 Rigidbody:
@@ -24114,6 +24349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &1998987165
 Rigidbody:
@@ -24228,6 +24466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &2017298321
 Rigidbody:
@@ -24645,6 +24886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &2076608717
 Rigidbody:
@@ -30061,6 +30305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &3233620851079606233
 Rigidbody:
@@ -30152,6 +30399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &3554582490681790297
 Rigidbody:
@@ -30297,6 +30547,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &4437674811675496018
 Rigidbody:
@@ -30568,6 +30821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333418a617a2f24bb0abea6e0613d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hapticAction:
+    actionPath: 
+    needsReinit: 0
   isSelected: 0
 --- !u!54 &4924460308355462263
 Rigidbody:
