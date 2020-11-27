@@ -59,6 +59,7 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
         print("focused");
         outline.enabled = true;
         isSelected = false;
+        Testing.Instance.Telekinesis.focusedObject = gameObject;
     }
 
     public void OnSelect()
@@ -89,7 +90,18 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     {
         // ref --> https://vr.tobii.com/sdk/develop/unity/documentation/api-reference/core/
         // This object either received or lost focused this frame, as indicated by the hasFocus parameter
-        if(hasFocus) print(gameObject.name + "  is focused by the user");
+        if(Testing.Instance.Telekinesis.grabbedObject) return; // if the user already is grabbing an object, return
+        if (hasFocus)
+        {
+            print(gameObject.name + "  is focused by the user");
+            if(isSelected) return;
+            Focused();
+        }
+        else
+        {
+            Default();
+            Testing.Instance.Telekinesis.focusedObject = null;
+        }
     }
 
     private void Vibrate(float secondsFromNow, float duration, float frequency, float amplitude, SteamVR_Input_Sources source)

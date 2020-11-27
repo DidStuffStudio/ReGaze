@@ -75,11 +75,11 @@ public class EyeRaycast : MonoBehaviour
         {
             print(hit.collider.gameObject.name);
             Debug.DrawRay(startPoint, direction * hit.distance, Color.cyan); 
-            targetPos = hit.point;
+            // targetPos = hit.point;
 
             if (hit.collider.gameObject.layer == 9) // if selectable              
             {
-                if (raycastHitObject)
+                /*if (raycastHitObject)
                 {
                     lastHitObject = raycastHitObject;
                     if (raycastHitObject.GetComponent<Grabbable>().isSelected) return;
@@ -96,7 +96,10 @@ public class EyeRaycast : MonoBehaviour
                 if (lastHitObject) lastHitObject.GetComponent<Grabbable>().Default();
 
                 // set the new one as focused
-                raycastHitObject.GetComponent<Grabbable>().Focused();
+                raycastHitObject.GetComponent<Grabbable>().Focused();*/
+                eyeSignifier.GetComponent<VisualEffect>().enabled = false;
+                hasHit = false;
+                lightObject.SetActive(false);
             }
             else
             {

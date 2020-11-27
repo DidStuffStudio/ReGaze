@@ -61,6 +61,7 @@ public class Telekinesis : MonoBehaviour
     public SteamVR_Action_Boolean reset;
     public SteamVR_Input_Sources handType;
     public SteamVR_Action_Vector2 trackpadPos;
+    public GameObject focusedObject;
 
     private void Start()
     {
@@ -78,7 +79,7 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
-        if (eyeRaycast.raycastHitObject && (rightHand.grabPinchAction.state || Input.GetKey(KeyCode.X)) && !isGrabbed)
+        if (focusedObject && (rightHand.grabPinchAction.state || Input.GetKey(KeyCode.X)) && !isGrabbed)
         {
             PickUp();
         }
@@ -102,7 +103,7 @@ public class Telekinesis : MonoBehaviour
     void PickUp()
     {
         print("picking up");
-        grabbedObject = eyeRaycast.raycastHitObject;
+        grabbedObject = focusedObject;
         grabbedObject.GetComponent<Grabbable>().OnSelect();
         startingDistance = Vector3.Distance(transform.position, grabbedObject.transform.position);
         isGrabbed = true;
