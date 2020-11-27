@@ -33,6 +33,8 @@ public class EyeRaycast : MonoBehaviour
 
     private GameObject lastHitObject;
 
+    [SerializeField] private GameObject vrCamera;
+
     private void Start()
     {
         eyeSignifier = Instantiate(eyeSignifierPrefab, lightObject.transform) as GameObject;
@@ -58,9 +60,11 @@ public class EyeRaycast : MonoBehaviour
                     eyeOrigin = Camera.main.transform.position;
                     eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
                 }
+
                 break;
             }
         }
+
         GazeCast(eyeOrigin, eyeDirection);
     }
 
@@ -74,64 +78,29 @@ public class EyeRaycast : MonoBehaviour
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, layerMask))
         {
             print(hit.collider.gameObject.name);
-            Debug.DrawRay(startPoint, direction * hit.distance, Color.cyan); 
-            // targetPos = hit.point;
-
-            if (hit.collider.gameObject.layer == 9) // if selectable              
+            Debug.DrawRay(startPoint, direction * hit.distance, Color.cyan);
+            // if ground, turn on target pos and so on...
+            if (hit.collider.gameObject.layer == 8) // if ground                
             {
-                /*if (raycastHitObject)
-                {
-                    lastHitObject = raycastHitObject;
-                    if (raycastHitObject.GetComponent<Grabbable>().isSelected) return;
-                }
-
-                raycastHitObject = hit.transform.gameObject;
-                if (raycastHitObject == lastHitObject || raycastHitObject.GetComponent<Grabbable>().isSelected)
-                {
-                    raycastHitObject.GetComponent<Grabbable>().Focused();
-                    return;
-                }
-
-                // if it's not the same as the previous hit object, then set that one to default state
-                if (lastHitObject) lastHitObject.GetComponent<Grabbable>().Default();
-
-                // set the new one as focused
-                raycastHitObject.GetComponent<Grabbable>().Focused();*/
-                eyeSignifier.GetComponent<VisualEffect>().enabled = false;
-                hasHit = false;
-                lightObject.SetActive(false);
+                targetPos = hit.point;
+                targetPos += (vrCamera.transform.position - transform.position);
+                raycastHit = hit;
+                eyeSignifier.GetComponent<VisualEffect>().enabled = true;
+                lightObject.SetActive(true);
+                hasHit = true;
+                MoveLight(hit.point);
             }
             else
             {
-                // if ground, turn on target pos and so on...
-                if (hit.collider.gameObject.layer == 8) // if ground                
-                {
-                    targetPos = hit.point;
-                    raycastHit = hit;
-                    eyeSignifier.GetComponent<VisualEffect>().enabled = true;
-                    lightObject.SetActive(true);
-                    hasHit = true;
-                    MoveLight(hit.point);
-                }
-                else
-                {
-                    eyeSignifier.GetComponent<VisualEffect>().enabled = false;
-                    hasHit = false;
-                    lightObject.SetActive(false);
-                }
-
-                if (raycastHitObject && !raycastHitObject.GetComponent<Grabbable>().isSelected)
-                {
-                    raycastHitObject.GetComponent<Grabbable>().Default();
-                }
                 eyeSignifier.GetComponent<VisualEffect>().enabled = false;
+                hasHit = false;
+                lightObject.SetActive(false);
             }
         }
     }
 
     void MoveLight(Vector3 hitPoint)
     {
-        //lightHeight += Input.GetAxis("Vertical");
         jumpTransform.position = hitPoint + new Vector3(0, lightHeight, 0);
         var lightToTargetDistance = Vector3.Distance(lightObject.transform.position, jumpTransform.position);
         var moveStep = lightToTargetDistance / lightMoveConstant;

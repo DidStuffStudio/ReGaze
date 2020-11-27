@@ -20,10 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Ice_M.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Ice_M.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Icicle_M.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Icicle_M.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/LightCone_Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/LightCone_Blue.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,12 +95,18 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
       <method v="2" />
     </configuration>
   </component>
