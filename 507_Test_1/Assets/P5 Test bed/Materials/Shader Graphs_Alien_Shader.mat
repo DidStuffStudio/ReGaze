@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_Alien_Shader
+  m_Shader: {fileID: -6465566751694194690, guid: 925539d3efd19384caac837694328cef,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_A08D731:
+        m_Texture: {fileID: 2800000, guid: d7811d175303044f1a4e4f3cc3c214be, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_617C26A9_Texture_1:
+        m_Texture: {fileID: 2800000, guid: b8a24799e544ef14585e71bbbac0a86c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_6456DE82: 8.99
+    m_Colors:
+    - Color_DF98072D: {r: 0.3962264, g: 0.20970725, b: 0.15512636, a: 0}
