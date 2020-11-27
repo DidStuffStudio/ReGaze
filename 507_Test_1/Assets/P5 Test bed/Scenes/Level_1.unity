@@ -213,6 +213,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &15612281
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15612277}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 5
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -842,7 +843,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37233224}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -866,6 +867,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!1001 &56930259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,6 +1302,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &118138335
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1313,7 +1316,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &118138336
@@ -1520,6 +1523,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &131497559
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1706,6 +1710,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &146862661
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1719,7 +1724,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &146862662
@@ -1873,6 +1878,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &158026921
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1886,7 +1892,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &158026922
@@ -2020,6 +2026,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &159092458
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2033,7 +2040,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &159092459
@@ -2260,6 +2267,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &198478149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2273,7 +2281,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &198478150
@@ -2407,6 +2415,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &202527668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2420,7 +2429,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &202527669
@@ -2554,6 +2563,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &235470266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2567,7 +2577,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &235470267
@@ -2701,6 +2711,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &282015168
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2714,7 +2725,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &282015169
@@ -3353,6 +3364,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &395591647
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3366,7 +3378,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &395591648
@@ -3520,6 +3532,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &448744126
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3533,7 +3546,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &448744127
@@ -3673,6 +3686,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &468606102
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3686,7 +3700,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &468606103
@@ -3946,6 +3960,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &485785025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3959,7 +3974,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &485785026
@@ -4279,6 +4294,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &509311880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4292,7 +4308,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &509311881
@@ -4597,6 +4613,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &521736784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4610,7 +4627,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &521736785
@@ -4901,6 +4918,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &562995768
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4909,7 +4927,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562995764}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -5001,6 +5019,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &567599295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5014,7 +5033,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &567599296
@@ -5242,6 +5261,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &581052854
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5255,7 +5275,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &581052855
@@ -5389,6 +5409,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &581448878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5402,7 +5423,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &581448879
@@ -5630,6 +5651,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &618410798
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5643,7 +5665,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &618410799
@@ -6258,6 +6280,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &649317429
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6271,7 +6294,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &649317430
@@ -6487,6 +6510,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &694819030
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6500,7 +6524,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &694819031
@@ -6764,6 +6788,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &714136388
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6777,7 +6802,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &714136389
@@ -11675,6 +11700,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &717562692
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11688,7 +11714,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &717562693
@@ -11822,6 +11848,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &723084547
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11835,7 +11862,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &723084548
@@ -11969,6 +11996,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &741204758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11982,7 +12010,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &741204759
@@ -12629,7 +12657,7 @@ MonoBehaviour:
   rightHand: {fileID: 769977380}
   telekineticTransform: {fileID: 104927972}
   grabbedObject: {fileID: 0}
-  moveConstant: 10
+  moveConstant: 50
   seethrough: {fileID: 2100000, guid: 479ecc6ae89ed4662b95337a6aeec158, type: 2}
   outlineMaterial: {fileID: 2100000, guid: e557ce9116b3a4edf95a07c98ee896b9, type: 2}
   gestureControllerMoveStrength: 100
@@ -13385,6 +13413,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &888162564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13398,7 +13427,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &888162565
@@ -13532,6 +13561,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &890238320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13545,7 +13575,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &890238321
@@ -14519,6 +14549,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &993643809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14532,7 +14563,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &993643810
@@ -15114,6 +15145,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1082050094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15122,7 +15154,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082050090}
   serializedVersion: 2
-  m_Mass: 25
+  m_Mass: 5
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -15262,6 +15294,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1083652152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15275,7 +15308,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1083652153
@@ -15409,6 +15442,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1090198717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15422,7 +15456,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1090198718
@@ -16376,6 +16410,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1168431663
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16384,7 +16419,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168431659}
   serializedVersion: 2
-  m_Mass: 200
+  m_Mass: 50
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -16995,6 +17030,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1202200914
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17008,7 +17044,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1202200915
@@ -17308,6 +17344,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1216062560
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17321,7 +17358,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1216062561
@@ -17455,6 +17492,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1219631144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17468,7 +17506,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1219631145
@@ -17642,6 +17680,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1236400228
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17655,7 +17694,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1236400229
@@ -17789,6 +17828,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1242996062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17802,7 +17842,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1242996063
@@ -17936,6 +17976,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1269914024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17949,7 +17990,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1269914025
@@ -18083,6 +18124,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1276543379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18096,7 +18138,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1276543380
@@ -18802,6 +18844,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1451761094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18815,7 +18858,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1451761095
@@ -19271,6 +19314,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1496403963
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19284,7 +19328,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1496403964
@@ -19532,6 +19576,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1519777597
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19545,7 +19590,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1519777598
@@ -19679,6 +19724,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1520105913
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19692,7 +19738,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1520105914
@@ -19956,6 +20002,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1543738121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19969,7 +20016,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1543738122
@@ -20215,6 +20262,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1598294530
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20223,7 +20271,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598294525}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -20429,6 +20477,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1602725869
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20442,7 +20491,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1602725870
@@ -20634,6 +20683,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1615961925
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20647,7 +20697,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1615961926
@@ -20987,6 +21037,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1664501459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21000,7 +21051,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1664501460
@@ -21344,6 +21395,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1671797618
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21357,7 +21409,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1671797619
@@ -21491,6 +21543,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1687098212
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21504,7 +21557,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1687098213
@@ -22112,6 +22165,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1728887247
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22125,7 +22179,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1728887248
@@ -22259,6 +22313,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1766170171
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22272,7 +22327,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1766170172
@@ -22406,6 +22461,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1785562185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22419,7 +22475,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1785562186
@@ -22583,6 +22639,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1793373402
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22596,7 +22653,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1793373403
@@ -22758,6 +22815,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1811312141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22766,7 +22824,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811312137}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -22858,6 +22916,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1830814331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22871,7 +22930,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1830814332
@@ -23489,6 +23548,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1867044250
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23502,7 +23562,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1867044251
@@ -23636,6 +23696,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1876694606
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23649,7 +23710,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1876694607
@@ -23847,6 +23908,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1887589401
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23860,7 +23922,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1887589402
@@ -24040,6 +24102,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1942316235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24053,7 +24116,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1942316236
@@ -24157,6 +24220,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1960301405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24165,7 +24229,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960301401}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -24351,6 +24415,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &1998987165
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24364,7 +24429,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1998987166
@@ -24468,6 +24533,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &2017298321
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24476,7 +24542,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017298317}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -24888,6 +24954,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &2076608717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24901,7 +24968,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &2076608718
@@ -25294,6 +25361,7 @@ GameObject:
   - component: {fileID: 7226588346461179383}
   - component: {fileID: 1126086962863213967}
   - component: {fileID: 1126086962863213966}
+  - component: {fileID: 1126086962863213968}
   m_Layer: 0
   m_Name: CraterSnow
   m_TagString: Untagged
@@ -30033,6 +30101,22 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!54 &1126086962863213968
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126086962863213965}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1297550642251604759
 GameObject:
   m_ObjectHideFlags: 0
@@ -30084,6 +30168,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5444c01e798205644b450fab70f13198, type: 2}
+  - {fileID: 2100000, guid: e977b0a3f0195bf4db14010b2a423e8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30307,6 +30392,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &3233620851079606233
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30315,7 +30401,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3233620851079606230}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 5
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -30401,6 +30487,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &3554582490681790297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30409,7 +30496,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3554582490681790294}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 5
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -30549,6 +30636,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &4437674811675496018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30557,7 +30645,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4437674811675496015}
   serializedVersion: 2
-  m_Mass: 2
+  m_Mass: 5
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -30823,6 +30911,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   isSelected: 0
+  canCollide: 0
 --- !u!54 &4924460308355462263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30831,7 +30920,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4924460308355462260}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 5
   m_Drag: 0.1
   m_AngularDrag: 1
   m_UseGravity: 1

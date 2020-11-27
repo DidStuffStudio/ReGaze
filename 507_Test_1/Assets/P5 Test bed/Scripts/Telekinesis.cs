@@ -94,6 +94,11 @@ public class Telekinesis : MonoBehaviour
         CombinedUpdate();
     }
 
+    private void FixedUpdate()
+    {
+        // GetComponent<Rigidbody>().MovePosition(transform.position + transform.right * Time.fixedDeltaTime);
+    }
+
     void CalculateDistance()
     {
         distance = Vector3.Distance(Camera.main.transform.position, grabbedObject.transform.position);
@@ -134,7 +139,9 @@ public class Telekinesis : MonoBehaviour
 
     void CombinedUpdate()
     {
-        grabbedObject.GetComponent<Rigidbody>().useGravity = false;
+        var rb = grabbedObject.GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.isKinematic = false;
         UpdateParticles();
 
         // Make the grabbed object follow the eyes
@@ -157,10 +164,23 @@ public class Telekinesis : MonoBehaviour
         }
 
 
-        grabbedObject.transform.position =
-            Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
-
-
+        // grabbedObject.transform.position =Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
+        // Vector3 direction = (telekineticTransform.position - grabbedObject.transform.position).normalized;
+        // rb.MovePosition(grabbedObject.transform.position + direction * (Time.fixedDeltaTime * moveConstant));
+        
+        Vector3 direction = telekineticTransform.transform.position - grabbedObject.transform.position;
+        Ray ray = new Ray(grabbedObject.transform.position, direction);
+        RaycastHit hit;
+        if (!Physics.Raycast(ray,out hit,direction.magnitude))
+            rb.MovePosition(Vector3.Lerp(grabbedObject.transform.position, telekineticTransform.position, moveStep / rb.mass));
+        else
+        {
+            // if(grabbedObject.GetComponent<Grabbable>().canCollide) 
+                rb.MovePosition(Vector3.Lerp(grabbedObject.transform.position, hit.point, moveStep / rb.mass));
+        }
+            // rb.MovePosition(hit.point);
+            // 
+        
         // Move the grabbed object also with the touchpad
         if (Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.TouchPad)
         {

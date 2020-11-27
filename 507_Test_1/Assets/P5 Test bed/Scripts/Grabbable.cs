@@ -30,6 +30,7 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     private Renderer mesh;
     private Material[] matArray;
     public bool isSelected;
+    public bool canCollide = true;
 
     private void Start()
     {
@@ -108,5 +109,16 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     {
         hapticAction.Execute(secondsFromNow, duration, frequency, amplitude, source);
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        StartCoroutine(WaitToCollideAgain());
+    }
+
+    private IEnumerator WaitToCollideAgain()
+    {
+        canCollide = false;
+        yield return new WaitForSeconds(0.05f);
+        canCollide = true;
+    }
 }
