@@ -151,8 +151,9 @@ public class Telekinesis : MonoBehaviour
         telekineticTransform.position = Camera.main.transform.position + eyeRaycast.eyeDirection * distance;
 
         // Move and rotate the grabbed object proportional to the gestures of the controller in the XYZ
-        if (Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.Gestures ||
-            Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.TouchPad)
+        if ((Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.Gestures ||
+             Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.TouchPad) &&
+            Testing.Instance.eyeTracking != Testing.EyeTracking.Controllers)
         {
             telekineticTransform.position +=
                 (rightHand.transform.position - storedControllerPos) * gestureControllerMoveStrength;
@@ -165,20 +166,21 @@ public class Telekinesis : MonoBehaviour
         // grabbedObject.transform.position =Vector3.MoveTowards(grabbedObject.transform.position, telekineticTransform.position, moveStep);
         // Vector3 direction = (telekineticTransform.position - grabbedObject.transform.position).normalized;
         // rb.MovePosition(grabbedObject.transform.position + direction * (Time.fixedDeltaTime * moveConstant));
-        
+
         Vector3 direction = telekineticTransform.transform.position - grabbedObject.transform.position;
         Ray ray = new Ray(grabbedObject.transform.position, direction);
         RaycastHit hit;
-        if (!Physics.Raycast(ray,out hit,direction.magnitude))
-            rb.MovePosition(Vector3.Lerp(grabbedObject.transform.position, telekineticTransform.position, moveStep / rb.mass));
+        if (!Physics.Raycast(ray, out hit, direction.magnitude))
+            rb.MovePosition(Vector3.Lerp(grabbedObject.transform.position, telekineticTransform.position,
+                moveStep / rb.mass));
         else
         {
             // if(grabbedObject.GetComponent<Grabbable>().canCollide) 
-                rb.MovePosition(Vector3.Lerp(grabbedObject.transform.position, hit.point, moveStep / rb.mass));
+            rb.MovePosition(Vector3.Lerp(grabbedObject.transform.position, hit.point, moveStep / rb.mass));
         }
-            // rb.MovePosition(hit.point);
-            // 
-        
+        // rb.MovePosition(hit.point);
+        // 
+
         // Move the grabbed object also with the touchpad
         if (Testing.Instance.tutorialInteractionMethods == Testing.TutorialInteractionMethods.TouchPad)
         {
