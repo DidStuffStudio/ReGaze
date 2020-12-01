@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Tobii.G2OM;
 using UnityEngine;
 using Valve.VR;
-
+[RequireComponent(typeof(Outline))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
 public class Grabbable : MonoBehaviour, IGazeFocusable
 {
     /*
@@ -31,9 +33,17 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     private Material[] matArray;
     public bool isSelected;
     public bool canCollide = true;
+    private AudioSource aSource;
+    bool hasAudioSource;
 
     private void Start()
     {
+        if (GetComponent<AudioSource>() != null)
+        {
+            aSource = GetComponent<AudioSource>();
+            hasAudioSource = true;
+        }
+
         outline = GetComponent<Outline>();
         outline.enabled = false;
         originalMaterial = GetComponent<Renderer>().material;
@@ -109,9 +119,12 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     {
         hapticAction.Execute(secondsFromNow, duration, frequency, amplitude, source);
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+        if (canCollide && hasAudioSource)
+        {
+            aSource.Play();
+        }
         StartCoroutine(WaitToCollideAgain());
     }
 

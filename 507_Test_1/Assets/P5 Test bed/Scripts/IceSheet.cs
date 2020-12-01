@@ -3,48 +3,60 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class IceSheet : MonoBehaviour
 {
     public GameObject iceShardsPrefab;
-    public AudioSource source;
+    private AudioSource source;
 
-    public AudioClip breaking, cracking;
     public float breakForce = 10;
 
-    private bool steppedOn;
+    public bool breakTest;
+    private bool broken;
 
     public UnityEvent OnBreak;
 
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+    private void Update()
+    {
+        if (breakTest && !broken)
+        {
+            Break(null);
+            broken = true;
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.layer == 12 && !steppedOn) //Play cracking
+        if (collision.collider.gameObject.CompareTag("Icicle")) //Play break and break
         {
-            steppedOn = true;
-            source.clip = cracking;
-            source.Play();
+            Break(collision);
         }
+    }
 
-        else if (collision.collider.gameObject.CompareTag("Icicle")) //Play break and break
-        {
-            var shards = Instantiate(iceShardsPrefab, transform.position, transform.rotation, null); 
-            shards.transform.localScale = Vector3.one/2;
-            source.clip = breaking;
+    void Break(Collision col)
+    {
+
+        
+            var shards = Instantiate(iceShardsPrefab, transform.position, transform.rotation, null);
+            shards.transform.localScale = transform.localScale;
             source.Play();
 
+        if (col != null)
+        {
             foreach (var rb in shards.GetComponentsInChildren<Rigidbody>())
             {
-                rb.AddForceAtPosition(Vector3.down * breakForce, collision.gameObject.transform.position);
+                rb.AddForceAtPosition(Vector3.down * breakForce, col.gameObject.transform.position);
             }
-            
+        }
+
+
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
-            
+
             StartCoroutine(WaitForEnd());
-     
-
-
-
-        }
     }
 
     IEnumerator WaitForEnd()
