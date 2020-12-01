@@ -33,11 +33,13 @@ public class EyeRaycast : MonoBehaviour
 
     private GameObject lastHitObject;
 
+    [SerializeField] private float eyeSignifierSize;
+
     [SerializeField] private GameObject vrCamera;
 
     private void Start()
     {
-        eyeSignifier = Instantiate(eyeSignifierPrefab, lightObject.transform) as GameObject;
+        eyeSignifier = Instantiate(eyeSignifierPrefab, null) as GameObject;
         eyeSignifier.SetActive(false);
     }
 
@@ -57,7 +59,8 @@ public class EyeRaycast : MonoBehaviour
                 eyeTrackingData = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World);
                 if (eyeTrackingData.GazeRay.IsValid)
                 {
-                    eyeOrigin = Camera.main.transform.position;
+                    //eyeOrigin = Camera.main.transform.position;
+                    eyeOrigin = eyeTrackingData.GazeRay.Origin;
                     eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
                 }
 
@@ -85,23 +88,27 @@ public class EyeRaycast : MonoBehaviour
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, layerMask))
         {
             print(hit.collider.gameObject.name);
-            Debug.DrawRay(startPoint, direction * hit.distance, Color.cyan);
+            Debug.DrawRay(startPoint, direction * hit.distance, Color.yellow);
             // if ground, turn on target pos and so on...
             if (hit.collider.gameObject.layer == 8) // if ground                
             {
                 targetPos = hit.point;
-                targetPos += new Vector3(vrCamera.transform.position.x - transform.position.x, hit.point.y, vrCamera.transform.position.z - transform.position.z);
+                targetPos += new Vector3(vrCamera.transform.position.x - transform.position.x, 0, vrCamera.transform.position.z - transform.position.z);
                 raycastHit = hit;
-                eyeSignifier.GetComponent<VisualEffect>().enabled = true;
-                lightObject.SetActive(true);
+                var distance = Vector3.Distance(eyeOrigin, targetPos);
+                if (distance > 5) eyeSignifier.transform.GetChild(0).GetComponent<Light>().intensity = distance;
+
+                eyeSignifier.SetActive(true);
+                //lightObject.transform.localScale = new Vector3(distance, distance,distance);
+                //lightObject.SetActive(true);
                 hasHit = true;
                 MoveLight(hit.point);
             }
             else
             {
-                eyeSignifier.GetComponent<VisualEffect>().enabled = false;
+                eyeSignifier.SetActive(false);
                 hasHit = false;
-                lightObject.SetActive(false);
+                //lightObject.SetActive(false);
             }
         }
     }
@@ -109,9 +116,9 @@ public class EyeRaycast : MonoBehaviour
     void MoveLight(Vector3 hitPoint)
     {
         jumpTransform.position = hitPoint + new Vector3(0, lightHeight, 0);
-        var lightToTargetDistance = Vector3.Distance(lightObject.transform.position, jumpTransform.position);
+        var lightToTargetDistance = Vector3.Distance(eyeSignifier.transform.position, jumpTransform.position);
         var moveStep = lightToTargetDistance / lightMoveConstant;
-        lightObject.transform.position =
-            Vector3.MoveTowards(lightObject.transform.position, jumpTransform.position, moveStep);
+        eyeSignifier.transform.position =
+            Vector3.MoveTowards(eyeSignifier.transform.position, jumpTransform.position, moveStep);
     }
 }
