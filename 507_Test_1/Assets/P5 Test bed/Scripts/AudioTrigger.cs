@@ -8,6 +8,8 @@ public class AudioTrigger : MonoBehaviour
 {
     public AudioClip audioToPlay;
     public UnityEvent OnTrigger;
+    public TheMasterManager manager;
+    public int index;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +19,7 @@ public class AudioTrigger : MonoBehaviour
             src.clip = audioToPlay;
             src.Play();
             OnTrigger?.Invoke();
+            manager.progressLight(index);
 
         }
     }

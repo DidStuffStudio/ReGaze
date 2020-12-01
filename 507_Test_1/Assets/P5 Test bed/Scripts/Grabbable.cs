@@ -56,10 +56,13 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
 
     public void Default()
     {
-        print("default");
         outline.enabled = false;
-        matArray[0] = originalMaterial;
-        matArray[1] = originalMaterial;
+        if (matArray.Length > 1)
+        {
+            matArray[0] = originalMaterial;
+            matArray[1] = originalMaterial;
+        }
+        else mesh.material = originalMaterial;
         mesh.materials = matArray;
         isSelected = false;
     }
@@ -67,7 +70,6 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     public void Focused()
     {
         // outline
-        print("focused");
         outline.enabled = true;
         isSelected = false;
         Testing.Instance.Telekinesis.focusedObject = gameObject;
@@ -75,15 +77,17 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
 
     public void OnSelect()
     {
-        print("onselect");
         // outline
         outline.enabled = false;
         // selection shader
-        matArray[0] = selectionMaterial;
-        matArray[1] = selectionMaterial;
+        if (matArray.Length > 1)
+        {
+            matArray[0] = selectionMaterial;
+            matArray[1] = selectionMaterial;
+        }
+        else mesh.material = selectionMaterial;
         mesh.materials = matArray;
         isSelected = true;
-        // StartCoroutine(OnSelectCoroutine());
     }
 
     public void Selected() { }
@@ -104,7 +108,7 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
         if(Testing.Instance.Telekinesis.grabbedObject) return; // if the user already is grabbing an object, return
         if (hasFocus)
         {
-            print(gameObject.name + "  is focused by the user");
+            // print(gameObject.name + "  is focused by the user");
             if(isSelected) return;
             Focused();
         }
