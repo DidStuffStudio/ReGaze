@@ -25,12 +25,11 @@ public class IceSheet : MonoBehaviour
         if (breakTest && !broken)
         {
             Break(null);
-            broken = true;
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.CompareTag("Icicle")) //Play break and break
+        if (collision.collider.gameObject.CompareTag("Icicle") && !broken) //Play break and break
         {
             Break(collision);
         }
@@ -38,7 +37,7 @@ public class IceSheet : MonoBehaviour
 
     void Break(Collision col)
     {
-
+            broken = true;
         
             var shards = Instantiate(iceShardsPrefab, transform.position, transform.rotation, null);
             shards.transform.localScale = transform.localScale;

@@ -138,4 +138,5 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
         yield return new WaitForSeconds(0.05f);
         canCollide = true;
     }
+
 }

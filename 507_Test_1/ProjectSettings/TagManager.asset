@@ -10,6 +10,8 @@ TagManager:
   - GestureTriggerBox
   - TouchpadTriggerBox
   - Icicle
+  - Right_Cube
+  - Left_Cube
   layers:
   - Default
   - TransparentFX

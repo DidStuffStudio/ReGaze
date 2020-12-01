@@ -16,7 +16,7 @@ public class Telekinesis : MonoBehaviour
     private const ControllerButton TriggerButton = ControllerButton.Trigger;
     private const ControllerButton Wheel = ControllerButton.Touchpad;
     private bool distanceCalculated = false;
-    private bool isGrabbed;
+    public bool isGrabbed;
     public Transform telekineticTransform;
 
     public GameObject grabbedObject;
@@ -39,7 +39,6 @@ public class Telekinesis : MonoBehaviour
 
     public GameObject particles;
     private ParticleSystem ps;
-    public GameObject dashVFX;
 
     private float startingDistance;
     [SerializeField] private float setDistance = 1.0f;
@@ -121,10 +120,9 @@ public class Telekinesis : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
         CalculateDistance();
         StoreVector();
-        dashVFX.SetActive(false);
     }
 
-    void ReleaseObject()
+    public void ReleaseObject()
     {
         particles.SetActive(false);
         grabbedObject.GetComponent<Grabbable>().Default();
@@ -134,7 +132,6 @@ public class Telekinesis : MonoBehaviour
         grabbedObject = null;
         eyeRaycast.raycastHitObject = null;
         isGrabbed = false;
-        dashVFX.SetActive(true);
         distanceCalculated = false;
     }
 

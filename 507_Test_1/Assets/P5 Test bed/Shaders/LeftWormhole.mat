@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Electric
-  m_Shader: {fileID: -6465566751694194690, guid: 68d8daba56bdd194fba4bb0055152120,
+  m_Name: LeftWormhole
+  m_Shader: {fileID: -6465566751694194690, guid: 2baee75dcab536e4693f9039d7632b5b,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,8 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_2E37BA1E: 6.85
-    - Vector1_7E81B7A3: 4.58
+    - Forcefield_Alpha: 1
+    - Vector1_B9A2B251: 100
+    - Vector1_D2619756: 5
+    - Vector1_DBB9A9D0: 0.2
     m_Colors:
-    - Color_5B91887B: {r: 0, g: 0.7490196, b: 0.7137255, a: 0}
-    - Vector2_D9683BFE: {r: 0, g: 0.01, b: 0, a: 0}
+    - Color_F197F3B4: {r: 1, g: 0, b: 0.73927116, a: 1}
+    - Forcefield_Speed: {r: 0, g: -0.1, b: 0, a: 0}
+    - Vector2_3A237B7E: {r: 0, g: 0.1, b: 0, a: 0}

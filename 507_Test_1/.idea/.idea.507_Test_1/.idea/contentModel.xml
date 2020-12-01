@@ -7,6 +7,7 @@
       <e p="507_Test_1.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="FinalPuzzle.cs" t="Include" />
         <e p="P5 Test bed" t="Include">
           <e p="Scripts" t="Include">
             <e p="AudioTrigger.cs" t="Include" />
@@ -33,6 +34,7 @@
             <e p="SeeThrough.shader" t="Include" />
           </e>
         </e>
+        <e p="Platform.cs" t="Include" />
         <e p="QuickOutline" t="Include">
           <e p="readme.txt" t="Include" />
           <e p="Resources" t="Include">
@@ -812,6 +814,7 @@
           </e>
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="Tutorial.cs" t="Include" />
         <e p="ViveSR" t="Include">
           <e p="Scripts" t="Include">
             <e p="Eye" t="Include">
@@ -861,6 +864,7 @@
             <e p="Unlit-Alpha2Gray.shader" t="Include" />
           </e>
         </e>
+        <e p="Wormhole.cs" t="Include" />
       </e>
       <e p="GazeModifierEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
