@@ -15,6 +15,7 @@ public class AudioTrigger : MonoBehaviour
     {
         if (other.gameObject.layer == 12)
         {
+            print("Entered");
             var src = GetComponent<AudioSource>();
             src.clip = audioToPlay;
             src.Play();

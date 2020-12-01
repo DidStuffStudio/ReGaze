@@ -81,7 +81,7 @@ public class EyeRaycast : MonoBehaviour
         if (Physics.Raycast(startPoint, direction, out hit, Mathf.Infinity, layerMask))
         {
             print(hit.collider.gameObject.name);
-            Debug.DrawRay(startPoint, direction * hit.distance, Color.cyan);
+            Debug.DrawRay(startPoint, direction * hit.distance, Color.yellow);
             // if ground, turn on target pos and so on...
             if (hit.collider.gameObject.layer == 8) // if ground                
             {

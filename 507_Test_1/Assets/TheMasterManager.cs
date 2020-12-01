@@ -8,25 +8,30 @@ public class TheMasterManager : MonoBehaviour
     public int positionIndex = 0;
     public Light[] lights;
     public float lightIntensity = 0.01f;
-    
-    void Update()
-    {
-        print(positionIndex);
-    }
 
     private void Start()
     {
-        progressLight(0);
+
+        foreach (var light in lights)
+        {
+            light.transform.parent.gameObject.SetActive(false);
+        }
+        lights[0].transform.parent.gameObject.SetActive(true);
     }
+    
 
     public void progressLight(int i)
     {
-        if (i > 0)
+        lights[i].transform.parent.gameObject.SetActive(false);
+        if (i < lights.Length)
         {
-            lights[i - 1].intensity = 0.0f;
+            positionIndex = i;
+            //lights[i].intensity = 0.0f;
+            //lights[i+1].intensity = lightIntensity;
+           
+            lights[i + 1].transform.parent.gameObject.SetActive(true);
         }
-        
-        lights[i].intensity = lightIntensity;
+
     }
     
 }
