@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\user\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_507_Test_1.1984416721.00" t="ExcludeRecursive" />
-    <e p="D:\Student Projects\MED507_P5\507_Test_1" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="507_Test_1.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -869,7 +867,7 @@
       <e p="SteamVR_Editor.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Input_Editor.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Windows_EditorHelper.csproj" t="IncludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
       <e p="TobiiXRCore.csproj" t="IncludeRecursive" />
       <e p="TobiiXRDevTools.csproj" t="IncludeRecursive" />
       <e p="TobiiXREditor.csproj" t="IncludeRecursive" />
@@ -881,5 +879,8 @@
       <e p="Unity.XR.Management.Samples.csproj" t="IncludeRecursive" />
       <e p="Unity.XR.Management.Samples.Editor.csproj" t="IncludeRecursive" />
     </e>
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_507_Test_1.539911505.00" t="ExcludeRecursive" />
   </component>
 </project>

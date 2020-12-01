@@ -83,7 +83,7 @@ public class EyeRaycast : MonoBehaviour
             if (hit.collider.gameObject.layer == 8) // if ground                
             {
                 targetPos = hit.point;
-                targetPos += (vrCamera.transform.position - transform.position);
+                targetPos += new Vector3(vrCamera.transform.position.x - transform.position.x, hit.point.y, vrCamera.transform.position.z - transform.position.z);
                 raycastHit = hit;
                 eyeSignifier.GetComponent<VisualEffect>().enabled = true;
                 lightObject.SetActive(true);
