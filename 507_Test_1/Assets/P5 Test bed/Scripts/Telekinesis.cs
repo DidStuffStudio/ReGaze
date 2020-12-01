@@ -68,6 +68,7 @@ public class Telekinesis : MonoBehaviour
         eyeRaycast = GetComponent<EyeRaycast>();
         reset.AddOnStateDownListener(JoystickDown, handType);
         if (particles) ps = particles.transform.GetChild(0).GetComponent<ParticleSystem>();
+        Testing.Instance.rightHand = rightHand;
     }
 
 

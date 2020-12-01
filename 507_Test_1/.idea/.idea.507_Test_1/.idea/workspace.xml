@@ -20,15 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Ice_M.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Ice_M.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Icicle_M.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Materials/Icicle_M.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/LightCone_Blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/LightCone_Blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Testing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Testing.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +33,32 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Input_Sources.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/Examples/Social_Example/Scripts/HandleHands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/External/Providers/Vive/ViveProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SineVFX/PostProcessingV2/Shaders/Builtins/MultiScaleVODownsample2.compute" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SineVFX/PostProcessingV2/Shaders/Builtins/SubpixelMorphologicalAntialiasing.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SineVFX/PostProcessingV2/Shaders/ACES.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/DevTools/GazeModifier/ILerpValue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Samples/XR Management/3.0.3/Example XR Management implementation/SampleLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/API/Internal/TobiiXR_Settings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///EyeRaycast.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Testing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/SnapTurn/SnapTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/DevTools/DevToolMenu/DevToolsControllerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/Examples/Utilities/Controller/Scripts/ControllerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/Examples/Utilities/Controller/Scripts/OpenVRControllerAdapter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/Examples/HandEyeCoordination_Example/Scripts/Utilities/ResetObjectPosition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Hand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SineVFX/PostProcessingV2/Shaders/Debug/Histogram.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/Examples/Utilities/Controller/Plugins/openvr_api.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///EyeRaycast.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Equippable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TobiiXR/Examples/UI_Example/Scripts/Touchpad/UITouchpadGazeSlider.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -59,16 +78,16 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/ControllerVisuals.cs" />
         <option value="$PROJECT_DIR$/Assets/ControllerGesture.cs" />
         <option value="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/BodyCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Testing.cs" />
         <option value="$PROJECT_DIR$/Assets/TestLerp.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
         <option value="$PROJECT_DIR$/Assets/Usability_StoryManager.cs" />
         <option value="$PROJECT_DIR$/Assets/DirtBoulderCheck.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/TutorialTriggers.cs" />
         <option value="$PROJECT_DIR$/Assets/IceSheet.cs" />
-        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Telekinesis.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
+        <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Testing.cs" />
       </list>
     </option>
   </component>
@@ -95,22 +114,16 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="selectedOptions">
-        <set />
-      </option>
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="selectedOptions">
-        <set />
-      </option>
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -158,11 +171,12 @@
       <workItem from="1605781714952" duration="2907000" />
       <workItem from="1606381822836" duration="9216000" />
       <workItem from="1606461916327" duration="8864000" />
+      <workItem from="1606816402881" duration="2441000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -262,9 +276,10 @@
       <screen x="1920" y="2" width="1920" height="1040" />
     </state>
     <state x="2012" y="94" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/1920.2.1920.1040@1920.2.1920.1040" timestamp="1604401060887" />
-    <state x="2512" y="123" width="736" height="801" key="find.popup" timestamp="1606471676909">
-      <screen x="1920" y="4" width="1920" height="1040" />
+    <state x="346" y="-956" width="799" height="832" key="find.popup" timestamp="1606853072306">
+      <screen x="-246" y="-1080" width="1920" height="1080" />
     </state>
+    <state x="346" y="-956" width="799" height="832" key="find.popup/0.0.1440.900/-246.-1080.1920.1080@-246.-1080.1920.1080" timestamp="1606853072306" />
     <state x="2512" y="121" width="736" height="801" key="find.popup/0.0.1920.1040/1920.2.1920.1040@1920.2.1920.1040" timestamp="1605108104981" />
     <state x="2512" y="123" width="736" height="801" key="find.popup/0.0.1920.1040/1920.4.1920.1040/3840.0.2160.1160@1920.4.1920.1040" timestamp="1606471676909" />
     <state x="2512" y="123" width="736" height="801" key="find.popup/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1605779225682" />

@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
- class Testing : MonoBehaviour
+class Testing : MonoBehaviour
  {
      private static Testing _instance;
      public static Testing Instance => _instance;
@@ -11,6 +12,7 @@ using UnityEngine;
      public EyeRaycast EyeRaycast;
      public Telekinesis Telekinesis;
      public BlinkTransform BlinkTransform;
+     public Hand rightHand;
      
 
      private void Awake()
@@ -33,7 +35,8 @@ using UnityEngine;
      public enum EyeTracking
     {
         Quest,
-        HTC
+        HTC, 
+        Controllers
     }
      public EyeTracking eyeTracking;
 

@@ -63,6 +63,13 @@ public class EyeRaycast : MonoBehaviour
 
                 break;
             }
+            case Testing.EyeTracking.Controllers: 
+            {
+                if(!Testing.Instance.rightHand) break;
+                eyeOrigin = Testing.Instance.rightHand.transform.position;
+                eyeDirection = Testing.Instance.rightHand.transform.forward;
+                break;
+            }
         }
 
         GazeCast(eyeOrigin, eyeDirection);
