@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,6 +11,14 @@ public class AudioTrigger : MonoBehaviour
     public UnityEvent OnTrigger;
     public TheMasterManager manager;
     public int index;
+    public float lightIntensity;
+
+
+    private void Start()
+    {
+        lightIntensity = GetComponentInChildren<Light>().intensity;
+        GetComponentInChildren<Light>().intensity = 0;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

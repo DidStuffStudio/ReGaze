@@ -814,6 +814,7 @@
           </e>
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="TriggerBox.cs" t="Include" />
         <e p="Tutorial.cs" t="Include" />
         <e p="ViveSR" t="Include">
           <e p="Scripts" t="Include">

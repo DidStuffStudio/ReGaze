@@ -6,32 +6,48 @@ using UnityEngine;
 public class TheMasterManager : MonoBehaviour
 {
     public int positionIndex = 0;
-    public Light[] lights;
+    public GameObject[] helpers;
+    private Light[] lights;
     public float lightIntensity = 0.01f;
+
+    public float fadeSpeed;
 
     private void Start()
     {
-
-        foreach (var light in lights)
+        lights = new Light[helpers.Length];
+        int counter = 0;
+        foreach (var helper in helpers)
         {
-            light.transform.parent.gameObject.SetActive(false);
+            lights[counter] = helper.GetComponentInChildren<Light>();
+            counter++;
         }
-        lights[0].transform.parent.gameObject.SetActive(true);
+
+        //lights[0].intensity = helpers[0].transform.GetComponent<AudioTrigger>().lightIntensity;
     }
-    
+
+    private void Update()
+    {
+        if (lights[positionIndex + 1].intensity <
+            helpers[positionIndex + 1].transform.GetComponent<AudioTrigger>().lightIntensity)
+        {
+            lights[positionIndex].intensity += fadeSpeed;
+        }
+
+        if (positionIndex >= 0)
+        {
+            if (lights[positionIndex].intensity > 0) lights[positionIndex].intensity-=fadeSpeed;
+            else lights[positionIndex].transform.parent.gameObject.SetActive(false);
+        }
+        
+    }
 
     public void progressLight(int i)
     {
-        lights[i].transform.parent.gameObject.SetActive(false);
+        positionIndex = i;
+        /*lights[i].transform.parent.gameObject.SetActive(false);
         if (i < lights.Length)
         {
-            positionIndex = i;
-            //lights[i].intensity = 0.0f;
-            //lights[i+1].intensity = lightIntensity;
-           
             lights[i + 1].transform.parent.gameObject.SetActive(true);
-        }
-
+        }*/
     }
-    
 }
