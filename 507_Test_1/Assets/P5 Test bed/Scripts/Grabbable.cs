@@ -103,10 +103,10 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     // The method of the "IGazeFocusable" interface, which will be called when this object receives or loses focus
     public void GazeFocusChanged(bool hasFocus)
     {
+        if(Testing.Instance.eyeTracking != Testing.EyeTracking.HTC) return;
         // ref --> https://vr.tobii.com/sdk/develop/unity/documentation/api-reference/core/
         // This object either received or lost focused this frame, as indicated by the hasFocus parameter
         if(Testing.Instance.Telekinesis.grabbedObject) return; // if the user already is grabbing an object, return
-        /*if(Testing.Instance.eyeTracking == Testing.EyeTracking.Controllers) return;*/
         if (hasFocus)
         {
             // print(gameObject.name + "  is focused by the user");

@@ -54,18 +54,4 @@ class Testing : MonoBehaviour
      }
 
      public TutorialInteractionMethods tutorialInteractionMethods;
-     
-    public void SetTutorialInteractionEyeOnly()
-    {
-    }
-
-    public void SetTutorialInteractionGestures()
-    {
-        
-    }
-
-    public void SetTutorialInteractionTouchpad()
-    {
-        
-    }
-}
+ }

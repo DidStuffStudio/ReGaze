@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Tobii.XR;
 using UnityEngine.VFX;
+using Valve.VR.Extras;
 
 public class EyeRaycast : MonoBehaviour
 {
@@ -64,13 +65,20 @@ public class EyeRaycast : MonoBehaviour
                     eyeDirection = Vector3.Normalize(eyeTrackingData.GazeRay.Direction);
                 }
 
+                if (Testing.Instance.rightHand)
+                {
+                    
+                }
+
                 break;
             }
-            case Testing.EyeTracking.Controllers: 
+            case Testing.EyeTracking.Controllers:
             {
-                if(!Testing.Instance.rightHand) break;
-                eyeOrigin = Testing.Instance.rightHand.transform.position;
-                eyeDirection = Testing.Instance.rightHand.transform.forward;
+                if (!Testing.Instance.rightHand) break;
+                var hand = Testing.Instance.rightHand;
+                hand.GetComponent<SteamVR_LaserPointer>().enabled = true;
+                eyeOrigin = hand.transform.position;
+                eyeDirection = hand.transform.forward;
                 break;
             }
         }
@@ -89,18 +97,38 @@ public class EyeRaycast : MonoBehaviour
         {
             print(hit.collider.gameObject.name);
             Debug.DrawRay(startPoint, direction * hit.distance, Color.yellow);
+            if (hit.collider.gameObject.layer == 9 && Testing.Instance.eyeTracking != Testing.EyeTracking.HTC) // selectable
+            {
+                if (raycastHitObject)
+                {
+                    lastHitObject = raycastHitObject;
+                    if (raycastHitObject.GetComponent<Grabbable>().isSelected) return;
+                }
+
+                raycastHitObject = hit.transform.gameObject;
+                if (raycastHitObject == lastHitObject || raycastHitObject.GetComponent<Grabbable>().isSelected)
+                {
+                    raycastHitObject.GetComponent<Grabbable>().Focused();
+                    return;
+                }
+
+                // if it's not the same as the previous hit object, then set that one to default state
+                if (lastHitObject) lastHitObject.GetComponent<Grabbable>().Default();
+
+                // set the new one as focused
+                raycastHitObject.GetComponent<Grabbable>().Focused();
+            }
+
             // if ground, turn on target pos and so on...
             if (hit.collider.gameObject.layer == 8) // if ground                
             {
                 targetPos = hit.point;
-                targetPos += new Vector3(vrCamera.transform.position.x - transform.position.x, 0, vrCamera.transform.position.z - transform.position.z);
+                targetPos += new Vector3(vrCamera.transform.position.x - transform.position.x, 0,
+                    vrCamera.transform.position.z - transform.position.z);
                 raycastHit = hit;
                 var distance = Vector3.Distance(eyeOrigin, targetPos);
                 if (distance > 5) eyeSignifier.transform.GetChild(0).GetComponent<Light>().intensity = distance;
-
                 eyeSignifier.SetActive(true);
-                //lightObject.transform.localScale = new Vector3(distance, distance,distance);
-                //lightObject.SetActive(true);
                 hasHit = true;
                 MoveLight(hit.point);
             }
@@ -108,7 +136,6 @@ public class EyeRaycast : MonoBehaviour
             {
                 eyeSignifier.SetActive(false);
                 hasHit = false;
-                //lightObject.SetActive(false);
             }
         }
     }
