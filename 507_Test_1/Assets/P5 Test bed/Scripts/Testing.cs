@@ -13,7 +13,7 @@ class Testing : MonoBehaviour
      public Telekinesis Telekinesis;
      public BlinkTransform BlinkTransform;
      public Hand rightHand;
-     
+     [SerializeField] private GameObject wayFindingAudio;
 
      private void Awake()
      {
@@ -54,4 +54,14 @@ class Testing : MonoBehaviour
      }
 
      public TutorialInteractionMethods tutorialInteractionMethods;
+
+     public void MoveWayFindingAudioSource(Vector3 newPosition)
+     {
+         wayFindingAudio.transform.position = newPosition;
+         if (wayFindingAudio.GetComponent<AudioSource>())
+         {
+             var audio = wayFindingAudio.GetComponent<AudioSource>();
+             audio.Play();
+         }
+     }
  }

@@ -22,7 +22,7 @@ public class TheMasterManager : MonoBehaviour
             counter++;
         }
 
-        //lights[0].intensity = helpers[0].transform.GetComponent<AudioTrigger>().lightIntensity;
+        lights[0].intensity = helpers[0].transform.GetComponent<AudioTrigger>().lightIntensity;
     }
 
     private void Update()
@@ -30,10 +30,10 @@ public class TheMasterManager : MonoBehaviour
         if (lights[positionIndex + 1].intensity <
             helpers[positionIndex + 1].transform.GetComponent<AudioTrigger>().lightIntensity)
         {
-            lights[positionIndex].intensity += fadeSpeed;
+            lights[positionIndex + 1].intensity += fadeSpeed;
         }
 
-        if (positionIndex >= 0)
+        if (positionIndex > 0)
         {
             if (lights[positionIndex].intensity > 0) lights[positionIndex].intensity-=fadeSpeed;
             else lights[positionIndex].transform.parent.gameObject.SetActive(false);
