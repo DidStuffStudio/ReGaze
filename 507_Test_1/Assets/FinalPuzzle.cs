@@ -7,7 +7,8 @@ using UnityEngine.VFX;
 public class FinalPuzzle : MonoBehaviour
 {
 
-    public MeshRenderer forcefield;
+    public MeshRenderer forcefieldR, leftPlatformR, rightPlatformR, leftWormholeR, rightWormholeR, leftOrbR, rightOrbR;
+    public Grabbable leftOrbG, rightOrbG;
 
     public Wormhole leftWormhole, rightWormhole;
 
@@ -19,15 +20,70 @@ public class FinalPuzzle : MonoBehaviour
     private float coreSize = 2.0f;
     public GameObject endPanel;
     private bool finito;
+    
+    
+    
+    
     private void Update()
     {
-        
-    
+
+
+        if (rightWormhole.onTrigger)
+        {
+            rightPlatformR.materials[1].SetFloat("Em", 1.5f);
+            if(rightOrbR) rightOrbR.material.SetFloat("Em", 6.0f);
+            if (rightOrbG.isSelected)
+            {
+                rightWormholeR.material.SetFloat("FresnelPower", 1.5f);
+                rightWormholeR.material.SetFloat("Em", 10.0f);
+            }
+            else
+            {
+                rightWormholeR.material.SetFloat("FresnelPower", 0f);
+                rightWormholeR.material.SetFloat("Em", 5.0f);
+            }
+
+        }
+
+        else
+        {
+            rightWormholeR.material.SetFloat("FresnelPower", 0);
+            rightPlatformR.materials[1].SetFloat("Em", 0.5f);
+            if(rightOrbR) rightOrbR.material.SetFloat("Em", 3.5f);
+            rightWormholeR.material.SetFloat("Em", 5.0f);
+        }
+
+        if (leftWormhole.onTrigger)
+        {
+            leftPlatformR.materials[1].SetFloat("Em", 1.5f);
+            if(leftOrbR) leftOrbR.material.SetFloat("Em", 6.0f);
+            if (leftOrbG.isSelected)
+            {
+                leftWormholeR.material.SetFloat("FresnelPower", 1.5f);
+                leftWormholeR.material.SetFloat("Em", 12.0f);
+            }
+            else
+            {
+                leftWormholeR.material.SetFloat("FresnelPower", 0f);
+                leftWormholeR.material.SetFloat("Em", 5.0f);
+            }
+
+        }
+        else
+        {
+            leftWormholeR.material.SetFloat("FresnelPower", 0);
+            leftPlatformR.materials[1].SetFloat("Em", 0.5f);
+            if(leftOrbR) leftOrbR.material.SetFloat("Em", 3.5f);
+            leftWormholeR.material.SetFloat("Em", 5.0f);
+        }
+
+
+
         if (test)
         {
             //Forcefield half capacity
-            forcefield.material.SetFloat("Forcefield_Speed", -0.02f);
-            forcefield.material.SetFloat("Forcefield_Alpha", 0.1f);
+            forcefieldR.material.SetFloat("Forcefield_Speed", -0.02f);
+            forcefieldR.material.SetFloat("Forcefield_Alpha", 0.1f);
             coreSizeMultiplyer += sizeChangeInterval;
             if (!finito)
             {
@@ -39,8 +95,8 @@ public class FinalPuzzle : MonoBehaviour
         if (leftWormhole.correct && rightWormhole.correct)
         {
             //Forcefield gone and core expand   
-            forcefield.material.SetFloat("Forcefield_Speed", -0.00f);
-            forcefield.material.SetFloat("Forcefield_Alpha", 0.0f);
+            forcefieldR.material.SetFloat("Forcefield_Speed", -0.00f);
+            forcefieldR.material.SetFloat("Forcefield_Alpha", 0.0f);
             coreSizeMultiplyer += sizeChangeInterval;
             if (!finito)
             {
@@ -53,8 +109,8 @@ public class FinalPuzzle : MonoBehaviour
         else if (leftWormhole.correct || rightWormhole.correct)
         {
             //Forcefield half capacity
-            forcefield.material.SetFloat("Forcefield_Speed", -0.02f);
-            forcefield.material.SetFloat("Forcefield_Alpha", 0.1f);
+            forcefieldR.material.SetFloat("Forcefield_Speed", -0.02f);
+            forcefieldR.material.SetFloat("Forcefield_Alpha", 0.1f);
         }
 
         coreSize = (Mathf.Sin(Time.time) + 1.5f) * coreSizeMultiplyer;
@@ -65,7 +121,7 @@ public class FinalPuzzle : MonoBehaviour
     IEnumerator WaitForEnd()
     {
         finito = true;
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(10.0f);
         endPanel.SetActive(true);
     }
 }

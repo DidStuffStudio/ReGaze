@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RghtOrbSpiral
-  m_Shader: {fileID: -6465566751694194690, guid: 1af8650c852937340bcee0ab9dd3cd93,
+  m_Name: PuzzleRingRight
+  m_Shader: {fileID: -6465566751694194690, guid: 68d8daba56bdd194fba4bb0055152120,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,13 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Em: 5
-    - Forcefield_Alpha: 0.28
-    - FresnelPower: 3.5
-    - Vector1_B9A2B251: 2737.3
-    - Vector1_D2619756: 4
-    - Vector1_DBB9A9D0: 0.1
+    - Em: 0.5
+    - Vector1_2E37BA1E: 1.98
+    - Vector1_7E81B7A3: 4.58
+    - Vector1_E0DCCEEB: 0.5
     m_Colors:
-    - Color_F197F3B4: {r: 0.42745098, g: 0.63529414, b: 0.3882353, a: 1}
-    - Forcefield_Speed: {r: 0.001, g: 0.001, b: 0, a: 0}
-    - Vector2_3A237B7E: {r: 0, g: 0.1, b: 0, a: 0}
+    - Color_5B91887B: {r: 0, g: 0.7490196, b: 0.7137255, a: 0}
+    - Colour: {r: 0.42420608, g: 0.6320754, b: 0.38461193, a: 0}
+    - Vector2_D9683BFE: {r: 0, g: 0.01, b: 0, a: 0}

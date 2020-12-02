@@ -21,11 +21,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - Em: 5.03
     - Forcefield_Alpha: 1
+    - FresnelPower: 0
+    - NS: 100
+    - VO: 0.51
     - Vector1_B9A2B251: 100
     - Vector1_D2619756: 5
     - Vector1_DBB9A9D0: 0.2
     m_Colors:
-    - Color_F197F3B4: {r: 0.5275143, g: 0.9056604, b: 0.14097542, a: 1}
-    - Forcefield_Speed: {r: 0, g: -0.1, b: 0, a: 0}
+    - Color_F197F3B4: {r: 0.42745098, g: 0.63529414, b: 0.3882353, a: 1}
+    - Forcefield_Speed: {r: 0, g: -0.065, b: 0, a: 0}
     - Vector2_3A237B7E: {r: 0, g: 0.1, b: 0, a: 0}

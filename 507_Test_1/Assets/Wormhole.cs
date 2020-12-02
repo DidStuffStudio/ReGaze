@@ -8,6 +8,13 @@ public class Wormhole : MonoBehaviour
     public string tagCheck;
     public bool correct;
     public bool onTrigger;
+    private MeshRenderer mr;
+
+    private void Start()
+    {
+        mr = GetComponent<MeshRenderer>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(tagCheck) && onTrigger)
@@ -16,24 +23,22 @@ public class Wormhole : MonoBehaviour
             correct = true;
             Testing.Instance.Telekinesis.ReleaseObject();
             Destroy(other.gameObject);
+            CorrectFeedback();
         }
     }
 
-    void Update()
+    /*void Update()
     {
-        if(onTrigger)
-            OnTriggerFeedback();
         if (correct)
             CorrectFeedback();
-    }
+    }*/
 
     void CorrectFeedback()
     {
-        
+        mr.material.SetFloat("NS",15.0f);
+        mr.material.SetFloat("Em", 5.0f);
+        mr.material.SetFloat("VO", 0.0f);
+        mr.material.SetFloat("FresnelPower", 0.0f);
     }
 
-    void OnTriggerFeedback()
-    {
-        
-    }
 }

@@ -20,15 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/DashTarget/BlackHole.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/DashTarget/BlackHole.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FinalPuzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalPuzzle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Master.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Master.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric Tile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric Tile.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/LeftOrbSpiral.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/LeftOrbSpiral.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/LeftWormhole.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/LeftWormhole.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RghtOrbSpiral.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RghtOrbSpiral.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RightWormhole.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RightWormhole.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader Graphs_Shader_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader Graphs_Shader_3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_3.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_3.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_3.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_3.shadergraph.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_4.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_4.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wormhole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wormhole.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +106,7 @@
         <option value="$PROJECT_DIR$/Assets/TriggerBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Respawn.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalPuzzle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Wormhole.cs" />
       </list>
     </option>
   </component>
@@ -143,7 +148,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -192,11 +197,12 @@
       <workItem from="1606381822836" duration="9216000" />
       <workItem from="1606461916327" duration="8864000" />
       <workItem from="1606824367128" duration="1298000" />
+      <workItem from="1606872707320" duration="4609000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
@@ -296,12 +302,12 @@
       <screen x="1920" y="2" width="1920" height="1040" />
     </state>
     <state x="2012" y="94" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/1920.2.1920.1040@1920.2.1920.1040" timestamp="1604401060887" />
-    <state x="346" y="-956" width="799" height="832" key="find.popup" timestamp="1606853072306">
-      <screen x="-246" y="-1080" width="1920" height="1080" />
+    <state x="2512" y="123" width="736" height="801" key="find.popup" timestamp="1606876829130">
+      <screen x="1920" y="4" width="1920" height="1040" />
     </state>
     <state x="346" y="-956" width="799" height="832" key="find.popup/0.0.1440.900/-246.-1080.1920.1080@-246.-1080.1920.1080" timestamp="1606853072306" />
     <state x="2512" y="121" width="736" height="801" key="find.popup/0.0.1920.1040/1920.2.1920.1040@1920.2.1920.1040" timestamp="1605108104981" />
-    <state x="2512" y="123" width="736" height="801" key="find.popup/0.0.1920.1040/1920.4.1920.1040/3840.0.2160.1160@1920.4.1920.1040" timestamp="1606471676909" />
+    <state x="2512" y="123" width="736" height="801" key="find.popup/0.0.1920.1040/1920.4.1920.1040/3840.0.2160.1160@1920.4.1920.1040" timestamp="1606876829130" />
     <state x="2512" y="123" width="736" height="801" key="find.popup/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1605779225682" />
     <state x="592" y="119" width="736" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603193567043" />
     <state x="2536" y="242" key="run.anything.popup" timestamp="1605108038406">
