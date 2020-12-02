@@ -20,12 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/FBX/Scene2EnvironmentV2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/FBX/Scene2EnvironmentV2.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/DashTarget/BlackHole.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Iter_2/DashTarget/BlackHole.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Master.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Master.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RightWormhole.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RightWormhole.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RightWormhole.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/RightWormhole.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric Tile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric Tile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Electric.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader Graphs_Shader_3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader Graphs_Shader_3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_3.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_3.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_4.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Shaders/Shader_4.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +101,7 @@
         <option value="$PROJECT_DIR$/Assets/TheMasterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/TriggerBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Respawn.cs" />
+        <option value="$PROJECT_DIR$/Assets/FinalPuzzle.cs" />
       </list>
     </option>
   </component>

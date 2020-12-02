@@ -9005,7 +9005,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -11438,7 +11438,7 @@ MonoBehaviour:
   rightWormhole: {fileID: 1646728660}
   test: 0
   core: {fileID: 1365427212}
-  sizeChangeInterval: 0.01
+  sizeChangeInterval: 0.1
   endPanel: {fileID: 1704051845}
 --- !u!4 &1174556366
 Transform:
@@ -20432,6 +20432,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 722259199992906804, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59654577ea32e450aa5850498f0c5939, type: 2}
     - target: {fileID: 4458596459539309203, guid: d0fdae3212de65d45978b5197278f681,
         type: 3}
       propertyPath: m_Name
@@ -20459,6 +20464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
       value: 2
       objectReference: {fileID: 0}
@@ -20471,6 +20481,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Name
+      value: Core color
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759268385555616807, guid: d0fdae3212de65d45978b5197278f681,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
+      value: 0.59607846
       objectReference: {fileID: 0}
     - target: {fileID: 9173285446668696474, guid: d0fdae3212de65d45978b5197278f681,
         type: 3}
