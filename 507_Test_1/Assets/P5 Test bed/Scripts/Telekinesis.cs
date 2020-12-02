@@ -230,7 +230,8 @@ public class Telekinesis : MonoBehaviour
 
         var psShape = ps.shape;
         // scale
-        psShape.scale = new Vector3(grabbedObject.transform.localScale.x, grabbedObject.transform.localScale.z, 1);
+        // psShape.scale = new Vector3(grabbedObject.transform.localScale.x, grabbedObject.transform.localScale.z, 1);
+        psShape.scale = grabbedObject.transform.GetComponent<Renderer>().bounds.extents;
         // rotation
         var eulerRotation1 = new Vector3(grabbedObject.transform.eulerAngles.x, grabbedObject.transform.eulerAngles.y,
             particles.transform.eulerAngles.z);
