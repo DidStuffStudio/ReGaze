@@ -47,6 +47,7 @@
             <e p="Outline.cs" t="Include" />
           </e>
         </e>
+        <e p="Respawn.cs" t="Include" />
         <e p="Samples" t="Include">
           <e p="XR Management" t="Include">
             <e p="3.0.3" t="Include">
