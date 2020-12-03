@@ -35,6 +35,7 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     public bool canCollide = true;
     private AudioSource aSource;
     bool hasAudioSource;
+    public bool soundOnCollide = true;
 
     private void Start()
     {
@@ -126,7 +127,7 @@ public class Grabbable : MonoBehaviour, IGazeFocusable
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (canCollide && hasAudioSource)
+        if (canCollide && hasAudioSource && soundOnCollide)
         {
             aSource.Play();
         }

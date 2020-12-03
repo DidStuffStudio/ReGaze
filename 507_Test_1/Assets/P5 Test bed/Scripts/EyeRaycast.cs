@@ -38,6 +38,7 @@ public class EyeRaycast : MonoBehaviour
 
     [SerializeField] private GameObject vrCamera;
 
+    public bool welcomeAudioFinito;
     private void Start()
     {
         eyeSignifier = Instantiate(eyeSignifierPrefab, null) as GameObject;
@@ -46,6 +47,8 @@ public class EyeRaycast : MonoBehaviour
 
     private void Update()
     {
+        if (!welcomeAudioFinito) return;
+        
         switch (Testing.Instance.eyeTracking)
         {
             case Testing.EyeTracking.Quest:

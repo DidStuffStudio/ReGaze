@@ -8,7 +8,6 @@ public class TheMasterManager : MonoBehaviour
     public int positionIndex = 0;
     public GameObject[] helpers;
     private Light[] lights;
-    public float lightIntensity = 0.01f;
 
     public float fadeSpeed;
 
@@ -27,16 +26,19 @@ public class TheMasterManager : MonoBehaviour
 
     private void Update()
     {
-        if (lights[positionIndex + 1].intensity <
-            helpers[positionIndex + 1].transform.GetComponent<AudioTrigger>().lightIntensity)
+        if (positionIndex < lights.Length)
         {
-            lights[positionIndex + 1].intensity += fadeSpeed;
+            if (lights[positionIndex + 1].intensity <
+                helpers[positionIndex + 1].transform.GetComponent<AudioTrigger>().lightIntensity)
+            {
+                lights[positionIndex + 1].intensity += fadeSpeed;
+            }
         }
 
         if (positionIndex > 0)
         {
             if (lights[positionIndex].intensity > 0) lights[positionIndex].intensity-=fadeSpeed;
-            else lights[positionIndex].transform.parent.gameObject.SetActive(false);
+            else lights[positionIndex].gameObject.SetActive(false);
         }
         
     }
@@ -44,10 +46,5 @@ public class TheMasterManager : MonoBehaviour
     public void progressLight(int i)
     {
         positionIndex = i;
-        /*lights[i].transform.parent.gameObject.SetActive(false);
-        if (i < lights.Length)
-        {
-            lights[i + 1].transform.parent.gameObject.SetActive(true);
-        }*/
     }
 }

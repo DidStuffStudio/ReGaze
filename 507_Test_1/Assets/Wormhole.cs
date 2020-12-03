@@ -9,9 +9,11 @@ public class Wormhole : MonoBehaviour
     public bool correct;
     public bool onTrigger;
     private MeshRenderer mr;
+    private AudioSource audioSrc;
 
     private void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
         mr = GetComponent<MeshRenderer>();
     }
 
@@ -19,7 +21,7 @@ public class Wormhole : MonoBehaviour
     {
         if (other.gameObject.CompareTag(tagCheck) && onTrigger)
         {
-       
+            audioSrc.Play();
             correct = true;
             Testing.Instance.Telekinesis.ReleaseObject();
             Destroy(other.gameObject);

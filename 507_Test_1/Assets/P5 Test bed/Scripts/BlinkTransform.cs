@@ -35,7 +35,7 @@ public class BlinkTransform : MonoBehaviour
     public SteamVR_Input_Sources handType;
 
 
-    public Usability_StoryManager StoryManager; //Messy shit remove after usability
+    public Tutorial tutorial; //Messy shit remove after usability
 
     private void Start()
     {
@@ -44,13 +44,14 @@ public class BlinkTransform : MonoBehaviour
         camera = transform.GetChild(0).gameObject;
         eyeRaycast = GetComponent<EyeRaycast>();
         teleport.AddOnStateDownListener(GripToTelport, handType);
+        tutorial = GetComponent<Tutorial>();
     }
 
     public void Update()
     {
         if ((teleport.state || Input.GetKey(KeyCode.Z)) && eyeRaycast.hasHit && !triggered) //Trigger new jump if conditions are met
         {
-            //StoryManager.jumped = true;
+            tutorial.jumped = true;
             // get the normal of the mesh of the point the player will be moving to, and add it to the targetPos
             var normal = eyeRaycast.raycastHit.normal;
             if (normal.y < 0) normal.y = Mathf.Abs(normal.y);

@@ -20,9 +20,9 @@ public class FinalPuzzle : MonoBehaviour
     private float coreSize = 2.0f;
     public GameObject endPanel;
     private bool finito;
-    
-    
-    
+    public AudioSource orbLeftAudioSrc, orbRightAudioSrc, shieldSrc;
+    public AudioClip shieldDecrease, complete;
+    private bool half, full;
     
     private void Update()
     {
@@ -34,11 +34,13 @@ public class FinalPuzzle : MonoBehaviour
             if(rightOrbR) rightOrbR.material.SetFloat("Em", 6.0f);
             if (rightOrbG.isSelected)
             {
+                orbRightAudioSrc.Play();
                 rightWormholeR.material.SetFloat("FresnelPower", 1.5f);
                 rightWormholeR.material.SetFloat("Em", 10.0f);
             }
             else
             {
+                if(orbRightAudioSrc) orbRightAudioSrc.Stop();
                 rightWormholeR.material.SetFloat("FresnelPower", 0f);
                 rightWormholeR.material.SetFloat("Em", 5.0f);
             }
@@ -59,11 +61,14 @@ public class FinalPuzzle : MonoBehaviour
             if(leftOrbR) leftOrbR.material.SetFloat("Em", 6.0f);
             if (leftOrbG.isSelected)
             {
+                
+                orbLeftAudioSrc.Play();
                 leftWormholeR.material.SetFloat("FresnelPower", 1.5f);
                 leftWormholeR.material.SetFloat("Em", 12.0f);
             }
             else
             {
+                if(orbLeftAudioSrc) orbLeftAudioSrc.Stop();
                 leftWormholeR.material.SetFloat("FresnelPower", 0f);
                 leftWormholeR.material.SetFloat("Em", 5.0f);
             }
@@ -103,11 +108,22 @@ public class FinalPuzzle : MonoBehaviour
                 StartCoroutine(WaitForEnd());
             }
 
+            if (!full)
+            {
+                full = true;
+                shieldSrc.clip = complete;
+                shieldSrc.loop = true;
+                shieldSrc.Play();
+            }
+
 
         }
         
-        else if (leftWormhole.correct || rightWormhole.correct)
+        else if ((leftWormhole.correct || rightWormhole.correct ) && !half)
         {
+            half = true;
+            shieldSrc.clip = shieldDecrease;
+            shieldSrc.Play();
             //Forcefield half capacity
             forcefieldR.material.SetFloat("Forcefield_Speed", -0.02f);
             forcefieldR.material.SetFloat("Forcefield_Alpha", 0.1f);
