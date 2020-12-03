@@ -100,7 +100,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 29a7b2af13173f54e80ac97cef567574,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9661,7 +9661,7 @@ Light:
   m_BounceIntensity: 1.02
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.19e-43, y: 9.4e-44, z: 0, w: -15.715965}
+  m_BoundingSphereOverride: {x: 0, y: 3.292e-41, z: 0, w: -12.0625}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -21639,17 +21639,17 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6518731
-      value: 0.2648468
-      inSlope: -1.2111549
-      outSlope: -1.2111549
+      time: 0.69780207
+      value: 0.42427063
+      inSlope: -0.65123075
+      outSlope: -0.65123075
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.3753177
+      inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0
+      value: 0.22063565
       inSlope: -0.3841959
       outSlope: -0.3841959
       tangentMode: 0
@@ -22191,8 +22191,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140497381}
-  m_LocalRotation: {x: 0.86686635, y: -0.2716511, z: -0.19984367, w: -0.3671661}
-  m_LocalPosition: {x: 80.06308, y: 987.47943, z: 544.642}
+  m_LocalRotation: {x: 0.8336122, y: -0.34431303, z: -0.16529877, w: -0.39901835}
+  m_LocalPosition: {x: 79.330826, y: 987.6733, z: 548.86523}
   m_LocalScale: {x: 11.142348, y: 11.142348, z: 11.142348}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27548,14 +27548,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5416099332883056769}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 118.64, y: 908.18, z: 366.45}
+  m_LocalRotation: {x: -0.5743073, y: -0.2688614, z: -0.20728005, w: 0.7449294}
+  m_LocalPosition: {x: 117.1, y: 908.8, z: 380.5}
   m_LocalScale: {x: 1.0523161, y: 1.0523157, z: 1.0523157}
   m_Children:
   - {fileID: 1359305463}
   m_Father: {fileID: 777032249}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -75.261, y: -39.691, z: 0}
 --- !u!33 &7064815363923157144
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28504,7 +28504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iceShardsPrefab: {fileID: 2815279592942606872, guid: e3d7fda678249354eba3cca3445f2d59,
     type: 3}
-  breakForce: 10
+  breakForce: -10
   breakTest: 0
   OnBreak:
     m_PersistentCalls:
@@ -28922,13 +28922,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3085550305990240069}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 118.64, y: 908.60004, z: 366.45}
+  m_LocalRotation: {x: -0.5743073, y: -0.2688614, z: -0.20728005, w: 0.7449294}
+  m_LocalPosition: {x: 117.1, y: 910.58, z: 380.5}
   m_LocalScale: {x: 1.0523161, y: 1.0523157, z: 1.0523157}
   m_Children: []
   m_Father: {fileID: 777032249}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -75.261, y: -39.691, z: 0}
 --- !u!4 &8181415639918162871
 Transform:
   m_ObjectHideFlags: 0

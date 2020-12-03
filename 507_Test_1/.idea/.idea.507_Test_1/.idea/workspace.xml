@@ -19,19 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.507_Test_1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/FinalPuzzle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FinalPuzzle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Level_2/Post Processing Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Master.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scenes/Master.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TheMasterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TheMasterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tutorial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tutorial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wormhole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wormhole.cs" afterDir="false" />
-    </list>
+    <list default="true" id="2925ad62-3c92-4578-aa7a-de2520332edf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,12 +89,12 @@
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/AudioTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/Grabbable.cs" />
         <option value="$PROJECT_DIR$/Assets/Wormhole.cs" />
-        <option value="$PROJECT_DIR$/Assets/TheMasterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/EyeRaycast.cs" />
         <option value="$PROJECT_DIR$/Assets/Tutorial.cs" />
         <option value="$PROJECT_DIR$/Assets/P5 Test bed/Scripts/BlinkTransform.cs" />
         <option value="$PROJECT_DIR$/Assets/FinalPuzzle.cs" />
+        <option value="$PROJECT_DIR$/Assets/TheMasterManager.cs" />
       </list>
     </option>
   </component>
@@ -199,7 +187,7 @@
       <workItem from="1606824367128" duration="1298000" />
       <workItem from="1606872707320" duration="7229000" />
       <workItem from="1606914054228" duration="7396000" />
-      <workItem from="1606978336025" duration="5750000" />
+      <workItem from="1606978336025" duration="6504000" />
     </task>
     <servers />
   </component>
